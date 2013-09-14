@@ -78,3 +78,16 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+/*
+| IP Protection
+*/
+
+Route::filter('ip-protect', function()
+{
+	// Do stuff before every request
+	if (!in_array(Request::getClientIp(), Config::get('app.ip-protect.whitelist')) && Config::get('app.ip-protect.enabled') === true ) 
+	{
+		return Redirect::to( Config::get('app.ip-protect.redirect_url') );
+	}
+});

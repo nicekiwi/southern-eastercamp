@@ -11,7 +11,12 @@
 |
 */
 
-Route::get('/', function()
+dd( App::environment() );
+
+Route::group(array('before' => 'ip-protect'), function()
 {
-	return View::make('home');
+	Route::get('/', function()
+	{
+		return View::make('home');
+	});
 });

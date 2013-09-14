@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => true,
+	'debug' => false,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url' => 'http://www.eastercamp.org.nz',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ return array(
 	|
 	*/
 
-	'timezone' => 'UTC',
+	'timezone' => 'Pacific/Auckland',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -179,6 +179,23 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 
+	),
+
+	/*
+	|--------------------------------------------------------------------------
+	| IP Protection Config
+	|--------------------------------------------------------------------------
+	*/
+
+	'ip-protect' => array(
+
+		'enabled' => true,
+		'redirect_url' => 'https://www.facebook.com/southerneastercamp',
+		'whitelist' => array(
+			'115.188.84.39',	// CYS Office
+			'118.90.87.215',	// Ezra Sharp: Home
+			'127.0.0.1',
+		),
 	),
 
 );
