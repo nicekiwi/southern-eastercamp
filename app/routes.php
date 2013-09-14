@@ -11,8 +11,6 @@
 |
 */
 
-dd( App::environment() );
-
 Route::group(array('before' => 'ip-protect'), function()
 {
 	Route::get('/', function()
