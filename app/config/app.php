@@ -193,7 +193,7 @@ return array(
 		'redirect_url' => 'https://www.facebook.com/southerneastercamp',
 		'whitelist' => array(
 			'115.188.84.39',	// CYS Office
-			'118.90.87.215',	// Ezra Sharp: Home
+			'118.90.30.127',	// Ezra Sharp: Home
 			'127.0.0.1',
 		),
 	),

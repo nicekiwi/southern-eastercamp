@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'ec14',
+			'database'  => 'nicekiwi_ec13',
 			'username'  => 'root',
 			'password'  => 'password',
 			'charset'   => 'utf8',
