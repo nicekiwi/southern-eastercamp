@@ -4,6 +4,8 @@
 
 <h1>Contact Us</h1>
 
+  <hr>
+
 {{ Form::open(array('url' => 'contact-us', 'id' => 'contact-form')) }}
 
 <div class="contact-name">

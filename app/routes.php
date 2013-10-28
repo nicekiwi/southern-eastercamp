@@ -11,6 +11,11 @@
 |
 */
 
+Route::get('splash', function()
+{
+	return View::make('splash');
+});
+
 Route::group(array('before' => 'ip-protect'), function()
 {
 	Route::get('/', function()

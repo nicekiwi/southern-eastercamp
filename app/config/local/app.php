@@ -37,7 +37,7 @@ return array(
 	'ip-protect' => array(
 
 		'enabled' => false,
-		'redirect_url' => 'https://www.facebook.com/southerneastercamp',
+		'redirect_url' => '/splash',
 		'whitelist' => array(
 			//'127.0.0.1',
 		),
