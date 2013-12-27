@@ -184,10 +184,10 @@ return array(
 	'ip-protect' => array(
 
 		'enabled' => true,
-		'redirect_url' => 'https://www.facebook.com/southerneastercamp',
+		'redirect_url' => '/splash',
 		'whitelist' => array(
 			'115.188.84.39',	// CYS Office
-			'118.90.30.127',	// Ezra Sharp: Home
+			'118.90.66.246',	// Ezra Sharp: Home
 			'127.0.0.1',
 		),
 	),

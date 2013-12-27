@@ -83,6 +83,15 @@ Route::filter('csrf', function()
 | IP Protection
 */
 
+Route::filter('date-protect', function(){
+
+	// If current date is not 2014 then goto facebook.
+	if(strftime('%y') !== 14 && !in_array(Request::getClientIp(), Config::get('app.ip-protect.whitelist')))
+	{
+		return Redirect::to( 'https://www.facebook.com/southerneastercamp' );
+	}
+});
+
 Route::filter('ip-protect', function()
 {
 	// Do stuff before every request

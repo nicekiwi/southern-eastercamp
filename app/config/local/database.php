@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'nicekiwi_ec13',
+			'database'  => 'eastercamp',
 			'username'  => 'root',
 			'password'  => 'password',
 			'charset'   => 'utf8',

@@ -21,15 +21,12 @@ $app = new Illuminate\Foundation\Application;
 | Laravel takes a dead simple approach to your application environments
 | so you can just specify a machine name or HTTP host that matches a
 | given environment, then we will automatically detect it for you.
-|
+| Call: putenv('LARA_ENV=production'); somewhere to get the Production enviroment.
 */
 
-$env = $app->detectEnvironment(array(
-
-	'local' => array('Ezra-Air.local','Ezras-Mac-mini.local'),
-	//'production' => array('Eastercamp'),
-
-));
+$env = $app->detectEnvironment(function(){
+	return getenv('LARA_ENV') ?: 'local';
+});
 
 /*
 |--------------------------------------------------------------------------

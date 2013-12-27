@@ -14,7 +14,8 @@
 Route::get('splash', function()
 {
 	return View::make('splash');
-});
+	
+})->before('date-protect');
 
 Route::group(array('before' => 'ip-protect'), function()
 {
