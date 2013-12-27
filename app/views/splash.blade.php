@@ -17,7 +17,7 @@
       </div>
 
       <div class="medium-6 small-10 columns">
-        <img src="/img/splash-logo.svg" alt="Eastercamp 2014, April 17th - 21st 2014, Spencer Park. New Website Coming Soon!">
+        <img src="/img/splash-logo.svg" alt="Eastercamp '14, April 17th - 21st 2014, Spencer Park. New Website Coming Soon!">
       </div>
 
       <div class="medium-3 small-1 columns">
