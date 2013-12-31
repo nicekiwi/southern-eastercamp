@@ -1,3 +1,15 @@
 body {
 	/*background: url(/img/splash-background.png) top center repeat-x;*/
 }
+
+.kiwidev-logo {
+	opacity:0.05;
+	width:70px;
+
+	transition: opacity 0.5s;
+	-webkit-transition: opacity 0.5s;
+}
+
+.kiwidev-logo:hover {
+	opacity: 0.9;
+}

@@ -27,7 +27,13 @@
 
     <div class="row" style="margin-top:25px;">
       <div class="small-12 columns">
-       <p style="text-align:center;"><a target="_blank" href="https://www.facebook.com/southerneastercamp"><i class="fa fa-facebook-square"></i> southerneastercamp</a></p>
+       <p style="text-align:center;"><a title="Southern Eastercamp Facebook" target="_blank" href="https://www.facebook.com/southerneastercamp"><i class="fa fa-facebook-square"></i> southerneastercamp</a></p>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:25px;">
+      <div class="small-12 columns">
+       <p style="text-align:center;"><a title="Kiwidev" target="_blank" href="http://www.kiwidev.co.nz"><img class="kiwidev-logo" src="/img/kiwidev-logo.png"></p>
       </div>
     </div>
     
