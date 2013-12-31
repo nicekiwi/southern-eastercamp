@@ -11,15 +11,10 @@
 |
 */
 
-Route::get('test', function() {
-	return date('D, d M Y H:i:s', strtotime('now')) . strftime('%y');
-});
-
 Route::get('splash', function()
 {
 	return View::make('splash');
-	
-})->before('date-protect');
+});
 
 Route::group(array('before' => 'ip-protect'), function()
 {
@@ -27,11 +22,6 @@ Route::group(array('before' => 'ip-protect'), function()
 	{
 		return View::make('home');
 	});
-
-	/*Route::get('news', function()
-	{
-		return View::make('news');
-	});*/
 
 	Route::get('registration', function()
 	{
@@ -55,5 +45,4 @@ Route::group(array('before' => 'ip-protect'), function()
 	});
 
 	Route::get('news', 'NewsController@ShowNews');
-	//Route::get('news/update/(:num)', 'news@update');
 });
