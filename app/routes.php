@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('test', function() {
+	return date('D, d M Y H:i:s', strtotime('now'));
+});
+
 Route::get('splash', function()
 {
 	return View::make('splash');
