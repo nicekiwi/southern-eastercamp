@@ -12,10 +12,9 @@
         <meta name="description" content="@yield('desc')">
         <meta name="viewport" content="width=device-width">
 
-        <!-- <link rel="stylesheet" href="css/normalize.min.css"> -->
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+        
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
-        <!-- <link rel="stylesheet" href="css/main.css"> -->
+        <link rel="stylesheet" href="css/main.css">
         <style>
         .news-post img.lazy {
             width: 100%;
