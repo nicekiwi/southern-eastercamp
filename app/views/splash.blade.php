@@ -6,7 +6,7 @@
     <title>Southern Eastercamp 2014</title>
 
     <meta property="og:title" content="Southern Eastercamp 2014"/>
-    <meta property="og:image" content="/img/facebook.png"/>
+    <meta property="og:image" content="http://www.eastercamp.org.nz/img/facebook.png"/>
     <meta property="og:site_name" content="Eastercamp"/>
     <meta property="og:description" content="Eastercamp '14, April 17th - 21st 2014, Spencer Park. New Website Coming Soon!"/>
 
