@@ -4,7 +4,8 @@
 	"keywords": ["framework", "laravel"],
 	"require": {
 		"laravel/framework": "4.1.*",
-		"facebook/php-sdk": "dev-master"
+		"facebook/php-sdk": "dev-master",
+		"hisorange/browser-detect": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

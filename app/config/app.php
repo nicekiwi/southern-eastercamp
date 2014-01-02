@@ -107,6 +107,9 @@ return array(
             'Illuminate\View\ViewServiceProvider',
             'Illuminate\Workbench\WorkbenchServiceProvider',
 
+            // Custom Providers
+            'hisorange\browserdetect\Providers\BrowserDetectServiceProvider',
+
     ),
 
 	/*
@@ -172,6 +175,9 @@ return array(
             'URL'             => 'Illuminate\Support\Facades\URL',
             'Validator'       => 'Illuminate\Support\Facades\Validator',
             'View'            => 'Illuminate\Support\Facades\View',
+
+            // Custom Aliases
+            'BrowserDetect' => 'hisorange\browserdetect\Facades\BrowserDetect',
 
 	),
 
