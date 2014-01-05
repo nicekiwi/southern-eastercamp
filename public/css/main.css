@@ -13,7 +13,7 @@ body {
 	/*background: url(/img/splash-background.png) top center repeat-x;*/
 }
 
-h1 {
+h1, h2, h3 {
 	font-family: 'streetscriptregular';
 	font-weight: normal;
 }
@@ -25,6 +25,13 @@ h1 {
 
 .news-post p {
 	font-size: 0.9em;
+}
+
+.logo-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
 }
 
 a.lightbox {

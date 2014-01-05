@@ -38,6 +38,11 @@ Route::group(array('before' => 'ip-protect'), function()
 		return View::make('information');
 	});
 
+	Route::get('contact', function()
+	{
+		return View::make('contact');
+	});
+
 	Route::get('meow', function()
 	{
 		$facebook = new Facebook(array('appId'  => '221201634590438','secret' => 'e52043468bf51ec60d834b0710bc0547',));
