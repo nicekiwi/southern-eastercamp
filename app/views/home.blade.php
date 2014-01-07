@@ -1,28 +1,13 @@
 @extends('layouts.master')
 
-@section('title')
-Southern Eastercamp 2014
-@stop
-
-@section('desc')
-
-@stop
+@section('title','Southern Eastercamp 2014')
+@section('desc','')
 
 @section('content')
 
-
-
 <style type="text/css">
 
-	#intro{
-		background: #fff;
-		color: white;
-		height: 800px;
-		margin: 0 auto;
-		padding: 0;
-	}
-
-	#second{
+	.parallax-section {
 		color: white;
 		overflow: hidden;
 		padding: 0;
@@ -35,31 +20,22 @@ Southern Eastercamp 2014
 
 		position: relative;
 	}
-
-	#rider {
-		position: absolute;
-		top: 0;
-		left: 20px;
-	}
 	
 	/* Medium Screens */
 	@media only screen and (min-width: 40.063em) {
-		#second {
+		#fmx-rider {
 			background-image: url(/img/parallax/fmx-bg-medium.jpg);
-			height: 421px;
+			height: 300px;
 		}
 	}
 
  	/* Large Screens */
 	@media only screen and (min-width: 64.063em) { 
-		#second{
+		#fmx-rider{
 			background-image: url(/img/parallax/fmx-bg-large.jpg);
-			height: 800px;
+			height: 500px;
 		}
 	}
-	
-
-	
 
 	#third{
 		background: url(/img/parallax/thirdBG.jpg) 50% 0 no-repeat fixed;
@@ -73,29 +49,6 @@ Southern Eastercamp 2014
 		height: 400px;
 		margin: 0 auto;
 		padding: 40px 0 0 0;
-	}
-
-	.story{
-		margin: 0 auto;
-		min-width: 980px;
-		overflow: auto;
-		width: 980px;
-	}
-
-	.story .float-left, .story .float-right{
-		padding: 100px 0 0 0;
-		position: relative;
-		width: 350px;	
-	}
-
-	#nav{
-		list-style: none;
-		position: fixed;
-		right: 20px;
-	}
-
-	#nav li{
-		margin: 0 0 15px 0;	
 	}
 </style>
 
@@ -117,9 +70,7 @@ Southern Eastercamp 2014
 	<div class="small-1 medium-3 columns">&nbsp;</div>
 </div>
 
-
-
-<section id="intro">
+<section class="parallax-section">
 	<div class="row">
 		<div class="small-2 columns"></div>
     	<div class="small-8 columns" style="text-align:center;">
@@ -129,7 +80,7 @@ Southern Eastercamp 2014
     </div>
 </section>
 
-<section id="second"><div class="bg">&nbsp;</div>
+<section id="fmx-rider" class="parallax-section">
 	<div class="row">
     	<div class="small-12 medium-6 columns">
             <h1 id="ec-countdown"></h1>
@@ -142,7 +93,7 @@ Southern Eastercamp 2014
     
 </section>
 
-<section id="third">
+<section class="parallax-section">
 	<div class="row">
     	<div class="float-left">
         	<h2>What Happens When JavaScript is Disabled?</h2>
@@ -151,7 +102,7 @@ Southern Eastercamp 2014
     </div> 
 </section> 
 
-<section id="fifth">
+<section class="parallax-section">
 	<div class="row">
 	    <h2>Registration!</h2>
     </div> 
