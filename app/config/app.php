@@ -187,16 +187,10 @@ return array(
 	|--------------------------------------------------------------------------
 	*/
 
-	'ip-protect' => array(
+	'ip-protection' => [
 
 		'enabled' => true,
 		'redirect_url' => '/splash',
-		'whitelist' => array(
-			'115.188.84.39',	// CYS Office
-			'118.90.66.246',	// Ezra Sharp: Home
-			'202.0.45.87',
-			'127.0.0.1',
-		),
-	),
+	],
 
 );

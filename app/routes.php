@@ -16,7 +16,7 @@ Route::get('splash', function()
 	return View::make('splash');
 });
 
-Route::group(array('before' => 'ip-protect'), function()
+Route::group(array('before' => 'ip-protection'), function()
 {
 	Route::get('/', function()
 	{
@@ -45,8 +45,12 @@ Route::group(array('before' => 'ip-protect'), function()
 
 	Route::get('meow', function()
 	{
-		$facebook = new Facebook(array('appId'  => '221201634590438','secret' => 'e52043468bf51ec60d834b0710bc0547',));
-		dd($facebook);
+		$facebook = new Facebook([
+			'appId'  => Config::get('facebook.app_id'),
+			'secret' => Config::get('facebook.secret_key'),
+		]);
+
+		dd($facebook->getUser());
 	});
 
 	Route::get('news', 'NewsController@ShowNews');

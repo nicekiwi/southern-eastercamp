@@ -34,13 +34,9 @@ return array(
 	|--------------------------------------------------------------------------
 	*/
 
-	'ip-protect' => array(
-
+	'ip-protection' => [
 		'enabled' => false,
-		'redirect_url' => '/splash',
-		'whitelist' => array(
-			//'127.0.0.1',
-		),
-	),
+		//'redirect_url' => '/splash',
+	],
 
 );

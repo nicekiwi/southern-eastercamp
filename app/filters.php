@@ -83,16 +83,16 @@ Route::filter('csrf', function()
 | IP Protection
 */
 
-Route::filter('date-protect', function(){
+Route::filter('date-protection', function(){
 	// If current date is not 2014 then goto facebook.
 	return Redirect::to( 'https://www.facebook.com/southerneastercamp' );
 });
 
-Route::filter('ip-protect', function()
+Route::filter('ip-protection', function()
 {
 	// Do stuff before every request
-	if (!in_array(Request::getClientIp(), Config::get('app.ip-protect.whitelist')) && Config::get('app.ip-protect.enabled') === true ) 
+	if (!in_array(Request::getClientIp(), Config::get('keys.custom.ip-protection.whitelist')) && Config::get('app.ip-protection.enabled') === true ) 
 	{
-		return Redirect::to( Config::get('app.ip-protect.redirect_url') );
+		return Redirect::to( Config::get('app.ip-protection.redirect_url') );
 	}
 });

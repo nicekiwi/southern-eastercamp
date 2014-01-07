@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'ec13',
-			'username'  => 'ec14-user',
-			'password'  => 'Yjakz%f84bYGXR&Q%c6NPF#M',
+			'database'  => Config::get('Laravel.database.db_name'),
+			'username'  => Config::get('Laravel.database.username'),
+			'password'  => Config::get('Laravel.database.password'),
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
