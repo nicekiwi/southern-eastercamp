@@ -23,9 +23,14 @@ Route::group(array('before' => 'ip-protection'), function()
 		return View::make('home');
 	});
 
-	Route::get('registration', function()
+	Route::get('register', function()
 	{
-		return View::make('registration');
+		return View::make('register');
+	});
+
+	Route::get('volunteers', function()
+	{
+		return View::make('volunteers');
 	});
 
 	Route::get('contact-us', function()

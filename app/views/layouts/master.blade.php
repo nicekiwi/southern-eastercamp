@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/nivo-lightbox.css">
     <link rel="stylesheet" href="/themes/default/default.css">
+    <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/css/main.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.0.2/js/modernizr.min.js"></script>
     <style>
@@ -38,40 +39,69 @@
       </div>
     </div>
 
-    <header style="background-image: url(/img/menu-bg.svg);">
+    <header class="nav-header">
     
       <div class="row">
+        <!-- <div class="small-12 medium-3 large-2 columns">
+          <a href="/"><img src="/img/ec-logo-header.svg"></a>
+        </div>
+
+        <nav class="ec-nav small-12 medium-9 large-10 columns">
+          <ul style="float:left;">
+            <li><a href="/news">News</a></li>
+            <li><a href="/register">Register</a></li>
+            <li><a href="/information">Information</a></li>
+            <li><a href="/faq">FAQ</i></a></li>
+          </ul>
+
+          <ul>
+            <li><a href="/downloads"><i class="fa fa-cloud-download"></i></a></li>
+            <li><a href="/photos"><i class="fa fa-camera"></i></a></li>
+            <li><a href="/videos"><i class="fa fa-youtube-play"></i></a></li>
+            <li><a href="/contact"><i class="fa fa-phone"></i></a></li>
+          </ul>
+        </nav> -->
+
         <div class="small-12 columns">
-                    <nav class="top-bar" data-topbar>
+          <nav class="top-bar" data-topbar>
             <ul class="title-area">
               <li class="name">
-                <h1><a href="/"></a></h1>
+                <h1><a href="/"><img src="/img/ec-logo-header.svg"></a></h1>
               </li>
               <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
             </ul>
 
             <section class="top-bar-section">
-              <!-- Right Nav Section -->
-              <ul class="right">
+              <ul>
+                <li><a href="/news"><span><i class="show-for-small-only fa fa-globe"></i><span>News</span></span></a></li>
+                <li><a href="/register"><span><i class="show-for-small-only fa fa-pencil"></i><span>Register</span></span></a></li>
                 <li class="has-dropdown">
-                  <a href="#">FAQ</a>
+                  <a href="/information"><span><i class="show-for-small-only fa fa-info-circle"></i><span>Information</span></span></a>
                   <ul class="dropdown">
-                    <li><a href="/faq/general">General</a></li>
-                    <li><a href="/faq/registration">Registration</a></li>
-                    <li><a href="/faq/parents">Parents</a></li>
-                    <li><a href="/faq/transport">Transport</a></li>
-                    <li><a href="/faq/leaders">Leaders</a></li>
+                    <li><a href="/information#eastercamp">Eastercamp</a></li>
+                    <li><a href="/information/registration">Registration</a></li>
+                    <li><a href="/information/parents">The Rules</a></li>
+                    <li><a href="/information/transport">Gear List</a></li>
+                    <li><a href="/information/leaders">Volunteer</a></li>
                   </ul>
-                  <li><a href="/media">Media</a></li>
-                  <li><a href="/contact">Contact</a></li>
+                </li>
+                <li class="has-dropdown">
+                  <a href="/help"><span><i class="show-for-small-only fa fa-question-circle"></i><span>Help</span></span></a>
+                  <ul class="dropdown">
+                    <li><a href="/faq/general">Frequently Asked Questions</a></li>
+                    <li><a href="/faq/registration">Registration</a></li>
+                    <li><a href="/faq/parents">Safety &amp; Security</a></li>
+                    <li><a href="/faq/transport">Partents Information</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                  </ul>
                 </li>
               </ul>
 
-              <!-- Left Nav Section -->
-              <ul class="left">
-                <li><a href="/news">News</a></li>
-                <li><a href="/registration">Registration</a></li>
-                <li><a href="/information">Information</a></li>
+              <ul class="right">
+                <li><a href="/downloads"><span><i class="fa fa-cloud-download"></i><span class="show-for-small-only">Downloads</span></span></a></li>
+                <li><a href="/photos"><span><i class="fa fa-camera"></i><span class="show-for-small-only">Photos</span></span></a></li>
+                <li><a href="/videos"><span><i class="fa fa-youtube-play"></i><span class="show-for-small-only">Videos</span></span></a></li>
+                <li><a href="/contact"><span><i class="fa fa-phone"></i><span class="show-for-small-only">Contact</span></span></a></li>
               </ul>
             </section>
           </nav>
