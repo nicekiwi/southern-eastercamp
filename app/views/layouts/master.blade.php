@@ -6,6 +6,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    @if(getenv('LARA_ENV') !== 'production')
+    <meta name="robots" content="noindex, nofollow">
+    @endif
     <title>@yield('title')</title>
     <meta name="description" content="@yield('desc')">
     <meta name="viewport" content="width=device-width">
