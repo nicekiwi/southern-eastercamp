@@ -51,8 +51,8 @@ Route::group(array('before' => 'ip-protection'), function()
 	Route::get('meow', function()
 	{
 		$facebook = new Facebook([
-			'appId'  => Config::get('facebook.app_id'),
-			'secret' => Config::get('facebook.secret_key'),
+			'appId'  => Config::get('keys.facebook.app_id'),
+			'secret' => Config::get('keys.facebook.secret_key'),
 		]);
 
 		dd($facebook->getUser());
