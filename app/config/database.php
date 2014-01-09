@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => Config::get('Laravel.database.db_name'),
-			'username'  => Config::get('Laravel.database.username'),
-			'password'  => Config::get('Laravel.database.password'),
+			'database'  => Config::get('laravel.database.db_name'),
+			'username'  => Config::get('laravel.database.username'),
+			'password'  => Config::get('laravel.database.password'),
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
