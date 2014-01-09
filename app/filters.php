@@ -91,7 +91,7 @@ Route::filter('date-protection', function(){
 Route::filter('ip-protection', function()
 {
 	// Do stuff before every request
-	if (!in_array(Request::getClientIp(), Config::get('keys.custom.ip-protection.whitelist')) && Config::get('app.ip-protection.enabled') === true ) 
+	if (!in_array(Request::getClientIp(), Config::get('keys.custom.ip-protection.whitelist',[])) && Config::get('app.ip-protection.enabled') === true ) 
 	{
 		return Redirect::to( Config::get('app.ip-protection.redirect_url') );
 	}
