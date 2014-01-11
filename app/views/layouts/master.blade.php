@@ -12,21 +12,22 @@
     <title>@yield('title')</title>
     <meta name="description" content="@yield('desc')">
     <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="/bower_components/components-font-awesome/css/font-awesome.min.css">
     
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.0.2/css/foundation.min.css" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/nivo-lightbox.css">
-    <link rel="stylesheet" href="/themes/default/default.css">
     <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/css/main.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.0.2/js/modernizr.min.js"></script>
+
+    <link href="/css/nivo-lightbox.css" media="screen, projection" rel="stylesheet" type="text/css" >
+    <link href="/themes/default/default.css" media="screen, projection" rel="stylesheet" type="text/css" >
+
+    <link href="/css/app.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
+    <script src="/bower_components/modernizr/modernizr.js"></script>
     <style>
     .news-post img.lazy {
         width: 100%;
     }
     </style>
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.0.2/js/modernizr.min.js"></script>
   </head>
   <body>
 
@@ -43,77 +44,63 @@
     </div>
 
     <header class="nav-header">
-    
       <div class="row">
-        <!-- <div class="small-12 medium-3 large-2 columns">
-          <a href="/"><img src="/img/ec-logo-header.svg"></a>
-        </div>
-
-        <nav class="ec-nav small-12 medium-9 large-10 columns">
-          <ul style="float:left;">
-            <li><a href="/news">News</a></li>
-            <li><a href="/register">Register</a></li>
-            <li><a href="/information">Information</a></li>
-            <li><a href="/faq">FAQ</i></a></li>
+        <nav class="top-bar" data-topbar>
+          <ul class="title-area">
+            <li class="name show-for-small-only">
+              <h1><a href="/"><img src="/img/ec-logo-header.svg"></a></h1>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
           </ul>
 
-          <ul>
-            <li><a href="/downloads"><i class="fa fa-cloud-download"></i></a></li>
-            <li><a href="/photos"><i class="fa fa-camera"></i></a></li>
-            <li><a href="/videos"><i class="fa fa-youtube-play"></i></a></li>
-            <li><a href="/contact"><i class="fa fa-phone"></i></a></li>
-          </ul>
-        </nav> -->
-
-        <div class="small-12 columns">
-          <nav class="top-bar" data-topbar>
-            <ul class="title-area">
-              <li class="name">
-                <h1><a href="/"><img src="/img/ec-logo-header.svg"></a></h1>
+          <section class="top-bar-section">
+            <ul>
+              <li class="hide-for-small-only"><a href="/"><i class="fa fa-home fa-lg"></i></a></li>
+              <li><a href="/news"><span><i class="show-for-small-only fa fa-globe fa-lg"></i><span>News</span></span></a></li>
+              <li><a href="/register"><span><i class="show-for-small-only fa fa-pencil fa-lg"></i><span>Register</span></span></a></li>
+              <li class="has-dropdown">
+                <a href="/information"><span><i class="show-for-small-only fa fa-info-circle fa-lg"></i><span>Information</span></span></a>
+                <ul class="dropdown">
+                  <li><a href="/information#eastercamp">Eastercamp</a></li>
+                  <li><a href="/information#the-rules">The Rules</a></li>
+                  <li><a href="/information/parents-caregivers">Parents &amp; Caregivers</a></li>
+                  <li><a href="/information/gear-list">Gear List</a></li>
+                  <li><a href="/information/volunteer">Volunteer</a></li>
+                </ul>
               </li>
-              <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+              <li class="has-dropdown">
+                <a href="/help"><span><i class="show-for-small-only fa fa-question-circle fa-lg"></i><span>Help</span></span></a>
+                <ul class="dropdown">
+                  <li><a href="/help/safety">Safety &amp; Security</a></li>
+                  <li><a href="/help/parents">Partents &amp; Caregivers</a></li>
+                  <li><a href="/help/faq">Frequently Asked Questions</a></li>
+                  <li><a href="/contact">Contact Us</a></li>
+                </ul>
+              </li>
             </ul>
 
-            <section class="top-bar-section">
-              <ul>
-                <li><a href="/news"><span><i class="show-for-small-only fa fa-globe"></i><span>News</span></span></a></li>
-                <li><a href="/register"><span><i class="show-for-small-only fa fa-pencil"></i><span>Register</span></span></a></li>
-                <li class="has-dropdown">
-                  <a href="/information"><span><i class="show-for-small-only fa fa-info-circle"></i><span>Information</span></span></a>
-                  <ul class="dropdown">
-                    <li><a href="/information#eastercamp">Eastercamp</a></li>
-                    <li><a href="/information/registration">Registration</a></li>
-                    <li><a href="/information/parents">The Rules</a></li>
-                    <li><a href="/information/transport">Gear List</a></li>
-                    <li><a href="/information/leaders">Volunteer</a></li>
-                  </ul>
-                </li>
-                <li class="has-dropdown">
-                  <a href="/help"><span><i class="show-for-small-only fa fa-question-circle"></i><span>Help</span></span></a>
-                  <ul class="dropdown">
-                    <li><a href="/faq/general">Frequently Asked Questions</a></li>
-                    <li><a href="/faq/registration">Registration</a></li>
-                    <li><a href="/faq/parents">Safety &amp; Security</a></li>
-                    <li><a href="/faq/transport">Partents Information</a></li>
-                    <li><a href="/contact">Contact Us</a></li>
-                  </ul>
-                </li>
-              </ul>
-
-              <ul class="right">
-                <li><a href="/downloads"><span><i class="fa fa-cloud-download"></i><span class="show-for-small-only">Downloads</span></span></a></li>
-                <li><a href="/photos"><span><i class="fa fa-camera"></i><span class="show-for-small-only">Photos</span></span></a></li>
-                <li><a href="/videos"><span><i class="fa fa-youtube-play"></i><span class="show-for-small-only">Videos</span></span></a></li>
-                <li><a href="/contact"><span><i class="fa fa-phone"></i><span class="show-for-small-only">Contact</span></span></a></li>
-              </ul>
-            </section>
-          </nav>
-        </div>
+            <ul class="right">
+              <li><a href="/downloads"><span><i class="fa fa-cloud-download fa-lg"></i><span class="show-for-small-only">Downloads</span></span></a></li>
+              <li><a href="/photos"><span><i class="fa fa-camera fa-lg"></i><span class="show-for-small-only">Photos</span></span></a></li>
+              <li><a href="/videos"><span><i class="fa fa-youtube-play fa-lg"></i><span class="show-for-small-only">Videos</span></span></a></li>
+              <li><a href="/contact"><span><i class="fa fa-phone fa-lg"></i><span class="show-for-small-only">Contact</span></span></a></li>
+            </ul>
+          </section>
+        </nav>
       </div>
-
     </header>
 
     @yield('content')
+
+    <div class="row">
+      <div class="small-12 medium-4 columns">
+        @include('partials.footer-video')
+      </div>
+
+      <div class="small-12 medium-8 columns">
+        @include('partials.footer-photos')
+      </div>
+    </div>
 
     <div class="row">
       <footer class="small-12 columns">
@@ -121,18 +108,16 @@
       </footer>
     </div>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.0.2/js/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.0.2/js/foundation.min.js"></script>
+    <script src="/bower_components/jquery/jquery.js"></script>
+    <script src="/bower_components/foundation/js/foundation.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-countdown/1.6.3/jquery.countdown.min.js"></script>
-
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-
     <script src="/js/jquery.appear.js"></script>
 
     <script src="/js/masonry.pkgd.min.js"></script>
     <script src="/js/nivo-lightbox.js"></script>
-    <script src="/js/main.js"></script>
-    <script></script>
+
+    <script src="/js/app.js"></script>
   </body>
 </html>

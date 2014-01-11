@@ -1,14 +1,14 @@
 @extends('layouts.master')
 
-@section('title','information')
+@section('title','404 Page not found.')
 @section('desc','')
 @section('content')
 
 <div class="row">
 	<div class="small-12 columns">
-		  <h1>Information</h1>
+		  <h1>404 Page not found.</h1>
 
-		  <p>Eastercamp is a massive youth camp held over the eastercamp weekend. </p>
+		  <p>Uh oh. </p>
 	</div>
 </div>
 

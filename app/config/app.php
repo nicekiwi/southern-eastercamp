@@ -193,4 +193,21 @@ return array(
 		'redirect_url' => '/splash',
 	],
 
+	/*
+	|--------------------------------------------------------------------------
+	| Enable caching
+	|--------------------------------------------------------------------------
+	|
+	| Set to true to enable static page caching for the time set below.
+	|
+	| Default: 360 minutes (6 Hours).
+	|
+	*/
+
+	'page-cache' => [
+
+		'enabled' => true,
+		'time' => 360,
+	],
+
 );

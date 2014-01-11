@@ -5,7 +5,8 @@
 	"require": {
 		"laravel/framework": "4.1.*",
 		"facebook/php-sdk": "dev-master",
-		"hisorange/browser-detect": "dev-master"
+		"hisorange/browser-detect": "dev-master",
+		"google/apiclient": "1.0.*"
 	},
 	"autoload": {
 		"classmap": [

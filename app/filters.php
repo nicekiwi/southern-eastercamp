@@ -80,7 +80,52 @@ Route::filter('csrf', function()
 });
 
 /*
-| IP Protection
+|--------------------------------------------------------------------------
+| 404 Page Trigger Response
+|--------------------------------------------------------------------------
+|
+| When a view is not found the missing view page is presented.
+|
+*/
+
+App::missing(function($exception)
+{
+    return Response::view('errors.missing', array(), 404);
+});
+
+/*
+|--------------------------------------------------------------------------
+| Caching Filter
+|--------------------------------------------------------------------------
+|
+| The Caching filter keeps a cache of any page requested for up to 6 hours.
+|
+*/
+
+Route::filter('cache', function($route, $request, $response = null)
+{
+    $page = ( Paginator::getCurrentPage() > 1 ? Paginator::getCurrentPage() : '' );
+
+    $key = 'route-'.Str::slug( Request::url() ) . $page;
+
+    if(is_null($response) && Cache::has($key) && App::environment() != 'local' && Config::get('app.debug') != 'true' && Config::get('app.cache') != 'true')
+    {
+        return Cache::get($key);
+    }
+    elseif(!is_null($response) && !Cache::has($key) && App::environment() != 'local' && Config::get('app.debug') != 'true' && Config::get('app.cache') != 'true')
+    {
+        Cache::put($key, $response->getContent(), 360);
+    }
+});
+
+/*
+|--------------------------------------------------------------------------
+| IP and Date Protection
+|--------------------------------------------------------------------------
+|
+| Filter visitors based on IP or date and reditect them if they do not meet
+| the requirments.
+|
 */
 
 Route::filter('date-protection', function(){

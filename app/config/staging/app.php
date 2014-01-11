@@ -28,4 +28,21 @@ return array(
 
 	'url' => 'http://staging.eastercamp.dev',
 
+	/*
+	|--------------------------------------------------------------------------
+	| Enable caching
+	|--------------------------------------------------------------------------
+	|
+	| Set to true to enable static page caching for the time set below.
+	|
+	| Default: 360 minutes (6 Hours).
+	|
+	*/
+
+	'page-cache' => [
+
+		'enabled' => false,
+		'time' => 360,
+	],
+
 );

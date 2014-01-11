@@ -18,45 +18,59 @@ Route::get('splash', function()
 
 Route::group(array('before' => 'ip-protection'), function()
 {
-	Route::get('/', function()
-	{
-		return View::make('home');
-	});
-
-	Route::get('register', function()
-	{
-		return View::make('register');
-	});
-
-	Route::get('volunteers', function()
-	{
-		return View::make('volunteers');
-	});
-
-	Route::get('contact-us', function()
-	{
-		return View::make('contact');
-	});
-
-	Route::get('information', function()
-	{
-		return View::make('information');
-	});
-
-	Route::get('contact', function()
-	{
-		return View::make('contact');
-	});
-
-	Route::get('meow', function()
-	{
-		$facebook = new Facebook([
-			'appId'  => Config::get('keys.facebook.app_id'),
-			'secret' => Config::get('keys.facebook.secret_key'),
-		]);
-
-		dd($facebook->getUser());
-	});
-
 	Route::get('news', 'NewsController@ShowNews');
+
+	Route::get('{category}/{page?}', function($page = null, $category = null)
+	{
+		if(View::exists($category)) return View::make($category);
+		else if(View::exists($page)) return View::make($page);
+
+		return App::abort(404);
+	});
+	
+	Route::get('{page?}', function($page = 'home')
+	{
+		if(View::exists($page)) return View::make($page);
+
+		return App::abort(404);
+	});
+
+	
+
+	// Route::get('register', function()
+	// {
+	// 	return View::make('register');
+	// });
+
+	// Route::get('volunteers', function()
+	// {
+	// 	return View::make('volunteers');
+	// });
+
+	// Route::get('contact-us', function()
+	// {
+	// 	return View::make('contact');
+	// });
+
+	// Route::get('information', function()
+	// {
+	// 	return View::make('information');
+	// });
+
+	// Route::get('contact', function()
+	// {
+	// 	return View::make('contact');
+	// });
+
+	// Route::get('meow', function()
+	// {
+	// 	$facebook = new Facebook([
+	// 		'appId'  => Config::get('keys.facebook.app_id'),
+	// 		'secret' => Config::get('keys.facebook.secret_key'),
+	// 	]);
+
+	// 	dd($facebook->getUser());
+	// });
+
+	
 });

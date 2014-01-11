@@ -18,6 +18,25 @@
 <section class="parallax-section">
 	<div class="row">
 		<div class="small-12 medium-6 columns">
+            
+        </div>
+
+        <div class="small-12 medium-6 columns">
+            <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+              <li><img class="th" src="http://foundation.zurb.com/docs/assets/img/examples/comet-th.jpg"></li>
+              <li><img class="th" src="http://foundation.zurb.com/docs/assets/img/examples/comet-th.jpg"></li>
+              <li><img class="th" src="http://foundation.zurb.com/docs/assets/img/examples/comet-th.jpg"></li>
+              <li><img class="th" src="http://foundation.zurb.com/docs/assets/img/examples/comet-th.jpg"></li>
+              <li><img class="th" src="http://foundation.zurb.com/docs/assets/img/examples/comet-th.jpg"></li>
+              <li><img class="th" src="http://foundation.zurb.com/docs/assets/img/examples/comet-th.jpg"></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="parallax-section">
+    <div class="row">
+        <div class="small-12 medium-6 columns">
             <h2>The Best 5 days you'll ever have!</h2>
             <p></p>
         </div>
