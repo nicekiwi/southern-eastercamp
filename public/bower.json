@@ -1,9 +1,9 @@
 {
-  "name": "foundation-compass-app",
+  "name": "southern-eastercamp",
   "version": "0.0.1",
   "private": "true",
   "dependencies": {
     "foundation": "zurb/bower-foundation",
-    "FortAwesome/Font-Awesome": "*"
+    "components-font-awesome": "*"
   }
 }
