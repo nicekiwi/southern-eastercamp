@@ -7,7 +7,7 @@
 	 
 		<h1>News</h1>
 
-		<ul id="news-posts" class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+		<ul id="news-posts" class="small-block-grid-1 medium-block-grid-2 large-block-grid-2">
 
 		@foreach ($news as $news_item)
 
