@@ -14,10 +14,12 @@ $(document).ready(function()
     until: new Date("April 17, 2014 20:00:00"),
     compactLabels: ['y', 'm', 'w', 'Days'],
     compact: true
-  }); 
-
-  $('#news-posts').masonry({
-    itemSelector: '.news-post',
-    transitionDuration: 0
   });
+
+  $('.ec-triangles').parallax("50%", 0.4);
+
+  // $('#news-posts').masonry({
+  //   itemSelector: '.news-post',
+  //   transitionDuration: 0
+  // });
 });

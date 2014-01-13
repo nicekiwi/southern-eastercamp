@@ -4,6 +4,7 @@
   "private": "true",
   "dependencies": {
     "foundation": "zurb/bower-foundation",
-    "components-font-awesome": "*"
+    "components-font-awesome": "*",
+    "jQuery-Parallax": "*"
   }
 }

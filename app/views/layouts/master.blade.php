@@ -71,7 +71,7 @@
               <li class="has-dropdown">
                 <a href="/help"><span><i class="show-for-small-only fa fa-question-circle fa-lg"></i><span>Help</span></span></a>
                 <ul class="dropdown">
-                  <li><a href="/help/safety">Safety &amp; Security</a></li>
+                  <li><a href="/help/safety-security">Safety &amp; Security</a></li>
                   <li><a href="/help/parents">Partents &amp; Caregivers</a></li>
                   <li><a href="/help/faq">Frequently Asked Questions</a></li>
                   <li><a href="/contact">Contact Us</a></li>
