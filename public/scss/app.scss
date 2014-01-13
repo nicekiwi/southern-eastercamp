@@ -78,18 +78,29 @@ h1, h2, h3 {
 }
 
 .expanded .top-bar-section .has-dropdown > a:after {
-        top: 21px;
-    }
+  top: 21px;
+}
 
 .top-bar-section li a:not(.button) {
   text-transform: uppercase;
 }
 
 .ec-triangles {
-    background-image: url(/img/parallax/triangles-bg-large.svg);
-    background-position: top center;
-    padding: 50px 0;
+  background-image: url(/img/parallax/triangles-bg-large.svg);
+  background-position: top center;
+  padding: 50px 0;
 }
 
+/* Kiwidev Logo */
+.kiwidev-logo {
+  opacity:0.05;
+  width:70px;
 
+  transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
+}
+
+.kiwidev-logo:hover {
+  opacity: 0.9;
+}
 
