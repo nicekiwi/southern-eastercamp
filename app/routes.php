@@ -22,9 +22,11 @@ Route::group(array('before' => 'ip-protection'), function()
 
 	Route::get('photos/{year?}', function($year = 2013)
 	{
-		if(View::exists($page)) return View::make($page);
+		//if(View::exists($page)) return View::make($page);
 
-		return View::make('photos');
+		$photos = new Photo;
+
+		return $photos->import_photos();//View::make('photos');
 	});
 
 	Route::get('{category}/{page?}', function($page = null, $category = null)
