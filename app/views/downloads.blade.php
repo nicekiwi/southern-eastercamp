@@ -8,9 +8,9 @@
 	<div class="small-12 columns">
 		<h1>Downloads</h1>
 
-		<ul class="no-bullet">
+		<ul class="small-block-grid-1">
 			@foreach($downloads as $item)
-			<li><i class="fa fa-file-text fa-lg"></i> <a href="{{ $item->url }}" target="_blank">{{ $item->desc }}</a> <small>({{ number_format($item->size) }} KB)</small></li>
+			<li><i class="fa fa-file-text fa-lg"></i>&nbsp;&nbsp;&nbsp;<a href="{{ $item->url }}" target="_blank">{{ $item->desc }}</a> ({{ number_format($item->size) }} KB)</li>
 			@endforeach
 		</ul>
 	</div>

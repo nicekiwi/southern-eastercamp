@@ -20,6 +20,13 @@ Route::group(array('before' => 'ip-protection'), function()
 {
 	Route::get('news', 'NewsController@ShowNews');
 
+	Route::get('photos/{year?}', function($year = 2013)
+	{
+		if(View::exists($page)) return View::make($page);
+
+		return View::make('photos');
+	});
+
 	Route::get('{category}/{page?}', function($page = null, $category = null)
 	{
 		if(View::exists($category)) return View::make($category);
@@ -28,6 +35,8 @@ Route::group(array('before' => 'ip-protection'), function()
 		return App::abort(404);
 	});
 	
+	
+
 	Route::get('{page?}', function($page = 'home')
 	{
 		if(View::exists($page)) return View::make($page);
