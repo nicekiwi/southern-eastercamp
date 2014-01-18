@@ -8,15 +8,19 @@
 	<div class="small-12 columns">
 		<h1>Information</h1>
 
-		<ul id="album-photos" class="photo-items">
+		<ul id="album-photos" class="small-block-grid-4">
 		@foreach ($albums as $album)
-		  @foreach ($album as $photo)
-		    <li class="tm-medium">
-		      <a target="{{(Holmes::is_mobile() ? '' : '_blank')}}" data-thumbnail="http://fancyapps.com/fancybox/demo/2_s.jpg" href="{{ $photo->link_large }}" class="{{(Holmes::is_mobile() ? 'mobile-photo' : 'fancybox')}}" rel="photo-gallery" title="Eastercamp Photo #{{ $photo->id }}">
-		        <img class="lazy {{ $photo->class }}" data-original="{{ substr($photo->link_large, 0, 44) }}/p200x200/{{ $photo->link_thumb }}_n.jpg" alt="Eastercamp Photo {{ $photo->id }}" width="288" />
-		      </a>
+
+			<li>
+
+			<h3>{{ $album['name'] }}</h3>
+
+		    
+				@if(isset($album['cover_photo']))
+		        <img class="th" src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-frc1/p206x206/604153_{{ $album['cover_photo'] }}_{{ $album['id'] }}_n.jpg" />
+		        @endif
 		    </li>
-		  @endforeach
+
 		@endforeach
 		</ul>
 	</div>

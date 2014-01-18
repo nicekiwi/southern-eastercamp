@@ -2,28 +2,67 @@
 
 class Photo extends Eloquent {
 
-	public function import_photos() {
+	private $facebook;
 
-		$facebook = new Facebook([
+	function __construct() {
+		$this->facebook = new Facebook([
 			'appId'  => Config::get('keys.facebook.app_id'),
 			'secret' => Config::get('keys.facebook.secret_key'),
 		]);
+	}
 
-		//dd($facebook);
+	public function import_photos() {
 
-		//$albums = $facebook->api('/southerneastercamp/albums');
+		// $facebook = new Facebook([
+		// 	'appId'  => Config::get('keys.facebook.app_id'),
+		// 	'secret' => Config::get('keys.facebook.secret_key'),
+		// ]);
 
-		$albums = Cache::remember("product_$id", 10, function() use ($id)
-	    {
-	        echo('Getting this from Shopify');
-	        $shopify = new ShopifyLib;
-	        return json_encode($shopify->getShopifyProduct($id));
-	    });
+		//dd($this->facebook);
 
-		$albums = $facebook->api('/10151439168936716/photos');
+		// $albums = null;
+
+		// $key = 'fb-albums';
+
+	 //    if(Cache::has($key))
+	 //    {
+	 //        $albums = Cache::get($key);
+	 //    }
+	 //    elseif(!Cache::has($key))
+	 //    {
+	 //        $albums = Cache::forever($key, $facebook->api('/southerneastercamp/albums?fields=id,name,count&limit=100'));
+	 //    }
+
+		//$albums = $facebook->api('/10151439168936716/photos');
 
 
-		return dd($albums);
+		//return $albums;
+
+		$albums = Cache::rememberForever('fb-albums', function()
+		{
+		    return $this->facebook->api('/southerneastercamp/albums?fields=id,name,count&limit=100');
+		});
+
+		foreach ($albums['data'] as $album) 
+		{
+			//echo $album['id'];
+			if(strpos($album['name'], ': Album') !== false) 
+			{
+				$photos = Cache::rememberForever('fb-album-photos-' . $album['id'], function() use ($album)
+				{
+				    return $this->facebook->api('/' . $album['id'] . '/photos?fields=id,picture,width,height,source&limit=' . $album['count']);
+				});
+
+				foreach ($photos['data'] as $photo) 
+				{
+					echo '<img src="' . $photo['picture'] . '" />';
+				}
+			}
+
+			
+
+
+		}
 
 	}
 

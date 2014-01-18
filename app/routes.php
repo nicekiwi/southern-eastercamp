@@ -11,6 +11,15 @@
 |
 */
 
+Route::get('test', function()
+{
+	$photo = new Photo;
+
+	return $photo->import_photos();
+
+});
+
+
 Route::get('splash', function()
 {
 	return View::make('splash');
@@ -25,8 +34,9 @@ Route::group(array('before' => 'ip-protection'), function()
 		//if(View::exists($page)) return View::make($page);
 
 		$photos = new Photo;
+		$albums = $photos->import_photos();
 
-		return $photos->import_photos();//View::make('photos');
+		return View::make('photos')->with('albums', $albums['data']);
 	});
 
 	Route::get('{category}/{page?}', function($page = null, $category = null)
