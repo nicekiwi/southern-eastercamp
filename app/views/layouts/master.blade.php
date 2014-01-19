@@ -13,12 +13,8 @@
     <meta name="description" content="@yield('desc')">
     <meta name="viewport" content="width=device-width">
 
+    <link rel="stylesheet" href="/bower_components/fancybox/source/jquery.fancybox.css">
     <link rel="stylesheet" href="/bower_components/components-font-awesome/css/font-awesome.min.css">
-    
-    <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
-
-    <link href="/css/nivo-lightbox.css" media="screen, projection" rel="stylesheet" type="text/css" >
-    <link href="/themes/default/default.css" media="screen, projection" rel="stylesheet" type="text/css" >
 
     <link href="/css/app.css" media="screen, projection" rel="stylesheet" type="text/css" />
 
@@ -102,23 +98,45 @@
       </div>
     </div>
 
-
-
     <div class="row">
-      <footer class="small-12 columns">
-        <p>&copy; CYS - Designed &amp; Developed by Kiwidev</p>
-      </footer>
+      <div class="small-12 columns">
+        <h3>Proudly Supported by</h3>
+        <ul class="example-orbit" data-orbit>
+          <li>
+            <img style="float:left;" src="/img/supporters/nz-police.jpg" alt="slide 1" />
+            <img style="float:left;" src="/img/supporters/nz-police.jpg" alt="slide 1" />
+            <img style="float:left;" src="/img/supporters/nz-police.jpg" alt="slide 1" />
+            <img style="float:left;" src="/img/supporters/nz-police.jpg" alt="slide 1" />
+          </li>
+          <li>
+            <img src="/img/supporters/nz-police.jpg" alt="slide 1" />
+            <img src="/img/supporters/nz-police.jpg" alt="slide 1" />
+            <img src="/img/supporters/nz-police.jpg" alt="slide 1" />
+            <img src="/img/supporters/nz-police.jpg" alt="slide 1" />
+          </li>
+        </ul>
+      </div>
     </div>
+
+    <footer>
+      <div class="row">
+        <div class="small-12 columns">
+          
+        </div>
+        <div class="small-12 columns">
+          <p>&copy; CYS - Designed &amp; Developed by Kiwidev</p>
+        </div>
+      </div>
+    </footer>
 
     <script src="/bower_components/jquery/jquery.js"></script>
     <script src="/bower_components/foundation/js/foundation.min.js"></script>
+    <script src="/bower_components/fancybox/source/jquery.fancybox.js"></script>
+    <script src="/bower_components/fancybox/source/helpers/jquery.fancybox-media.js"></script>
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-countdown/1.6.3/jquery.countdown.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax-min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-    <script src="/js/jquery.appear.js"></script>
 
     <script src="/js/masonry.pkgd.min.js"></script>
-    <script src="/js/nivo-lightbox.js"></script>
 
     <script src="/js/app.js"></script>
   </body>

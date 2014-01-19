@@ -5,6 +5,6 @@
   "dependencies": {
     "foundation": "zurb/bower-foundation",
     "components-font-awesome": "*",
-    "jQuery-Parallax": "*"
+    "fancybox": "*"
   }
 }

@@ -45,7 +45,7 @@
 					            <iframe src="//www.youtube.com/embed/{{ rawurldecode(substr($news_item->picture, 112,11)) }}?rel=0" frameborder="0" allowfullscreen></iframe>
 					          </div>
 					        @else
-					          <a class="lightbox" href="http://www.youtube.com/watch?v={{ rawurldecode(substr($news_item->picture, 112,11)) }}&amp;rel=0" title="{{$news_item->link_name}}">
+					          <a class="fancybox" href="//www.youtube.com/embed/{{ rawurldecode(substr($news_item->picture, 112,11)) }}?rel=0&amp;autoplay=1" title="{{$news_item->link_name}}">
 					            <img class="th" src="https://i.embed.ly/1/display/crop?key=d5a004fad9d94741b9ea438a9b802b3e&amp;url={{ rawurldecode(substr($news_item->picture, 79,44)) }}/hqdefault.jpg&amp;height=270&amp;width=480" />
 					            <i class="fa fa-play-circle"></i>
 					          </a>
@@ -72,7 +72,7 @@
 				<!-- Photo Formatting -->
 				@if($news_item->type == 'photo' || $news_item->type == 'photos')
 					<div class="media-photo">
-						<a target="" href="{{ $news_item->picture_large }}" class="{{($browser['isMobile'] ? 'mobile-photo' : 'lightbox')}}" title="{{ $news_item->link_name }}">
+						<a target="" href="{{ $news_item->picture_large }}" class="{{($browser['isMobile'] ? 'mobile-photo' : 'fancybox')}}" title="{{ $news_item->link_name }}">
 							<img class="lazy th" src="https://i.embed.ly/1/display/crop?key=d5a004fad9d94741b9ea438a9b802b3e&amp;url={{ $news_item->picture }}&amp;height=155&amp;width=280" alt="{{ strtotime($news_item->created_time) }}" />
 						</a>
 					</div>

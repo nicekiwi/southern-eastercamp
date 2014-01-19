@@ -1,0 +1,38 @@
+#map-canvas {
+	width: 100%;
+	height: 400px;
+}
+
+#map-canvas *, #map-canvas *:before, #map-canvas *:after {
+    -moz-box-sizing: content-box!important;
+    -webkit-box-sizing: content-box!important;
+    box-sizing: content-box!important;  
+}
+#map-canvas img {
+    max-width: none;
+}
+#map-canvas label {
+    width: auto;
+    display: inline;
+}
+
+.parallax-orbit-container {
+	position: relative;
+	width: 100%;
+}
+
+.parallax-orbit-container h1 {
+	z-index: 10;
+}
+
+.parallax-orbit-inner {
+	position: absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	z-index: 0;
+}
+
+.information-orbit {
+	
+}
