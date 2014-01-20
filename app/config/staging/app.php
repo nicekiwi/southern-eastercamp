@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://staging.eastercamp.dev',
+	'url' => 'http://staging.eastercamp.org.nz',
 
 	/*
 	|--------------------------------------------------------------------------
