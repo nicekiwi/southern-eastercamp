@@ -15,7 +15,7 @@ Route::get('test', function()
 {
 	$photo = new Photo;
 
-	return $photo->import_photos();
+	//return $photo->import_photos();
 
 });
 
@@ -36,7 +36,7 @@ Route::group(array('before' => 'ip-protection'), function()
 		$photos = new Photo;
 		$albums = $photos->import_photos();
 
-		return View::make('photos')->with('albums', $albums['data']);
+		//return View::make('photos')->with('albums', $albums['data']);
 	});
 
 	Route::get('{category}/{page?}', function($page = null, $category = null)

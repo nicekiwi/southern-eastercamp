@@ -25,14 +25,15 @@
 
     <section class="parallax-section ec-pies">
         <div class="row">
-            <div class="small-12 columns">&nbsp;</div>
+            <div class="small-12 columns"><h2>Where when etc</h2></div>
         </div>
     </section>
 
 
     <div class="row">
         <div class="small-12 columns">
-
+            <h2>Christian Camp</h2>
+            <p>Eastercamp is a Christian event, run by Caterbury Youth Services, but you dont have to be a Christian to come to camp everyone is welcome to come and we try to be inclusive of everyone.</p>
         </div>
     </div>
 
@@ -45,17 +46,6 @@
             <img src="/img/parallax/fmx-rider.png">
         </div>
     </div>
-
-	<div class="row">
-    	<div class="float-left">
-        	<h2>What Happens When JavaScript is Disabled?</h2>
-            <p>The user gets a slap! Actually, all that jQuery does is moves the backgrounds relative to the position of the scrollbar. Without it, the backgrounds simply stay put and the user would never know they are missing out on the awesome! CSS2 does a good enough job to still make the effect look cool.</p>
-        </div>
-    </div> 
-
-	<div class="row">
-	    <h2>Registration!</h2>
-    </div> 
 
 
 @stop

@@ -25,6 +25,13 @@ $(document).ready(function()
     compact: true
   });
 
+  $('#ec-countdown-text').countdown({
+    until: new Date("April 17, 2014 20:00:00"),
+    format: 'd',
+    compactLabels: ['y', 'm', 'w', ' days;'],
+    compact: true
+  });
+
   $("a.fancybox").fancybox({
     defaults : {padding: 0, width: 1000, height: 900},
     helpers : {media: true},

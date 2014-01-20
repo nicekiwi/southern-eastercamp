@@ -4,43 +4,35 @@
 
 <div class="row">
   <div class="small-12 columns">
-      <h1>Registration</h1>
+      <h1>Register for Eastercamp</h1>
 
       <p>Registering is easy. Have a read through the requirments and fees; then hit the big green button.</p>
 
-      <div class="alert alert-warning">
-        <i class="icon-exclamation-sign icon-large"></i> <strong>Note:</strong> Registrations don't open until November the 16th.
-      </div>
+      <h3 style="margin:0;">Registration Fee: $139</h3>
+      <p>This covers all the essentials including food!</p>
+      <p><strong>Note:</strong> While not being a requirment to having an awesome time; there are some optional activities, rides and cafes that attract <a href="/faq/question/5016" title="Do I need spending money?">a small surcharge</a> at camp.</p>
+      
+
+      <p><b>Early Bird Discount:</b><br>If you register (and pay) before 5.00pm Monday, the 11th of March we'll give you a $10 discount!</p>
 
       <h3>Requirments</h3>
-      <p>To register online for eastercamp you will need:</p>
+      <p>To complete the online registration you will need:</p>
+
       <ol>
         <li>to be at least 13 years old by the start of camp (17th April) or in Year 9 or above this school year.</li>
         <li>to be part of a youth group. <a href="contact-us">Contact us</a> if you're not and we can help you find one.</li>
-        <li>access to a Credit/Debit Card or Internet Banking.</li>
+        <li>access to a Credit/Debit Card or Internet Banking** (Parents/Caregivers should be handy for this).</li>
       </ol>
 
-      <h3>Fees</h3>
-      <ul>
-      <li><strong>$129 Early Discount:</strong> until 5.00pm Monday, 11th of March.</li>
-      <li><strong>$139 (Normal-bird):</strong> until registrations close – 5pm Friday 22nd March.</li>
-      </ul>
+      <p>All fees must be paid in a single payment before camp, there are no part payment of fees.</p>
 
-      <p>Your camp fee covers almost everything including food! But there are some activities that attract <a href="/faq/question/5016" title="Do I need spending money?">a small surcharge</a>.</p>
+      <p>Internet Banking payments <strong>must be paid before 5.00pm Wednesday, the 9th of April</strong>. There-after only Credit/Debit Cards will be accepted.</p>
 
-      <p>&nbsp;</p>
+      <p>If you have no way of paying online, talk to your youth leader or <a href="http://www.24-7youthwork.org.nz/" target="_blank">24/7 Youth Worker</a> – they'll help you register to make sure you can still come to camp. We don't anyone to miss out!</p>
 
-      <p>
-        <a href="#">
-          <button type="button" class="btn btn-success btn-lg btn-block" disabled="disabled" style="width:50%;">
-            Register Online
-          </button>
-        </a>
-      </p>
+      <p>Registrations close at 5.00pm Friday, 11th of April 2014. <strong>No late registrations are accepted!!</strong></p>
 
-      <p>&nbsp;</p>
-
-      <p>If you have no way of paying online, talk to your youth leader or 24/7 worker – they'll help you register to make sure you can still come to camp. We don't anyone to miss out!</p>
+      <p><a href="https://www.eastercamp.org.nz/southern/register" class="button success">Online Registration opens February 1st</a></p>
 
       <p>&nbsp;</p>
 
