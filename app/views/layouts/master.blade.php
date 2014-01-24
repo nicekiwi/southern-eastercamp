@@ -119,11 +119,24 @@
 
     <footer>
       <div class="row">
-        <div class="small-12 columns">
-          
+<!--         <div class="small-4 columns">
+          <i class="fa fa-facebook-square fa-2x"></i><i class="fa fa-youtube-play fa-2x"></i>
+        </div> -->
+        <div class="small-4 columns">
+          <a title="Canterbury Youth Services" target="_blank" href="http://www.cys.org.nz">
+            <img src="/img/cys-logo.png">
+          </a>
         </div>
-        <div class="small-12 columns">
-          <p>&copy; CYS - Designed &amp; Developed by Kiwidev</p>
+        <div class="small-8 columns">
+          <ul class="inline-list right">
+            <li><a href="/information/parents-caregivers">Parents</a></li>
+            <li><a href="https://www.eastercamp.org.nz/southern/leaders">Leaders</a></li>
+            <li><a href="/register/volunteer">Volunteer</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/privacy">Privacy</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+          <p>&copy; 2012 CYS. All Rights Reserved. Designed &amp; Developed by Ezra Sharp</p>
         </div>
       </div>
     </footer>
