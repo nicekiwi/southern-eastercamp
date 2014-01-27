@@ -26,3 +26,10 @@ View::composer('downloads', function($view)
 
 	$view->with('downloads', $downloads);
 });
+
+View::composer('videos', function($view)
+{
+	$videos = Video::get();
+
+	$view->with(compact('videos'));
+});

@@ -5,6 +5,7 @@
   "dependencies": {
     "foundation": "zurb/bower-foundation",
     "components-font-awesome": "*",
-    "fancybox": "*"
+    "fancybox": "*",
+    "unveil": "*"
   }
 }

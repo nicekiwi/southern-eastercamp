@@ -1,14 +1,17 @@
 <?php
-class News extends Eloquent {
+class News extends Eloquent 
+{
+
+	public $timestamps = true;
 
 	public static function get_news()
 	{
 		return DB::table('news')
-			->orderBy('created_time', 'desc')
+			->orderBy('created_at', 'desc')
 			->where('fb_id','!=','')
 			->where('status_type','!=','created_event')
-			->where('created_time','>','2012-11-01')
-			->take(15)
+			->where('created_at','>','2012-11-01')
+			->take(55)
 			->get();
 	}
 
@@ -96,6 +99,14 @@ class News extends Eloquent {
 			return false;
 		}
 	}
+
+	public static function formattedCreatedDate() {
+        if ($this->created_time->diffInDays() > 30) {
+            return 'Created at ' . $this->created_time->toFormattedDateString();
+        } else {
+            return 'Created ' . $this->created_time->diffForHumans();
+        }
+    }
 
 	public static function makeLinks($input) 
 	{

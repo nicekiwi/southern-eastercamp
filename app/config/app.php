@@ -109,6 +109,7 @@ return array(
 
             // Custom Providers
             'hisorange\browserdetect\Providers\BrowserDetectServiceProvider',
+            'Binarix\FoundationPagination\FoundationPaginationServiceProvider',
 
     ),
 

@@ -6,7 +6,7 @@ return array(
 
 		'mysql' => array(
 			'host'      => 'localhost',
-			'database'  => 'eastercamp',
+			'database'  => 'eastercamp-test',
 			'username'  => 'root',
 			'password'  => 'password',
 		),

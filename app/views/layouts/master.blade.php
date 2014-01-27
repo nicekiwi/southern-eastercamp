@@ -100,22 +100,28 @@
     <div class="row">
       <div class="small-12 columns">
         <h3>Proudly Supported by</h3>
-        <ul class="example-orbit" data-orbit>
-          <li>
-            <img style="float:left;" src="/img/supporters/nz-police.jpg" alt="slide 1" />
-            <img style="float:left;" src="/img/supporters/nz-police.jpg" alt="slide 1" />
-            <img style="float:left;" src="/img/supporters/nz-police.jpg" alt="slide 1" />
-            <img style="float:left;" src="/img/supporters/nz-police.jpg" alt="slide 1" />
-          </li>
-          <li>
-            <img src="/img/supporters/nz-police.jpg" alt="slide 1" />
-            <img src="/img/supporters/nz-police.jpg" alt="slide 1" />
-            <img src="/img/supporters/nz-police.jpg" alt="slide 1" />
-            <img src="/img/supporters/nz-police.jpg" alt="slide 1" />
-          </li>
-        </ul>
+        <div class="supporters-list">
+          <div class="jCarouselLite">
+            <ul>
+              <li><img class="grayscale" src="/img/supporters/nz-police.jpg" alt="slide 1" /></li>
+              <li><img class="grayscale" src="/img/supporters/nz-police.jpg" alt="slide 1" /></li>
+              <li><img class="grayscale" src="/img/supporters/nz-police.jpg" alt="slide 1" /></li>
+              <li><img class="grayscale" src="/img/supporters/nz-police.jpg" alt="slide 1" /></li>
+              <li><img class="grayscale" src="/img/supporters/nz-police.jpg" alt="slide 1" /></li>
+            </ul>
+          </div>
+        </div>
+        
       </div>
     </div>
+
+    <section class="footer-first">
+      <div class="row">
+        <div class="small-12 columns">
+          <p>Some kinda media content</p>
+        </div>
+      </div>
+    </section>
 
     <footer>
       <div class="row">
@@ -145,9 +151,11 @@
     <script src="/bower_components/foundation/js/foundation.min.js"></script>
     <script src="/bower_components/fancybox/source/jquery.fancybox.js"></script>
     <script src="/bower_components/fancybox/source/helpers/jquery.fancybox-media.js"></script>
+    <script src="/bower_components/unveil/jquery.unveil.min.js"></script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-countdown/1.6.3/jquery.countdown.min.js"></script>
 
+    <script src="/js/jcarousellite.min.js"></script>
     <script src="/js/masonry.pkgd.min.js"></script>
 
     <script src="/js/app.js"></script>
