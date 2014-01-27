@@ -38,6 +38,13 @@ $(document).ready(function()
     youtube : {autoplay: 1}
     
   });
+
+  $(".jCarouselLite").jCarouselLite({
+      auto: 2500,
+      speed: 1000
+  });
+
+  $("img.gallery-photo").unveil(100);
   //$('.ec-triangles').parallax("50%", 0.4);
 
   // $('#news-posts').masonry({

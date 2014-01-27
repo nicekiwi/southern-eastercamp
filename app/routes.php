@@ -11,14 +11,21 @@
 |
 */
 
-Route::get('test', function()
+Route::get('photos/{slug?}', 'AlbumController@index_public');
+
+Route::get('login', 'SessionsController@create');
+Route::get('logout', 'SessionsController@destroy');
+Route::resource('sessions', 'SessionsController');
+
+Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
 {
-	$photo = new Photo;
+	Route::get('/', function()
+	{
+		return View::make('admin.index');
+	});
 
-	//return $photo->import_photos();
-
+	Route::resource('albums', 'AlbumController');
 });
-
 
 Route::get('splash', function()
 {
@@ -29,15 +36,15 @@ Route::group(array('before' => 'ip-protection'), function()
 {
 	Route::get('news', 'NewsController@ShowNews');
 
-	Route::get('photos/{year?}', function($year = 2013)
-	{
-		//if(View::exists($page)) return View::make($page);
+	// Route::get('photos/{year?}', function($year = 2013)
+	// {
+	// 	//if(View::exists($page)) return View::make($page);
 
-		$photos = new Photo;
-		$albums = $photos->import_photos();
+	// 	$photos = new Photo;
+	// 	$albums = $photos->import_photos();
 
-		//return View::make('photos')->with('albums', $albums['data']);
-	});
+	// 	//return View::make('photos')->with('albums', $albums['data']);
+	// });
 
 	Route::get('{category}/{page?}', function($page = null, $category = null)
 	{
@@ -55,6 +62,8 @@ Route::group(array('before' => 'ip-protection'), function()
 
 		return App::abort(404);
 	});
+
+	
 
 	
 
@@ -95,3 +104,4 @@ Route::group(array('before' => 'ip-protection'), function()
 
 	
 });
+

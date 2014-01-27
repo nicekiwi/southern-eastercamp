@@ -10,6 +10,8 @@
     		<div class="small-1 medium-2 columns">&nbsp;</div>
         	<div class="small-10 medium-8 columns">
     			<img src="/img/parallax/ec-logo.svg" style="max-height: 300px !important; margin: 0 auto; display: block;">
+
+                <a class="fancybox button radius" href="http://www.youtube.com/watch?v=tsXKAtpLm4I">Watch the Promo&nbsp;&nbsp;<i class="fa fa-play-circle fa-lg"></i></a>
     		</div>
     		<div class="small-1 medium-2 columns">&nbsp;</div>
         </div>
