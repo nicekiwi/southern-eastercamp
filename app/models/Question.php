@@ -97,6 +97,6 @@ class Question extends Eloquent {
 
 	public function category()
     {
-        return $this->hasOne('QuestionCategory','id');//->where('public', 1);
+        return $this->hasOne('QuestionCategory','id','category_id');//->where('public', 1);
     }
 }

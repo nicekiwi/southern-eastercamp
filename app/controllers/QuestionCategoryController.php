@@ -18,7 +18,7 @@ class QuestionCategoryController extends \BaseController {
 	
 	public function index_public()
 	{
-		$categories = QuestionCategory::orderBy('order','desc')->get();
+		$categories = QuestionCategory::orderBy('order','asc')->get();
 
 		return View::make('question-categories.public')->with(compact('categories'));
 	}

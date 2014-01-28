@@ -30,7 +30,12 @@ class QuestionController extends \BaseController {
 	 */
 	public function create()
 	{
-		$categories = ['' => 'Select a Category'] + QuestionCategory::orderBy('order','asc')->lists('title', 'id');
+		if(QuestionCategory::count() === 0) {
+			Session::flash('error_message', 'Create a category first.');
+			return Redirect::intended('admin/questions');
+		}
+
+		$categories = QuestionCategory::orderBy('order','asc')->lists('title', 'id');
 
 		$this->layout->content = View::make('questions.create')->with(compact('categories'));
 	}
@@ -95,7 +100,10 @@ class QuestionController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$categories = QuestionCategory::orderBy('order','asc')->lists('title', 'id');
+		$question = Question::findOrFail($id);
+
+		$this->layout->content = View::make('questions.edit')->with(compact('categories','question'));
 	}
 
 	/**
@@ -106,7 +114,38 @@ class QuestionController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		// validate
+		// read more on validation at http://laravel.com/docs/validation
+		$rules = array(
+			'question'      => 'required',
+			'answer'      	=> 'required',
+			'order'      	=> 'required'
+		);
+
+		$validator = Validator::make(Input::all(), $rules);
+
+		// process the login
+		if ($validator->fails()) {
+			Session::flash('error_message', 'Validation Error');
+			return Redirect::to('admin/'.$id.'/edit')
+				->withErrors($validator)
+				->withInput(Input::except('password'));
+		}
+
+		// Store
+		$question = Question::findOrFail($id);
+		$question->question = Input::get('question');
+		$question->answer = Input::get('answer');
+		$question->order = Input::get('order');
+
+		$question->category_id = Input::get('category_id');
+
+		$question->save();
+
+		// redirect
+		Session::flash('success_message', 'Question has been aded.');
+
+		return Redirect::to('admin/questions');
 	}
 
 	/**

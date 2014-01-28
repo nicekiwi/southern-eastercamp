@@ -23,7 +23,12 @@ class VideoController extends \BaseController {
 	 */
 	public function create()
 	{
-		$playlists = ['' => 'Select a Playlist'] + Playlist::orderBy('order','desc')->lists('title', 'id');
+		if(Playlist::count() === 0) {
+			Session::flash('error_message', 'Create a playlist first.');
+			return Redirect::intended('admin/videos');
+		}
+
+		$playlists = Playlist::orderBy('order','desc')->lists('title', 'id');
 
 		$this->layout->content = View::make('videos.create')->with(compact('playlists'));
 	}

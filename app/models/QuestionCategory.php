@@ -6,7 +6,7 @@ class QuestionCategory extends Eloquent {
 
 	public function questions()
     {
-        return $this->hasMany('Question','category_id');//->where('public', 1);
+        return $this->hasMany('Question','category_id','id');//->where('public', 1);
     }
 
 }

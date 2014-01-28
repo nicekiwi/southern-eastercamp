@@ -23,7 +23,11 @@
 				<tr>
 					<td>{{ $question->order }}</td>
 					<td><a href="/admin/questions/{{ $question->id }}/edit">{{ $question->question }}</a></td>
+					@if(isset($question->category->title))
 					<td>{{ $question->category->title }}</td>
+					@else 
+					<td></td>
+					@endif
 					<td>{{ $question->created_at }}</td>
 					<td>delete_btn</td>
 				</tr>
