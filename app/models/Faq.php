@@ -1,5 +1,5 @@
 <?php
-class Faqs extends Eloquent {
+class Faq extends Eloquent {
 
 	public static function get_faqs($cat)
 	{
@@ -92,4 +92,9 @@ class Faqs extends Eloquent {
 			DB::query("UPDATE `faqs` SET `views` = views+1 WHERE `id` = '$id'");
 		}
 	}
+
+	public function categories()
+    {
+        return $this->hasMany('FaqCategory','id');//->where('public', 1);
+    }
 }
