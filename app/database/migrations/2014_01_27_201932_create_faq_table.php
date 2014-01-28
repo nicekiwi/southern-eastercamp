@@ -14,7 +14,7 @@ class CreateFaqTable extends Migration {
 		Schema::create('faq', function($table)
 		{
 			$table->increments('id');
-			$table->string('category');
+			$table->integer('category_id')->unsigned()->nullable();
 			$table->text('question');
 			$table->text('answer');
 			$table->string('views');

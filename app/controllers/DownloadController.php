@@ -1,6 +1,6 @@
 <?php
 
-class PhotoController extends \BaseController {
+class DownloadController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.

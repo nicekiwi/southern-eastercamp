@@ -7,7 +7,7 @@
 		{{ Form::open([ 'method' => 'POST', 'route' => 'admin.albums.store' ]) }}
 
 
-		{{ Form::selectRange('year', 2006, 2020); }}
+		{{ Form::selectRange('year', 2015, 2004); }}
 
 
 		<h3>Selection Albums</h3>
@@ -22,7 +22,8 @@
 			</thead>
 			<tbody>
 				@foreach ($fb_albums as $fb_album)
-					@if(strpos($fb_album['name'],': Album') !== false)
+
+					@if(strpos($fb_album['name'],': Album') !== false && !in_array($fb_album['id'], $existing))
 					<tr>
 						<td>{{ Form::checkbox('fb_album_ids[]',$fb_album['id'])  }}</td>
 						<td>{{ $fb_album['name'] }}</td>
@@ -34,6 +35,8 @@
 				@endforeach
 			</tbody>
 		</table>
+
+		<p>If no results are showen, then there are no matching albums on Facebook that can be added.</p>
 
 		{{ Form::submit('Add Album') }}
 		    

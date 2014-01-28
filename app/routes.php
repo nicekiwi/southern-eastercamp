@@ -11,6 +11,7 @@
 |
 */
 
+Route::get('videos', 'PlaylistController@index_public');
 Route::get('photos/{slug?}', 'AlbumController@index_public');
 
 Route::get('login', 'SessionsController@create');
@@ -25,6 +26,13 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
 	});
 
 	Route::resource('albums', 'AlbumController');
+	Route::resource('playlists', 'PlaylistController');
+	Route::resource('videos', 'VideoController');
+
+	Route::resource('faq', 'FaqController');
+	Route::resource('downloads', 'DownloadController');
+
+	//Route::resource('wallpapers', 'WallpaperController');
 });
 
 Route::get('splash', function()

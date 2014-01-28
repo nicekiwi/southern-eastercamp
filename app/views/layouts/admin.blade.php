@@ -33,7 +33,15 @@
           @if(Auth::check())
             <ul>
               <li><a href="/admin/albums"><i class="fa fa-camera"></i>&nbsp;&nbsp;Photos</a></li>
-              <li><a href="/admin/videos"><i class="fa fa-youtube-play"></i>&nbsp;&nbsp;Videos</a></li>
+
+              <li class="has-dropdown not-click">
+                <a href="/admin/videos" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-youtube-play"></i>&nbsp;&nbsp;Videos <b class="caret"></b>
+                </a>
+                <ul class="dropdown"><li class="title back js-generated"><h5><a href="#">Back</a></h5></li>
+                  <li><a href="/admin/playlists">Playlists</a></li>
+                </ul>
+              </li>
               <li><a href="/admin/downloads"><i class="fa fa-cloud-download"></i>&nbsp;&nbsp;Downloads</a></li>
               <li><a href="/admin/faq"><i class="fa fa-question-circle"></i>&nbsp;&nbsp;FAQ</a></li>
             </ul>

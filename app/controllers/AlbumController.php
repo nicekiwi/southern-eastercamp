@@ -34,10 +34,19 @@ class AlbumController extends \BaseController {
 	public function create()
 	{
 		$albumClass = new Album;
-
 		$fb_albums = $albumClass->get_fb_albums();
 
-		$this->layout->content = View::make('albums.create')->with(compact('fb_albums'));
+		$existing = [];
+
+		foreach (Album::get() as $list) {
+			foreach (json_decode($list->albums) as $id) {
+				array_push($existing, $id);
+			}
+		}
+
+		//dd($new_existing);
+
+		$this->layout->content = View::make('albums.create')->with(compact('fb_albums','existing'));
 	}
 
 	/**
@@ -50,7 +59,7 @@ class AlbumController extends \BaseController {
 		// validate
 		// read more on validation at http://laravel.com/docs/validation
 		$rules = array(
-			'year'       		=> 'required',
+			'year'       		=> 'required|unique:albums',
 			'fb_album_ids'      => 'required'
 		);
 
@@ -67,7 +76,7 @@ class AlbumController extends \BaseController {
 		// Store
 		$album = new Album;
 		$album->year = Input::get('year');
-		$album->albums = implode(',', Input::get('fb_album_ids'));
+		$album->albums = json_encode(Input::get('fb_album_ids'));//implode(',', Input::get('fb_album_ids'));
 
 		$album->save();
 

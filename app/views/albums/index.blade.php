@@ -14,6 +14,7 @@
 					<td>Title / Year</td>
 					<td>Photos</td>
 					<td>Added</td>
+					<td>x</td>
 				</tr>
 			</thead>
 
@@ -24,6 +25,7 @@
 					<td><a href="/admin/albums/{{ $album->id }}/edit">Eastercamp {{ $album->year }}</a></td>
 					<td>{{ $album->count }}</td>
 					<td>{{ $album->created_at }}</td>
+					<td>delete_btn</td>
 				</tr>
 			@endforeach
 			</tbody>

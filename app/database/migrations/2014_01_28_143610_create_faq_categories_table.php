@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVideosTable extends Migration {
+class CreateFaqCategoriesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -11,14 +11,12 @@ class CreateVideosTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('videos', function($table)
+		Schema::create('faq_categories', function($table)
 		{
 			$table->increments('id');
-			$table->integer('playlist_id')->unsigned()->nullable();
+			$table->text('title')->nullable();
+			$table->string('count');
 			$table->integer('order');
-			$table->string('url')->unique();
-			$table->string('title');
-			$table->integer('public');
 			
 			$table->timestamps();
 		});
@@ -31,7 +29,7 @@ class CreateVideosTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('videos');
+		Schema::drop('faq_categories');
 	}
 
 }

@@ -13,7 +13,7 @@ class SetForeignKeyOnPhotos extends Migration {
 	{
 		Schema::table('photos', function($table)
 		{
-			$table->foreign('album_id')->references('id')->on('albums')->onDelete('cascade');
+			$table->foreign('album_id')->references('id')->on('albums')->onUpdate('cascade')->onDelete('cascade');
 		});
 	}
 

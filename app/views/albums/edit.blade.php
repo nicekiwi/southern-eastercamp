@@ -4,7 +4,7 @@
 	<div class="small-12 columns">
 		<h2>Edit Album</h2>
 
-		{{ Form::model($album, [ 'method' => 'POST', 'route' => 'admin.albums.update' ]) }}
+		{{ Form::model($album, [ 'method' => 'PATCH', 'route' => ['admin.albums.update', $album->id] ]) }}
 
 		{{ Form::selectRange('year', 2006, 2020); }}
 
