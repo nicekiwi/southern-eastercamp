@@ -44,11 +44,11 @@
               </li>
               <li><a href="/admin/downloads"><i class="fa fa-cloud-download"></i>&nbsp;&nbsp;Downloads</a></li>
               <li class="has-dropdown not-click">
-                <a href="/admin/faq" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="fa fa-question-circle"></i>&nbsp;&nbsp;FAQ</a> <b class="caret"></b>
+                <a href="/admin/questions" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-question-circle"></i>&nbsp;&nbsp;Questions</a> <b class="caret"></b>
                 </a>
                 <ul class="dropdown"><li class="title back js-generated"><h5><a href="#">Back</a></h5></li>
-                  <li><a href="/admin/faq-categories">Categories</a></li>
+                  <li><a href="/admin/question-categories">Categories</a></li>
                 </ul>
               </li>
             </ul>

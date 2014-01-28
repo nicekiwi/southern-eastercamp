@@ -12,6 +12,13 @@ class PostController extends \BaseController {
 		//
 	}
 
+	public function index_public()
+	{
+		$posts = Post::orderBy('posted_at','desc')->paginate(15);
+
+		return View::make('posts.public')->with(compact('posts'));
+	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 *

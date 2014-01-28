@@ -2,14 +2,14 @@
 
 <div class="row">
 	<div class="small-12 columns">
-		<h2>Update playlist</h2>
+		<h2>Add new category</h2>
 
-		{{ Form::model($playlist, [ 'method' => 'PATCH', 'route' => ['admin.playlists.update', $playlist->id] ]) }}
+		{{ Form::open([ 'method' => 'POST', 'route' => 'admin.question-categories.store' ]) }}
 
 		{{ Form::text('title'); }}
 		{{ Form::text('order'); }}
 
-		{{ Form::submit('Update Playlist') }}
+		{{ Form::submit('Add Category') }}
 		    
 		{{ Form::close() }}
 	</div>

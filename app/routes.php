@@ -11,13 +11,19 @@
 |
 */
 
+Route::get('test', function()
+{
+	$post = new Post;
+	return $post->download_posts();
+});
+
 Route::get('news', 'PostController@index_public');
 
 Route::get('videos', 'PlaylistController@index_public');
 Route::get('photos/{slug?}', 'AlbumController@index_public');
 
-Route::get('faq', 'FaqCategoryController@index_public');
-Route::get('faq/question/{id}', 'FaqController@index_public');
+Route::get('faq', 'QuestionCategoryController@index_public');
+Route::get('faq/question/{id}', 'QuestionController@index_public');
 
 Route::get('login', 'SessionsController@create');
 Route::get('logout', 'SessionsController@destroy');
@@ -36,8 +42,8 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
 	Route::resource('playlists', 'PlaylistController');
 	Route::resource('videos', 'VideoController');
 
-	Route::resource('faq', 'FaqController');
-	Route::resource('faq-categories', 'FaqCategoryController');
+	Route::resource('questions', 'QuestionController');
+	Route::resource('question-categories', 'QuestionCategoryController');
 	Route::resource('downloads', 'DownloadController');
 
 	//Route::resource('wallpapers', 'WallpaperController');

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFaqTable extends Migration {
+class CreateQuestionsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -11,7 +11,7 @@ class CreateFaqTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('faq', function($table)
+		Schema::create('questions', function($table)
 		{
 			$table->increments('id');
 			$table->integer('category_id')->unsigned()->nullable();
@@ -20,6 +20,7 @@ class CreateFaqTable extends Migration {
 			$table->string('views');
 			$table->integer('helpful_yes');
 			$table->integer('helpful_no');
+			$table->integer('order');
 			
 			$table->timestamps();
 		});
@@ -32,7 +33,7 @@ class CreateFaqTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('faq');
+		Schema::drop('questions');
 	}
 
 }

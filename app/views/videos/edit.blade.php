@@ -2,7 +2,7 @@
 
 <div class="row">
 	<div class="small-12 columns">
-		<h2>Add new video</h2>
+		<h2>Update Video</h2>
 
 		{{ Form::model($video, [ 'method' => 'PATCH', 'route' => ['admin.videos.update', $video->id] ]) }}
 

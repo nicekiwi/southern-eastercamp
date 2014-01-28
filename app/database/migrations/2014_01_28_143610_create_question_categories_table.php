@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFaqCategoriesTable extends Migration {
+class CreateQuestionCategoriesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -11,7 +11,7 @@ class CreateFaqCategoriesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('faq_categories', function($table)
+		Schema::create('question_categories', function($table)
 		{
 			$table->increments('id');
 			$table->text('title')->nullable();
@@ -29,7 +29,7 @@ class CreateFaqCategoriesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('faq_categories');
+		Schema::drop('question_categories');
 	}
 
 }

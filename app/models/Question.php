@@ -1,7 +1,7 @@
 <?php
-class Faq extends Eloquent {
+class Question extends Eloquent {
 
-	protected $table = 'faq';
+	protected $table = 'questions';
 
 	public static function get_faqs($cat)
 	{
@@ -95,8 +95,8 @@ class Faq extends Eloquent {
 		}
 	}
 
-	public function categories()
+	public function category()
     {
-        return $this->hasMany('FaqCategory','id');//->where('public', 1);
+        return $this->hasOne('QuestionCategory','id');//->where('public', 1);
     }
 }
