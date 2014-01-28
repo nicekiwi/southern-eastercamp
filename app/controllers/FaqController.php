@@ -2,6 +2,8 @@
 
 class FaqController extends \BaseController {
 
+	protected $layout = 'layouts.admin';
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,7 +11,9 @@ class FaqController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$questions = Faq::orderBy('order','desc')->get();
+
+		$this->layout->content = View::make('faq.index')->with(compact('questions'));
 	}
 
 	/**

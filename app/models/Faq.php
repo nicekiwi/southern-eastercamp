@@ -1,6 +1,8 @@
 <?php
 class Faq extends Eloquent {
 
+	protected $table = 'faq';
+
 	public static function get_faqs($cat)
 	{
 		return DB::table('faqs')

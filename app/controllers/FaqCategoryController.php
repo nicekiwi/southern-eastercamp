@@ -2,6 +2,8 @@
 
 class FaqCategoryController extends \BaseController {
 
+	protected $layout = 'layouts.admin';
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,7 +11,9 @@ class FaqCategoryController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$categories = FaqCategory::orderBy('order','desc')->get();
+
+		$this->layout->content = View::make('faq-categories.index')->with(compact('categories'));
 	}
 
 	/**
