@@ -33,6 +33,7 @@ class AlbumController extends \BaseController {
 	 */
 	public function create()
 	{
+		// Create array of existing fb-ids
 		$albumClass = new Album;
 		$fb_albums = $albumClass->get_fb_albums();
 
@@ -43,8 +44,6 @@ class AlbumController extends \BaseController {
 				array_push($existing, $id);
 			}
 		}
-
-		//dd($new_existing);
 
 		$this->layout->content = View::make('albums.create')->with(compact('fb_albums','existing'));
 	}

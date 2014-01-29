@@ -32,20 +32,20 @@
           <section class="top-bar-section">
           @if(Auth::check())
             <ul>
-              <li><a href="/admin/albums"><i class="fa fa-camera"></i>&nbsp;&nbsp;Photos</a></li>
+              <li><a href="/admin/albums">Photos</a></li>
 
               <li class="has-dropdown not-click">
                 <a href="/admin/videos" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="fa fa-youtube-play"></i>&nbsp;&nbsp;Videos <b class="caret"></b>
+                  Videos <b class="caret"></b>
                 </a>
                 <ul class="dropdown"><li class="title back js-generated"><h5><a href="#">Back</a></h5></li>
                   <li><a href="/admin/playlists">Playlists</a></li>
                 </ul>
               </li>
-              <li><a href="/admin/downloads"><i class="fa fa-cloud-download"></i>&nbsp;&nbsp;Downloads</a></li>
+              <li><a href="/admin/downloads">Downloads</a></li>
               <li class="has-dropdown not-click">
                 <a href="/admin/questions" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="fa fa-question-circle"></i>&nbsp;&nbsp;Questions</a> <b class="caret"></b>
+                  FAQ <b class="caret"></b>
                 </a>
                 <ul class="dropdown"><li class="title back js-generated"><h5><a href="#">Back</a></h5></li>
                   <li><a href="/admin/question-categories">Categories</a></li>

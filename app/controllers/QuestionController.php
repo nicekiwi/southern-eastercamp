@@ -16,9 +16,11 @@ class QuestionController extends \BaseController {
 		$this->layout->content = View::make('questions.index')->with(compact('questions'));
 	}
 
-	public function index_public()
+	public function index_public($id)
 	{
-		$categories = QuestionCategory::orderBy('order','desc')->get();
+		$question = Question::where('id',$id)->first();
+
+		if(!isset($question->id)) return App::abort(404);
 
 		return View::make('questions.public')->with(compact('question'));
 	}

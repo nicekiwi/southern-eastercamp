@@ -23,6 +23,16 @@ class QuestionCategoryController extends \BaseController {
 		return View::make('question-categories.public')->with(compact('categories'));
 	}
 
+	public function category_public($slug)
+	{
+		$category = QuestionCategory::where('title', ucfirst($slug))->first();
+
+		// If Category does not exist, call 404
+		if(!isset($category->id)) return App::abort(404);
+
+		return View::make('question-categories.public-category')->with(compact('category'));
+	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 *

@@ -23,6 +23,7 @@ Route::get('videos', 'PlaylistController@index_public');
 Route::get('photos/{slug?}', 'AlbumController@index_public');
 
 Route::get('faq', 'QuestionCategoryController@index_public');
+Route::get('faq/{slug}', 'QuestionCategoryController@category_public');
 Route::get('faq/question/{id}', 'QuestionController@index_public');
 
 Route::get('login', 'SessionsController@create');
