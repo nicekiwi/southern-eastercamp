@@ -110,6 +110,7 @@ return array(
             // Custom Providers
             'hisorange\browserdetect\Providers\BrowserDetectServiceProvider',
             'Binarix\FoundationPagination\FoundationPaginationServiceProvider',
+            'VTalbot\Markdown\MarkdownServiceProvider',
 
     ),
 
@@ -179,6 +180,7 @@ return array(
 
             // Custom Aliases
             'BrowserDetect' => 'hisorange\browserdetect\Facades\BrowserDetect',
+            'Markdown' => 'VTalbot\Markdown\Facades\Markdown',
 
 	),
 

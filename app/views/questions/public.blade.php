@@ -7,7 +7,7 @@
 
 		<h2>{{ $question->question }}</h2>
 		
-		{{ $question->answer }}
+		{{ Markdown::string($question->answer) }}
 	</div>
 </div>
 
