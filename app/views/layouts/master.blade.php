@@ -67,9 +67,9 @@
               <li class="has-dropdown">
                 <a href="/faq"><span><i class="show-for-small-only fa fa-question-circle fa-lg"></i><span>FAQ</span></span></a>
                 <ul class="dropdown">
-                  <li><a href="/faq/general">General</a></li>
-                  <li><a href="/faq/registration">Registration</a></li>
-                  <li><a href="/faq/transport">Transport</a></li>
+                @foreach($questions as $question)
+                  <li><a href="/faq/{{ Str::slug($question->title) }}">{{ $question->title }}</a></li>
+                @endforeach
                 </ul>
               </li>
             </ul>

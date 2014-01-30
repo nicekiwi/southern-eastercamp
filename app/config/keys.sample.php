@@ -16,7 +16,8 @@ return array (
 	// Facebook API
 	'facebook' => [
 		'app_id' => '',
-		'secret_key' => ''
+		'secret_key' => '',
+		'page' => ''
 	],
 
 	// Mandrill SMTP

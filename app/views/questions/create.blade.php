@@ -6,19 +6,18 @@
 
 		{{ Form::open([ 'method' => 'POST', 'route' => 'admin.questions.store' ]) }}
 
-
 		{{ Form::select('category_id', $categories) }}
 
 		{{ Form::text('question'); }}
 		{{ Form::textarea('answer'); }}
 		{{ Form::text('order'); }}
 
+		{{ Form::checkbox('public', 1, true); }}
+
 		{{ Form::submit('Add Question') }}
 		    
 		{{ Form::close() }}
 	</div>
 </div>
-
-
 
 @stop

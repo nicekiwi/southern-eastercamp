@@ -18,6 +18,7 @@ class CreateWallpapersTable extends Migration {
 			$table->string('url')->unique();
 			$table->string('desc');
 			$table->integer('size');
+			$table->string('public');
 			
 			$table->timestamps();
 		});

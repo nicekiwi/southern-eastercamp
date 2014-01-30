@@ -19,6 +19,7 @@ class CreateDownloadsTable extends Migration {
 			$table->string('url')->unique();
 			$table->string('desc');
 			$table->integer('size');
+			$table->integer('public');
 			
 			$table->timestamps();
 		});

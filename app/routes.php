@@ -18,6 +18,7 @@ Route::get('test', function()
 });
 
 Route::get('news', 'PostController@index_public');
+Route::get('downloads', 'DownloadController@index_public');
 
 Route::get('videos', 'PlaylistController@index_public');
 Route::get('photos/{slug?}', 'AlbumController@index_public');

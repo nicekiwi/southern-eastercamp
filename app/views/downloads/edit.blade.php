@@ -2,12 +2,9 @@
 
 <div class="row">
 	<div class="small-12 columns">
-		<h2>Update Video</h2>
+		<h2>Update Download</h2>
 
-		{{ Form::model($video, [ 'method' => 'PATCH', 'route' => ['admin.videos.update', $video->id] ]) }}
-
-
-		{{ Form::select('playlist_id', $playlists) }}
+		{{ Form::model($download, [ 'method' => 'PATCH', 'route' => ['admin.downloads.update', $download->id] ]) }}
 
 		{{ Form::text('title'); }}
 		{{ Form::text('url'); }}
@@ -15,7 +12,7 @@
 
 		{{ Form::checkbox('public', 1, true); }}
 
-		{{ Form::submit('Update Video') }}
+		{{ Form::submit('Update Download') }}
 		    
 		{{ Form::close() }}
 	</div>

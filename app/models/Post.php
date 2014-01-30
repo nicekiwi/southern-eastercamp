@@ -11,20 +11,10 @@ class Post extends Eloquent
 		]);
 	}
 
-	public function get_news()
-	{
-		return DB::table('news')
-			->orderBy('created_at', 'desc')
-			->where('fb_id','!=','')
-			->where('status_type','!=','created_event')
-			->where('created_at','>','2012-11-01')
-			->take(55)
-			->get();
-	}
-
 	public function download_posts()
 	{
-		$facebook_posts = $this->facebook->api('/southerneastercamp/posts?fields=message,link,picture,source,story,status_type,created_time,description,name,caption,type&limit=100&start=0');
+		$facebook_fields = 'message,link,picture,source,story,status_type,created_time,description,name,caption,type';
+		$facebook_posts = $this->facebook->api('/'. Config::get('keys.facebook.page') .'/posts?fields='. $fields .'&limit=100&start=0');
 
 		$facebook_posts = $facebook_posts['data'];
 		$local_posts 	= Post::pluck('fb_id');
@@ -103,18 +93,11 @@ class Post extends Eloquent
 					$local_post->type = 'photos';
 				}
 				
+				// Save new Post.
 				$local_post->save();
 			}
 		}
 	}
-
-	// function formattedCreatedDate() {
- //        if ($this->created_time->diffInDays() > 30) {
- //            return 'Created at ' . $this->created_time->toFormattedDateString();
- //        } else {
- //            return 'Created ' . $this->created_time->diffForHumans();
- //        }
- //    }
 
 	function makeLinks($input) 
 	{

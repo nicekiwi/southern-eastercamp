@@ -12,6 +12,8 @@
 		{{ Form::textarea('answer'); }}
 		{{ Form::text('order'); }}
 
+		{{ Form::checkbox('public', 1, true); }}
+
 		{{ Form::submit('Add Question') }}
 		    
 		{{ Form::close() }}

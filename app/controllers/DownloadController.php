@@ -2,6 +2,8 @@
 
 class DownloadController extends \BaseController {
 
+	protected $layout = 'layouts.admin';
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,7 +11,16 @@ class DownloadController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$files = Download::orderBy('order','desc')->get();
+
+		$this->layout->content = View::make('downloads.index')->with(compact('files'));
+	}
+
+	public function index_public()
+	{
+		$files = Download::orderBy('order','desc')->get();
+
+		return View::make('downloads.public')->with(compact('files'));
 	}
 
 	/**

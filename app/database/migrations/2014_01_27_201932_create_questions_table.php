@@ -21,6 +21,7 @@ class CreateQuestionsTable extends Migration {
 			$table->integer('helpful_yes');
 			$table->integer('helpful_no');
 			$table->integer('order');
+			$table->integer('public');
 			
 			$table->timestamps();
 		});
