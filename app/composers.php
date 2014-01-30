@@ -2,11 +2,14 @@
 
 // composers
 
-View::composer('*', function($view)
+View::composer('layouts.master', function($view)
 {
     $browser = BrowserDetect::getInfo();
+    $browser = $browser->data;
 
-    $view->with('browser', $browser->data);
+    $questions = QuestionCategory::orderBy('order','asc')->get(['title']);
+
+    $view->with(compact(['browser','questions']));
 });
 
 View::composer('partials.footer-photos', function($view)

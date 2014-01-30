@@ -17,7 +17,7 @@ class Album extends Eloquent {
 		$facebook_fields = 'id,name,count';
 		$facebook_albums = $this->facebook->api('/'. Config::get('keys.facebook.page') .'/albums?fields='. $facebook_fields .'&limit=100');
 
-		return $albums['data'];
+		return $facebook_albums['data'];
 	}
 
 	public function get_fb_photos($fb_album_id) 
@@ -25,7 +25,7 @@ class Album extends Eloquent {
 		$facebook_fields = 'id,source,width,height';
 		$facebook_photos = $this->facebook->api('/' . $fb_album_id . '/photos?fields=' . $facebook_fields . '&limit=500');
 
-		return $photos['data'];
+		return $facebook_photos['data'];
 	}
 
 	public function photos()

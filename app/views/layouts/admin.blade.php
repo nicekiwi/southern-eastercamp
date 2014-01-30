@@ -32,6 +32,8 @@
           <section class="top-bar-section">
           @if(Auth::check())
             <ul>
+              <li><a href="/admin/posts">News</a></li>
+              <li><a href="/admin/pages">Pages</a></li>
               <li><a href="/admin/albums">Photos</a></li>
 
               <li class="has-dropdown not-click">
@@ -56,7 +58,7 @@
             <ul class="right">
               
               <li class="has-dropdown not-click">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="/admin" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-user"></i> {{ Auth::user()->username }} <b class="caret"></b>
                 </a>
                 <ul class="dropdown"><li class="title back js-generated"><h5><a href="#">Back</a></h5></li>
@@ -71,39 +73,7 @@
       </div>
     </header>
 
-    <div class="row">
-      <div class="small-12 columns">
-        <!-- Display Alert messages -->
-        @if(Session::get('error_message'))
-        <div data-alert data-options="animation_speed:500;" class="alert-box radius alert">
-            {{ Session::get('error_message') }}
-            <a href="#" class="close">&times;</a>
-        </div>
-        @endif
-
-        @if(Session::get('warning_message'))
-        <div data-alert data-options="animation_speed:500;" class="alert-box radius warning">
-            {{ Session::get('flash_message') }}
-            <a href="#" class="close">&times;</a>
-        </div>
-        @endif
-
-        @if(Session::get('info_message'))
-        <div data-alert data-options="animation_speed:500;" class="alert-box radius info">
-            {{ Session::get('info_message') }}
-            <a href="#" class="close">&times;</a>
-        </div>
-        @endif
-
-        @if(Session::get('success_message'))
-        <div data-alert data-options="animation_speed:500;" class="alert-box radius success">
-            {{ Session::get('success_message') }}
-            <a href="#" class="close">&times;</a>
-        </div>
-        @endif
-      </div>
-    </div>
-
+    @include('partials.error-messages')
 
     @yield('content')
 

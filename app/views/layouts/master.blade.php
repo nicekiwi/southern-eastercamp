@@ -26,19 +26,6 @@
     </style>
   </head>
   <body>
-
-    <div class="row">
-      
-    </div>
-
-    <div class="row">
-      <div class="small-12 columns">
-        <!--[if lt IE 7]>
-          <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-      </div>
-    </div>
-
     <header class="nav-header">
       <div class="row">
         <nav class="top-bar" data-topbar>
@@ -84,6 +71,16 @@
         </nav>
       </div>
     </header>
+
+    @include('partials.error-messages')
+
+    <div class="row">
+      <div class="small-12 columns">
+        <!--[if lt IE 7]>
+          <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+      </div>
+    </div>
 
     @yield('content')
 

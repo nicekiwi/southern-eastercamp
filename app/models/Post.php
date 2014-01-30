@@ -14,10 +14,9 @@ class Post extends Eloquent
 	public function download_posts()
 	{
 		$facebook_fields = 'message,link,picture,source,story,status_type,created_time,description,name,caption,type';
-		$facebook_posts = $this->facebook->api('/'. Config::get('keys.facebook.page') .'/posts?fields='. $fields .'&limit=100&start=0');
+		$facebook_posts = $this->facebook->api('/'. Config::get('keys.facebook.page') .'/posts?fields='. $facebook_fields .'&limit=50&start=0&date_format=U');
 
 		$facebook_posts = $facebook_posts['data'];
-		$local_posts 	= Post::pluck('fb_id');
 
 		// Make sure facebook returned some posts
 		if(count($facebook_posts) === 0) return false;
@@ -26,7 +25,7 @@ class Post extends Eloquent
 		foreach($facebook_posts as $facebook_post)
 		{
 			// Check if post is already in database by id
-			if(!in_array($facebook_post['id'], (array)$local_posts)) {
+			if(Post::where('fb_id', $facebook_post['id'])->count() === 0) {
 
 				// Setup new post
 				$local_post = new Post;
