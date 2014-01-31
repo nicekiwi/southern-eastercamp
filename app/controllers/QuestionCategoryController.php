@@ -53,7 +53,7 @@ class QuestionCategoryController extends \BaseController {
 		// validate
 		// read more on validation at http://laravel.com/docs/validation
 		$rules = array(
-			'title'      => 'required',
+			'title'      => 'required|unique:question-categories',
 			'order'      => 'required'
 		);
 
@@ -61,7 +61,7 @@ class QuestionCategoryController extends \BaseController {
 
 		// process the login
 		if ($validator->fails()) {
-			Session::flash('error_message', 'Validation Error');
+			Session::flash('error_message', 'Validation error, please check all required fields.');
 			return Redirect::to('admin/question-categories/create')
 				->withErrors($validator)
 				->withInput(Input::except('password'));
@@ -75,7 +75,7 @@ class QuestionCategoryController extends \BaseController {
 		$category->save();
 
 		// redirect
-		Session::flash('success_message', 'Category has been aded.');
+		Session::flash('success_message', Input::get('title') . ' category has been aded.');
 
 		return Redirect::to('admin/question-categories');
 	}
@@ -113,7 +113,7 @@ class QuestionCategoryController extends \BaseController {
 	public function update($id)
 	{
 		$rules = array(
-			'title'      => 'required',
+			'title'      => 'required|unique:question-categories,title,'.$id,
 			'order'      => 'required'
 		);
 
@@ -121,7 +121,7 @@ class QuestionCategoryController extends \BaseController {
 
 		// process the login
 		if ($validator->fails()) {
-			Session::flash('error_message', 'Validation Error');
+			Session::flash('error_message', 'Validation error, please check all required fields.');
 			return Redirect::to('question-categories/' . $id . '/edit')
 				->withErrors($validator)
 				->withInput(Input::except('password'));
@@ -134,7 +134,7 @@ class QuestionCategoryController extends \BaseController {
 		$category->save();
 
 		// redirect
-		Session::flash('success_message', 'Category has been updated.');
+		Session::flash('success_message', Input::get('title') . ' category has been updated.');
 
 		return Redirect::to('admin/question-categories');
 	}

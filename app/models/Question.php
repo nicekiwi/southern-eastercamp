@@ -32,16 +32,6 @@ class Question extends Eloquent {
 
 	}
 
-	public static function mark_view($id)
-	{
-		if(!Cookie::has('view-'.$id))
-		{
-			Cookie::put('view-'.$id, '1');
-
-			DB::query("UPDATE `faqs` SET `views` = views+1 WHERE `id` = '$id'");
-		}
-	}
-
 	public function category()
     {
         return $this->hasOne('QuestionCategory','id','category_id');

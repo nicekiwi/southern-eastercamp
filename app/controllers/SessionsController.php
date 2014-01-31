@@ -31,11 +31,15 @@ class SessionsController extends \BaseController {
 		]);
 
 		if($attempt) {
-			Session::flash('success_message', 'Login was a great success.');
+			Session::flash('success_message', 'Congratulations ' . Auth::user()->first_name . ', login was a great success.');
+			
+			$user = Auth::user();
+			$event = Event::fire('user.login', array($user));
+
 			return Redirect::intended('/admin');
 		}
 
-		Session::flash('error_message', 'Invalid Username or Password.');
+		Session::flash('error_message', 'Login Failed. Pleae check your credentials and try again.');
 		return Redirect::to('login');
 	}
 

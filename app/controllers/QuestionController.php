@@ -12,7 +12,6 @@ class QuestionController extends \BaseController {
 	public function index()
 	{
 		$questions = Question::orderBy('order','desc')->get();
-
 		$this->layout->content = View::make('questions.index')->with(compact('questions'));
 	}
 
@@ -33,12 +32,11 @@ class QuestionController extends \BaseController {
 	public function create()
 	{
 		if(QuestionCategory::count() === 0) {
-			Session::flash('error_message', 'Create a category first.');
+			Session::flash('error_message', 'You must create a category before you can create a question.');
 			return Redirect::intended('admin/questions');
 		}
 
 		$categories = QuestionCategory::orderBy('order','asc')->lists('title', 'id');
-
 		$this->layout->content = View::make('questions.create')->with(compact('categories'));
 	}
 
@@ -52,7 +50,7 @@ class QuestionController extends \BaseController {
 		// validate
 		// read more on validation at http://laravel.com/docs/validation
 		$rules = array(
-			'question'      => 'required',
+			'question'      => 'required|unique:questions',
 			'answer'      	=> 'required',
 			'order'      	=> 'required'
 		);
@@ -61,7 +59,7 @@ class QuestionController extends \BaseController {
 
 		// process the login
 		if ($validator->fails()) {
-			Session::flash('error_message', 'Validation Error');
+			Session::flash('error_message', 'Validation error, please check all required fields.');
 			return Redirect::to('admin/questions/create')
 				->withErrors($validator)
 				->withInput(Input::except('password'));
@@ -78,7 +76,7 @@ class QuestionController extends \BaseController {
 		$question->save();
 
 		// redirect
-		Session::flash('success_message', 'Question has been aded.');
+		Session::flash('success_message', 'Question has been added.');
 
 		return Redirect::to('admin/questions');
 	}
@@ -119,7 +117,7 @@ class QuestionController extends \BaseController {
 		// validate
 		// read more on validation at http://laravel.com/docs/validation
 		$rules = array(
-			'question'      => 'required',
+			'question'      => 'required|unique,question,' . $id,
 			'answer'      	=> 'required',
 			'order'      	=> 'required'
 		);
@@ -128,8 +126,8 @@ class QuestionController extends \BaseController {
 
 		// process the login
 		if ($validator->fails()) {
-			Session::flash('error_message', 'Validation Error');
-			return Redirect::to('admin/'.$id.'/edit')
+			Session::flash('error_message', 'Validation error, please check all required fields.');
+			return Redirect::to('admin/' . $id . '/edit')
 				->withErrors($validator)
 				->withInput(Input::except('password'));
 		}
@@ -145,7 +143,7 @@ class QuestionController extends \BaseController {
 		$question->save();
 
 		// redirect
-		Session::flash('success_message', 'Question has been aded.');
+		Session::flash('success_message', 'Question has been upated.');
 
 		return Redirect::to('admin/questions');
 	}

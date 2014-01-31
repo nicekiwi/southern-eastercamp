@@ -9,6 +9,8 @@
 		{{ Form::text('title'); }}
 		{{ Form::text('url'); }}
 		{{ Form::text('order'); }}
+		{{ Form::text('size'); }}
+		{{ Form::text('type'); }}
 
 		{{ Form::checkbox('public', 1, true); }}
 

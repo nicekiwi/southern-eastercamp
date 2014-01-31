@@ -29,7 +29,7 @@
 					<td>{{ $video->title }}</td>
 					<td><a href="{{ $video->url }}">{{ $video->url }}</a></td>
 					<td>{{ $video->public }}</td>
-					<td>{{ $video->created_at }}</td>
+					<td>{{ $video->created_at->diffForHumans() }}</td>
 				</tr>
 				@endforeach
 			</tbody>

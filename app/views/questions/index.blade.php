@@ -28,7 +28,7 @@
 					@else 
 					<td></td>
 					@endif
-					<td>{{ $question->created_at }}</td>
+					<td>{{ $question->created_at->diffForHumans() }}</td>
 					<td>delete_btn</td>
 				</tr>
 				@endforeach

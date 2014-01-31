@@ -25,7 +25,7 @@
 				<tr>
 					<td>{{ $question->order }}</td>
 					<td>{{ $question->question }}</td>
-					<td>{{ $question->created_at }}</td>
+					<td>{{ $question->created_at->diffForHumans() }}</td>
 				</tr>
 				@endforeach
 			</tbody>

@@ -11,12 +11,6 @@
 |
 */
 
-Route::get('test', function()
-{
-	$post = new Post;
-	return $post->download_posts();
-});
-
 Route::get('news', 'PostController@index_public');
 Route::get('downloads', 'DownloadController@index_public');
 
@@ -32,7 +26,7 @@ Route::get('logout', 'SessionsController@destroy');
 
 Route::resource('sessions', 'SessionsController');
 
-Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
+Route::group(['prefix' => 'admin', 'before' => 'auth'], function()
 {
 	Route::get('/', function()
 	{
@@ -40,6 +34,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
 	});
 
 	Route::resource('posts', 'PostController');
+	Route::resource('pages', 'PageController');
 	Route::resource('albums', 'AlbumController');
 	Route::resource('playlists', 'PlaylistController');
 	Route::resource('videos', 'VideoController');
@@ -47,8 +42,14 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
 	Route::resource('questions', 'QuestionController');
 	Route::resource('question-categories', 'QuestionCategoryController');
 	Route::resource('downloads', 'DownloadController');
-
 	//Route::resource('wallpapers', 'WallpaperController');
+
+	// Make sure only Admins can add or remove users and groups
+	Route::group(['before' => 'auth.admin'], function()
+	{
+		Route::resource('users', 'UserController');
+		Route::resource('groups', 'GroupController');
+	});
 });
 
 Route::get('splash', function()

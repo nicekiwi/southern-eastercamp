@@ -11,8 +11,7 @@ class VideoController extends \BaseController {
 	 */
 	public function index()
 	{
-		$videos = Video::orderBy('playlist_id','desc')->orderBy('order','asc')->get();
-
+		$videos = Video::orderBy('playlist_id','asc')->orderBy('order','asc')->get();
 		$this->layout->content = View::make('videos.index')->with(compact('videos'));
 	}
 
@@ -24,11 +23,11 @@ class VideoController extends \BaseController {
 	public function create()
 	{
 		if(Playlist::count() === 0) {
-			Session::flash('error_message', 'Create a playlist first.');
+			Session::flash('error_message', 'You must create a playlist before you can create a playlist.');
 			return Redirect::intended('admin/videos');
 		}
 
-		$playlists = Playlist::orderBy('order','desc')->lists('title', 'id');
+		$playlists = Playlist::orderBy('order','asc')->lists('title', 'id');
 
 		$this->layout->content = View::make('videos.create')->with(compact('playlists'));
 	}
@@ -96,7 +95,7 @@ class VideoController extends \BaseController {
 	{
 		$video = Video::findOrFail($id);
 
-		$playlists = ['' => 'Select a Playlist'] + Playlist::orderBy('order','desc')->lists('title', 'id');
+		$playlists = Playlist::orderBy('order','asc')->lists('title', 'id');
 
 		$this->layout->content = View::make('videos.edit')->with(compact(['video','playlists']));
 	}

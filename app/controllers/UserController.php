@@ -1,6 +1,6 @@
 <?php
 
-class PostController extends \BaseController {
+class UserController extends \BaseController {
 
 	protected $layout = 'layouts.admin';
 
@@ -11,17 +11,9 @@ class PostController extends \BaseController {
 	 */
 	public function index()
 	{
-		$count = Post::count();
-		$posts = Post::take(15)->orderBy('posted_at','desc')->get(['fb_id','posted_at']);
+		$users = User::orderBy('group_id','asc')->get();
 
-		$this->layout->content = View::make('posts.index')->with(compact('count','posts'));
-	}
-
-	public function index_public()
-	{
-		$posts = Post::orderBy('posted_at','desc')->paginate(15);
-
-		return View::make('posts.public')->with(compact('posts'));
+		$this->layout->content = View::make('users.index')->with(compact('users'));
 	}
 
 	/**
@@ -31,19 +23,12 @@ class PostController extends \BaseController {
 	 */
 	public function create()
 	{
-		$before = Post::count();
+		if(Group::count() === 0) {
+			Session::flash('error_message', 'You must create a group before you can create a user.');
+			return Redirect::intended('admin/users');
+		}
 
-		// Sync local db with Facebook posts.
-		$post = new Post;
-		$post->download_posts();
-
-		$after = Post::count();
-
-		$total = $before - $after;
-
-		// redirect
-		Session::flash('success_message', 'Facebook Sync complete, ' . $total . ' news posts added.');
-		return Redirect::to('admin/posts');
+		$this->layout->content = View::make('users.create');
 	}
 
 	/**

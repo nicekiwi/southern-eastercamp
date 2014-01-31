@@ -49,4 +49,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->email;
 	}
 
+	public function getDates()
+	{
+	    return array('last_login','created_at','updated_at');
+	}
+
+	public function group()
+    {
+        return $this->hasOne('Group','id','group_id');
+    }
+
 }

@@ -1,8 +1,6 @@
 <?php
 
-class PlaylistController extends \BaseController {
-
-	protected $layout = 'layouts.admin';
+class GroupController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -11,20 +9,18 @@ class PlaylistController extends \BaseController {
 	 */
 	public function index()
 	{
-		$playlists = Playlist::orderBy('order','asc')->get();
-		$this->layout->content = View::make('playlists.index')->with(compact('playlists'));
+		$groups = Group::orderBy('id','asc')->get();
+		$this->layout->content = View::make('groups.index')->with(compact('groups'));
 	}
 
-	public function index_public()
-	{
-		$playlists = Playlist::orderBy('order','asc')->get();
-
-		return View::make('playlists.public')->with(compact('playlists'));
-	}
-
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return Response
+	 */
 	public function create()
 	{
-		$this->layout->content = View::make('playlists.create');
+		$this->layout->content = View::make('groups.create');
 	}
 
 	/**
@@ -37,8 +33,8 @@ class PlaylistController extends \BaseController {
 		// validate
 		// read more on validation at http://laravel.com/docs/validation
 		$rules = array(
-			'title'      => 'required|unique:playlists',
-			'order'      => 'required'
+			'title'      		=> 'required|unique:groups',
+			'permissions'      	=> 'required'
 		);
 
 		$validator = Validator::make(Input::all(), $rules);
@@ -46,22 +42,22 @@ class PlaylistController extends \BaseController {
 		// process the login
 		if ($validator->fails()) {
 			Session::flash('error_message', 'Validation error, please check all required fields.');
-			return Redirect::to('admin/playlists/create')
+			return Redirect::to('admin/groups/create')
 				->withErrors($validator)
 				->withInput(Input::except('password'));
 		}
 
 		// Store
-		$playlist = new Playlist;
-		$playlist->title = Input::get('title');
-		$playlist->order = Input::get('order');
+		$group = new Group;
+		$group->title = Input::get('title');
+		$group->permissions = Input::get('permissions');
 
-		$playlist->save();
+		$group->save();
 
 		// redirect
-		Session::flash('success_message', Input::get('title') . ' playlist has been aded.');
+		Session::flash('success_message', Input::get('title') . ' group has been aded.');
 
-		return Redirect::to('admin/playlists');
+		return Redirect::to('admin/groups');
 	}
 
 	/**
@@ -83,9 +79,8 @@ class PlaylistController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$playlist = Playlist::findOrFail($id);
-
-		$this->layout->content = View::make('playlists.edit')->with(compact('playlist'));
+		$group = Groups::findOrFail($id);
+		$this->layout->content = View::make('groups.edit')->with(compact('group'));
 	}
 
 	/**
@@ -96,9 +91,11 @@ class PlaylistController extends \BaseController {
 	 */
 	public function update($id)
 	{
+		// validate
+		// read more on validation at http://laravel.com/docs/validation
 		$rules = array(
-			'title'      => 'required|unique:playlists,title,'.$id,
-			'order'      => 'required'
+			'title'      		=> 'required|unique:groups,title' . $id,
+			'permissions'      	=> 'required'
 		);
 
 		$validator = Validator::make(Input::all(), $rules);
@@ -106,21 +103,22 @@ class PlaylistController extends \BaseController {
 		// process the login
 		if ($validator->fails()) {
 			Session::flash('error_message', 'Validation error, please check all required fields.');
-			return Redirect::to('playlists/' . $id . '/edit')
+			return Redirect::to('admin/groups/' . $id . '/edit')
 				->withErrors($validator)
 				->withInput(Input::except('password'));
 		}
 
-		$playlist = Playlist::findOrFail($id);
-		$playlist->title = Input::get('title');
-		$playlist->order = Input::get('order');
+		// Store
+		$group = new Group;
+		$group->title = Input::get('title');
+		$group->permissions = Input::get('permissions');
 
-		$playlist->save();
+		$group->save();
 
 		// redirect
-		Session::flash('success_message', Input::get('title') . ' playlist has been updated.');
+		Session::flash('success_message', Input::get('title') . ' group has been updated.');
 
-		return Redirect::to('admin/playlists');
+		return Redirect::to('admin/groups');
 	}
 
 	/**

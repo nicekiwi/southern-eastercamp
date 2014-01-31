@@ -22,17 +22,3 @@ View::composer('partials.footer-photos', function($view)
 
 	$view->with('photos', $photos);
 });
-
-// View::composer('downloads', function($view)
-// {
-// 	$downloads = Download::orderBy('order')->get();
-
-// 	$view->with('downloads', $downloads);
-// });
-
-// View::composer('videos', function($view)
-// {
-// 	$videos = Video::get();
-
-// 	$view->with(compact('videos'));
-// });

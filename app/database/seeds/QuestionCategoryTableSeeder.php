@@ -1,12 +1,27 @@
-Í<?php
+<?php
 
-class UserTableSeeder extends Seeder {
+class QuestionCategoryTableSeeder extends Seeder {
 
 	public function run()
 	{
 		QuestionCategory::create([
-			'id'		=> -1,
-			'title' 	=> 'None',
+			'order'		=> 5,
+			'title' 	=> 'General'
+		]);
+
+		QuestionCategory::create([
+			'order'		=> 10,
+			'title' 	=> 'Registration'
+		]);
+
+		QuestionCategory::create([
+			'order'		=> 15,
+			'title' 	=> 'Parents & Caregivers'
+		]);
+
+		QuestionCategory::create([
+			'order'		=> 20,
+			'title' 	=> 'Transport'
 		]);
 	}
 }

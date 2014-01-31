@@ -5,6 +5,7 @@ class Post extends Eloquent
 	private $facebook;
 
 	function __construct() {
+		// Setup Facebook Instance
 		$this->facebook = new Facebook([
 			'appId'  => Config::get('keys.facebook.app_id'),
 			'secret' => Config::get('keys.facebook.secret_key'),
@@ -13,7 +14,10 @@ class Post extends Eloquent
 
 	public function download_posts()
 	{
+		// Fields we want from Facebook
 		$facebook_fields = 'message,link,picture,source,story,status_type,created_time,description,name,caption,type';
+		
+		// Get Wall posts by the public page
 		$facebook_posts = $this->facebook->api('/'. Config::get('keys.facebook.page') .'/posts?fields='. $facebook_fields .'&limit=50&start=0&date_format=U');
 
 		$facebook_posts = $facebook_posts['data'];
@@ -103,9 +107,13 @@ class Post extends Eloquent
 	    $linkExp = '/\b((https?|ftp|file):\/\/|www\.|ftp\.)[-A-Z0-9+&@#\/%?=~_|!:,.;]*[A-Z0-9+&@#\/%=~_|]/si';
 	    $emailExp = '/(\S+@\S+\.\S+)/i';
 
+	    // Add links to plain text
 	    $input = preg_replace($linkExp, '<a href="\0" title="Visit: \0" target="_blank">\0</a>', $input);
+	    
+	    // Add email mailto links to plain text
 	    $input = preg_replace($emailExp, '<a href="mailto:$1" title="Email: $1" target="_blank">$1</a>', $input);
 
+	    // Prefix links with http://
 	    $input = str_replace('href="www', 'href="http://www', $input);
 
 	    return $input;
@@ -113,6 +121,7 @@ class Post extends Eloquent
 
 	function makePicture($input)
 	{
+		// Change file to larger extension
 		return str_replace('_s.jpg','_n.jpg', $input);
 	}
 

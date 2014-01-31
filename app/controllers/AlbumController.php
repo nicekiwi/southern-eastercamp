@@ -12,15 +12,12 @@ class AlbumController extends \BaseController {
 	public function index()
 	{
 		$albums = Album::orderBy('year','desc')->get();
-
 		$this->layout->content = View::make('albums.index')->with(compact('albums'));
 	}
 
 	public function index_public($year = 2013)
 	{
 		$album_id = Album::where('year',$year)->pluck('id');
-
-		//$photos = Album::where('year',$year)->photos;
 		$photos = Photo::where('album_id',$album_id)->paginate(150);
 
 		return View::make('albums.public')->with(compact('photos'));
@@ -75,7 +72,7 @@ class AlbumController extends \BaseController {
 		// Store
 		$album = new Album;
 		$album->year = Input::get('year');
-		$album->albums = json_encode(Input::get('fb_album_ids'));//implode(',', Input::get('fb_album_ids'));
+		$album->albums = json_encode(Input::get('fb_album_ids'));
 
 		$album->save();
 
@@ -111,7 +108,7 @@ class AlbumController extends \BaseController {
 		$album->save();
 
 		// redirect
-		Session::flash('success_message', 'Album has been aded.');
+		Session::flash('success_message', 'Eastercamp' . Input::get('year') . ' Photo Album has been created.');
 
 		return Redirect::to('admin/albums');
 	}

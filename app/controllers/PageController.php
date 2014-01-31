@@ -1,8 +1,6 @@
 <?php
 
-class PostController extends \BaseController {
-
-	protected $layout = 'layouts.admin';
+class PageController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -11,17 +9,7 @@ class PostController extends \BaseController {
 	 */
 	public function index()
 	{
-		$count = Post::count();
-		$posts = Post::take(15)->orderBy('posted_at','desc')->get(['fb_id','posted_at']);
-
-		$this->layout->content = View::make('posts.index')->with(compact('count','posts'));
-	}
-
-	public function index_public()
-	{
-		$posts = Post::orderBy('posted_at','desc')->paginate(15);
-
-		return View::make('posts.public')->with(compact('posts'));
+		//
 	}
 
 	/**
@@ -31,19 +19,7 @@ class PostController extends \BaseController {
 	 */
 	public function create()
 	{
-		$before = Post::count();
-
-		// Sync local db with Facebook posts.
-		$post = new Post;
-		$post->download_posts();
-
-		$after = Post::count();
-
-		$total = $before - $after;
-
-		// redirect
-		Session::flash('success_message', 'Facebook Sync complete, ' . $total . ' news posts added.');
-		return Redirect::to('admin/posts');
+		//
 	}
 
 	/**

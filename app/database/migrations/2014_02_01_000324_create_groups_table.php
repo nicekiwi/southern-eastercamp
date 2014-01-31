@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWallpapersTable extends Migration {
+class CreateGroupsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -11,15 +12,12 @@ class CreateWallpapersTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('wallpapers', function($table)
+		Schema::create('groups', function(Blueprint $table)
 		{
-			$table->increments('id');
-			$table->integer('order');
-			$table->string('url')->unique();
+			$table->integer('id')->unique()->unsigned();
 			$table->string('title');
-			$table->integer('size');
-			$table->string('public');
-			
+			$table->string('permissions');
+
 			$table->timestamps();
 		});
 	}
@@ -31,7 +29,7 @@ class CreateWallpapersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('wallpapers');
+		Schema::drop('groups');
 	}
 
 }

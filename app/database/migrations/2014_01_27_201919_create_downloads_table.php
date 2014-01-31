@@ -17,7 +17,7 @@ class CreateDownloadsTable extends Migration {
 			$table->integer('order');
 			$table->string('type');
 			$table->string('url')->unique();
-			$table->string('desc');
+			$table->string('title');
 			$table->integer('size');
 			$table->integer('public');
 			

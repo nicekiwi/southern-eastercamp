@@ -28,7 +28,7 @@
 					<td><a class="fancybox" data-title="{{ $video->title }}" href="http://www.youtube.com/watch?v={{ $video->url }}">{{ $video->url }}</a></td>
 					<td>{{ $video->playlist->title }}</td>
 					<td>{{ $video->public }}</td>
-					<td>{{ $video->created_at }}</td>
+					<td>{{ $video->created_at->diffForHumans() }}</td>
 					<td>delete_btn</td>
 				</tr>
 				@endforeach

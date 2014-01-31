@@ -24,7 +24,7 @@
 					<td>{{ count(explode(',', $album->albums)) }}</td>
 					<td><a href="/admin/albums/{{ $album->id }}/edit">Eastercamp {{ $album->year }}</a></td>
 					<td>{{ $album->count }}</td>
-					<td>{{ $album->created_at }}</td>
+					<td>{{ $album->created_at->diffForHumans() }}</td>
 					<td>delete_btn</td>
 				</tr>
 			@endforeach

@@ -44,7 +44,14 @@
                   <li><a href="/admin/playlists">Playlists</a></li>
                 </ul>
               </li>
-              <li><a href="/admin/downloads">Downloads</a></li>
+              <li class="has-dropdown not-click">
+                <a href="/admin/downloads" class="dropdown-toggle" data-toggle="dropdown">
+                  Downloads <b class="caret"></b>
+                </a>
+                <ul class="dropdown"><li class="title back js-generated"><h5><a href="#">Back</a></h5></li>
+                  <li><a href="/admin/wallpapers">Wallpapers</a></li>
+                </ul>
+              </li>
               <li class="has-dropdown not-click">
                 <a href="/admin/questions" class="dropdown-toggle" data-toggle="dropdown">
                   FAQ <b class="caret"></b>
@@ -53,16 +60,27 @@
                   <li><a href="/admin/question-categories">Categories</a></li>
                 </ul>
               </li>
+
+              @if(Auth::user()->group_id <= 5)
+              <li class="has-dropdown not-click">
+                <a href="/admin/users" class="dropdown-toggle" data-toggle="dropdown">
+                  Users <b class="caret"></b>
+                </a>
+                <ul class="dropdown"><li class="title back js-generated"><h5><a href="#">Back</a></h5></li>
+                  <li><a href="/admin/groups">Groups</a></li>
+                </ul>
+              </li>
+              @endif
             </ul>
 
             <ul class="right">
               
               <li class="has-dropdown not-click">
                 <a href="/admin" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="fa fa-user"></i> {{ Auth::user()->username }} <b class="caret"></b>
+                  <i class="fa fa-user"></i> {{ Auth::user()->first_name }} <b class="caret"></b>
                 </a>
                 <ul class="dropdown"><li class="title back js-generated"><h5><a href="#">Back</a></h5></li>
-                  <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                  <li><a href="/logout">Logout</a></li>
                 </ul>
               </li>
               

@@ -1,12 +1,22 @@
-Í<?php
+<?php
 
-class UserTableSeeder extends Seeder {
+class PlaylistTableSeeder extends Seeder {
 
 	public function run()
 	{
 		Playlist::create([
-			'id'		=> -1,
-			'title' 	=> 'None',
+			'order'		=> 5,
+			'title' 	=> 'Promos'
+		]);
+
+		Playlist::create([
+			'order'		=> 10,
+			'title' 	=> 'Highlights'
+		]);
+
+		Playlist::create([
+			'order'		=> 15,
+			'title' 	=> 'Segments'
 		]);
 	}
 }
