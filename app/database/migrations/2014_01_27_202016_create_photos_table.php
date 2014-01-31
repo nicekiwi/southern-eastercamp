@@ -19,7 +19,7 @@ class CreatePhotosTable extends Migration {
 			$table->string('fb_photo_id');
 			$table->string('width');
 			$table->string('height');
-			$table->string('source')->unique();
+			$table->string('picture')->unique();
 			
 			$table->timestamps();
 		});

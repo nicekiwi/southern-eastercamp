@@ -22,10 +22,14 @@ class Album extends Eloquent {
 
 	public function get_fb_photos($fb_album_id) 
 	{
-		$facebook_fields = 'id,source,width,height';
+		$facebook_fields = 'id,picture,width,height';
 		$facebook_photos = $this->facebook->api('/' . $fb_album_id . '/photos?fields=' . $facebook_fields . '&limit=500');
 
 		return $facebook_photos['data'];
+	}
+
+	public function import_photos() {
+		
 	}
 
 	public function photos()

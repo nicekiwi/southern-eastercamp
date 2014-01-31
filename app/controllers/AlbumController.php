@@ -97,7 +97,7 @@ class AlbumController extends \BaseController {
 				$photo->fb_photo_id = $fb_photo['id'];
 				$photo->width 		= $fb_photo['width'];
 				$photo->height 		= $fb_photo['height'];
-				$photo->source 		= $fb_photo['source'];
+				$photo->picture 	= $fb_photo['picture'];
 
 				$photo->save();
 			}
