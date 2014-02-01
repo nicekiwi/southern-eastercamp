@@ -1,9 +1,3 @@
-@extends('layouts.master')
-
-@section('title','information')
-@section('desc','')
-@section('content')
-
 <div class="row">
 	<div class="small-12 columns">
 		<h1>Parents &amp; Caregivers Info</h1>
@@ -26,5 +20,3 @@
 		<p>An EC Earthquake Info Sheet &amp; Emergency Evacuation Plans can be found on the Downloads page.</p>
 	</div>
 </div>
-
-@stop

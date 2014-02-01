@@ -16,6 +16,31 @@ class PageController extends \BaseController {
 		$this->layout->content = View::make('pages.index')->with(compact('pages'));
 	}
 
+	public function index_public()
+	{
+		// Set the master public Layout
+		$this->layout = View::make('layouts.master');
+
+		// Get Page info from DB if it exists
+		$page = Page::where('slug', Request::path())->first();
+
+		if($page === null) return App::abort(404);
+
+		// Input Meta info if set
+		$this->layout->meta_title = $page->meta_title;
+		$this->layout->meta_desc = $page->meta_desc;
+
+		// If view exists render view
+		if(View::exists($page->slug))
+			$this->layout->content = View::make($page->slug)->with('content', $page->content);
+		// If DB content exists show it
+		elseif($page->content !== '')
+			$this->layout->content = $page->content;
+		// Else return 404 page
+		else
+			return App::abort(404);
+	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 *

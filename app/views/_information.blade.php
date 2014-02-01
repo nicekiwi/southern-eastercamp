@@ -1,9 +1,3 @@
-@extends('layouts.master')
-
-@section('title','information')
-@section('desc','')
-@section('content')
-
 <div class="parallax-orbit-container">
 	<div class="parallax-orbit-inner">
 		<ul class="parallax-orbit information-orbit" data-orbit>
@@ -70,5 +64,3 @@
 		<p>If you are too old to come as a general camper or leader, you can apply to <a href="/information/volunteer">volunteer</a> and come help out.</p>
 	</div>
 </div>
-
-@stop

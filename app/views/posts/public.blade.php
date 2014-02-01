@@ -1,7 +1,3 @@
-@extends('layouts.master')
-
-@section('content')
-
 <div class="row">
 	<div class="small-12 columns">
 	 
@@ -91,4 +87,3 @@
 		{{ $posts->links() }}
 	</div>
 </div>
-@stop

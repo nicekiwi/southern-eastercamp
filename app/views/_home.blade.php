@@ -1,9 +1,4 @@
-@extends('layouts.master')
 
-@section('title','Southern Eastercamp 2014')
-@section('desc','')
-
-@section('content')
 
     <section class="parallax-section ec-triangles">
     	<div class="row">
@@ -50,4 +45,3 @@
     </div>
 
 
-@stop

@@ -1,7 +1,3 @@
-@extends('layouts.master')
-
-@section('content')
-
 <div class="row">
 	<div class="small-12 columns">
 		<h1>Downloads</h1>
@@ -13,5 +9,3 @@
 		</ul>
 	</div>
 </div>
-
-@stop

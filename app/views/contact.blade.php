@@ -1,14 +1,4 @@
-@extends('layouts.master')
-
-@section('content')
-
-<div class="row">
-	<div class="small-12 columns">
-		<h1>Contact Us</h1>
-	</div>
-</div>
-
-{{ $page->content }}
+{{ $content }}
 
 <div class="row">
 	<div class="small-12 medium-12 columns">
@@ -56,7 +46,4 @@
 		{{ Form::token() . Form::close() }}
 
 	</div>
-
-
 </div>
-@stop

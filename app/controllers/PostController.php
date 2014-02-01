@@ -3,6 +3,13 @@
 class PostController extends \BaseController {
 
 	protected $layout = 'layouts.admin';
+	protected $browser;
+
+	function __construct()
+	{
+		$browser = BrowserDetect::getInfo();
+    	$this->browser = $browser->data;
+	}
 
 	/**
 	 * Display a listing of the resource.
@@ -19,9 +26,20 @@ class PostController extends \BaseController {
 
 	public function index_public()
 	{
+		// Set the master public Layout
+		$this->layout = View::make('layouts.master');
+
+		// Get Page info from DB if it exists
+		$page = Page::where('slug', Request::path())->first();
 		$posts = Post::orderBy('posted_at','desc')->paginate(15);
 
-		return View::make('posts.public')->with(compact('posts'));
+		// Input Meta info if set
+		$this->layout->meta_title = $page->meta_title;
+		$this->layout->meta_desc = $page->meta_desc;
+
+		$this->layout->content = View::make('posts.public');
+		$this->layout->content->posts = $posts;
+		$this->layout->content->browser = $this->browser;
 	}
 
 	/**

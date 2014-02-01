@@ -17,9 +17,19 @@ class PlaylistController extends \BaseController {
 
 	public function index_public()
 	{
+		// Set the master public Layout
+		$this->layout = View::make('layouts.master');
+
+		// Get Page info from DB if it exists
+		$page = Page::where('slug', Request::path())->first();
 		$playlists = Playlist::orderBy('order','asc')->get();
 
-		return View::make('playlists.public')->with(compact('playlists'));
+		// Input Meta info if set
+		$this->layout->meta_title = $page->meta_title;
+		$this->layout->meta_desc = $page->meta_desc;
+
+		$this->layout->content = View::make('playlists.public');
+		$this->layout->content->playlists = $playlists;
 	}
 
 	public function create()

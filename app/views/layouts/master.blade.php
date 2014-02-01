@@ -3,14 +3,16 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     @if(getenv('LARA_ENV') !== 'production')
     <meta name="robots" content="noindex, nofollow">
     @endif
-    <title>@yield('title')</title>
-    <meta name="description" content="@yield('desc')">
+    <title></title>
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="/bower_components/fancybox/source/jquery.fancybox.css">
@@ -19,11 +21,6 @@
     <link href="/css/app.css" media="screen, projection" rel="stylesheet" type="text/css" />
 
     <script src="/bower_components/modernizr/modernizr.js"></script>
-    <style>
-    .news-post img.lazy {
-        width: 100%;
-    }
-    </style>
   </head>
   <body>
     <header class="nav-header">
@@ -74,15 +71,14 @@
 
     @include('partials.error-messages')
 
+    <!--[if lt IE 7]>
     <div class="row">
       <div class="small-12 columns">
-        <!--[if lt IE 7]>
           <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
       </div>
-    </div>
-
-    @yield('content')
+    </div><![endif]-->
+    
+    {{ $content }}
 
     <div class="row">
       <div class="small-12 medium-4 columns">

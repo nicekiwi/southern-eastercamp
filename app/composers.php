@@ -4,20 +4,9 @@
 
 View::composer('layouts.master', function($view)
 {
-    $browser = BrowserDetect::getInfo();
-    $browser = $browser->data;
-
     $questions = QuestionCategory::orderBy('order','asc')->get(['title']);
-
-    $view->with(compact(['browser','questions']));
+    $view->with(compact('questions'));
 });
-
-// View::composer('*', function($view)
-// {
-// 	$page = Page::where('slug', Request::path())->first();
-
-// 	$view->with(compact('page'));
-// });
 
 View::composer('partials.footer-photos', function($view)
 {
