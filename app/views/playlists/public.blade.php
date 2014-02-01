@@ -6,7 +6,9 @@
 		
 		<ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-4">
 			@foreach ($playlist->videos as $video)
+			@if($video->public === 1)
 			<li><a class="fancybox" data-title="{{ $video->title }}" href="http://www.youtube.com/watch?v={{ $video->url }}"><img class="th" src="http://i.ytimg.com/vi/{{ $video->url }}/hqdefault.jpg"></a></li>
+			@endif
 			@endforeach
 		</ul>
 		@endforeach

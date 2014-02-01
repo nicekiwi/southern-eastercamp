@@ -6,7 +6,9 @@
 		
 		<ul class="small-block-grid-1 medium-block-grid-2">
 			@foreach ($category->questions as $question)
+			@if($question->public === 1)
 			<li><a href="/faq/question/{{ $question->id }}">{{ $question->question }}</a></li>
+			@endif
 			@endforeach
 		</ul>
 		@endforeach

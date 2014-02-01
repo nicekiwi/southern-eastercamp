@@ -38,6 +38,9 @@
 
 		<p>If no results are showen, then there are no matching albums on Facebook that can be added.</p>
 
+		{{ Form::label('public', 'Display Publicly:') }}
+		{{ Form::checkbox('public', 1, true); }}
+
 		{{ Form::submit('Create Album') }}
 		    
 		{{ Form::close() }}
