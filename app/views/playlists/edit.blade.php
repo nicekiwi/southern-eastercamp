@@ -6,8 +6,11 @@
 
 		{{ Form::model($playlist, [ 'method' => 'PATCH', 'route' => ['admin.playlists.update', $playlist->id] ]) }}
 
-		{{ Form::text('title'); }}
+		{{ Form::label('order', 'Display Order:') }}
 		{{ Form::text('order'); }}
+
+		{{ Form::label('title', 'Title:') }}
+		{{ Form::text('title'); }}
 
 		{{ Form::submit('Update Playlist') }}
 		    

@@ -6,12 +6,22 @@
 
 		{{ Form::model($download, [ 'method' => 'PATCH', 'route' => ['admin.downloads.update', $download->id] ]) }}
 
-		{{ Form::text('title'); }}
-		{{ Form::text('url'); }}
+		{{ Form::label('order', 'Display Order:') }}
 		{{ Form::text('order'); }}
+
+		{{ Form::label('title', 'File Title:') }}
+		{{ Form::text('title'); }}
+
+		{{ Form::label('url', 'File Location:') }}
+		{{ Form::text('url'); }}
+
+		{{ Form::label('size', 'File Size:') }}
 		{{ Form::text('size'); }}
+
+		{{ Form::label('type', 'File Type:') }}
 		{{ Form::text('type'); }}
 
+		{{ Form::label('public', 'Display Publicly:') }}
 		{{ Form::checkbox('public', 1, true); }}
 
 		{{ Form::submit('Update Download') }}

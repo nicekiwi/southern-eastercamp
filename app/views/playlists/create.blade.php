@@ -6,8 +6,11 @@
 
 		{{ Form::open([ 'method' => 'POST', 'route' => 'admin.playlists.store' ]) }}
 
-		{{ Form::text('title'); }}
+		{{ Form::label('order', 'Display Order:') }}
 		{{ Form::text('order'); }}
+
+		{{ Form::label('title', 'Title:') }}
+		{{ Form::text('title'); }}
 
 		{{ Form::submit('Add Playlist') }}
 		    

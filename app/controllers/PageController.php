@@ -51,7 +51,7 @@ class PageController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		$this->layout->content = View::make('pages.create');
 	}
 
 	/**
@@ -61,7 +61,40 @@ class PageController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		// validate
+		// read more on validation at http://laravel.com/docs/validation
+		$rules = array(
+			'meta_title'      	=> 'required',
+			'slug'      	 	=> 'required|unique:pages',
+			'order'      		=> 'required'
+		);
+
+		$validator = Validator::make(Input::all(), $rules);
+
+		// process the login
+		if ($validator->fails()) {
+			Session::flash('error_message', 'Validation error, please check all required fields.');
+			return Redirect::to('admin/pages/create')
+				->withErrors($validator)
+				->withInput(Input::except('password'));
+		}
+
+		// Store
+		$page 					= new Page;
+		$page->order 			= Input::get('order');
+		$page->meta_title 		= Input::get('meta_title');
+		$page->meta_desc 		= Input::get('meta_desc');
+		$page->slug 			= Input::get('slug');
+		$page->content 			= Input::get('content');
+
+		$page->created_by 		= Auth::user()->id;
+
+		$page->save();
+
+		// redirect
+		Session::flash('success_message', 'Page has been added.');
+
+		return Redirect::to('admin/pages');
 	}
 
 	/**
@@ -70,7 +103,7 @@ class PageController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($slug)
+	public function show($id)
 	{
 		//
 	}
@@ -83,7 +116,9 @@ class PageController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$page = Page::findOrFail($id);
+
+		$this->layout->content = View::make('pages.edit')->with(compact('page'));
 	}
 
 	/**
@@ -94,7 +129,40 @@ class PageController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		// validate
+		// read more on validation at http://laravel.com/docs/validation
+		$rules = array(
+			'meta_title'      	=> 'required',
+			'slug'      	 	=> 'required|unique:pages,slug,' . $id,
+			'order'      		=> 'required'
+		);
+
+		$validator = Validator::make(Input::all(), $rules);
+
+		// process the login
+		if ($validator->fails()) {
+			Session::flash('error_message', 'Validation error, please check all required fields.');
+			return Redirect::to('admin/pages/' . $id . '/edit')
+				->withErrors($validator)
+				->withInput(Input::except('password'));
+		}
+
+		// Store
+		$page 					= Page::findOrFail($id);
+		$page->order 			= Input::get('order');
+		$page->meta_title 		= Input::get('meta_title');
+		$page->meta_desc 		= Input::get('meta_desc');
+		$page->slug 			= Input::get('slug');
+		$page->content 			= Input::get('content');
+
+		$page->updated_by 		= Auth::user()->id;
+
+		$page->save();
+
+		// redirect
+		Session::flash('success_message', 'Page has been updated.');
+
+		return Redirect::to('admin/pages');
 	}
 
 	/**

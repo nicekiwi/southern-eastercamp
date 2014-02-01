@@ -2,7 +2,7 @@
 
 <div class="row">
 	<div class="small-12 columns">
-		<h2>Add new user</h2>
+		<h2>Create User</h2>
 
 		{{ Form::open([ 'method' => 'POST', 'route' => 'admin.users.store' ]) }}
 
@@ -21,7 +21,7 @@
 		{{ Form::label('password_confirmation', 'Confirm Password:') }}
 		{{ Form::password('password_confirmation'); }}
 
-		{{ Form::submit('Add User') }}
+		{{ Form::submit('Create User') }}
 		    
 		{{ Form::close() }}
 	</div>

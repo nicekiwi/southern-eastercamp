@@ -6,12 +6,19 @@
 
 		{{ Form::model($question, [ 'method' => 'PATCH', 'route' => ['admin.questions.update', $question->id] ]) }}
 
-		{{ Form::select('category_id', $categories) }}
-
-		{{ Form::text('question'); }}
-		{{ Form::textarea('answer'); }}
+		{{ Form::label('order', 'Display Order:') }}
 		{{ Form::text('order'); }}
 
+		{{ Form::label('category_id', 'Category:') }}
+		{{ Form::select('category_id', $categories) }}
+
+		{{ Form::label('question', 'Question:') }}
+		{{ Form::text('question'); }}
+
+		{{ Form::label('answer', 'Answer:') }}
+		{{ Form::textarea('answer'); }}
+
+		{{ Form::label('public', 'Dislpay Publicly:') }}
 		{{ Form::checkbox('public', 1, true); }}
 
 		{{ Form::submit('Add Question') }}

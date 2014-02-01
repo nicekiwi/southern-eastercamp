@@ -2,11 +2,11 @@
 
 <div class="row">
 	<div class="small-12 columns">
-		<h2>Add new Album</h2>
+		<h2>Create Album</h2>
 
 		{{ Form::open([ 'method' => 'POST', 'route' => 'admin.albums.store' ]) }}
 
-
+		{{ Form::label('year', 'Album Year:') }}
 		{{ Form::selectRange('year', 2015, 2004); }}
 
 
@@ -38,7 +38,7 @@
 
 		<p>If no results are showen, then there are no matching albums on Facebook that can be added.</p>
 
-		{{ Form::submit('Add Album') }}
+		{{ Form::submit('Create Album') }}
 		    
 		{{ Form::close() }}
 	</div>

@@ -69,7 +69,7 @@ class PlaylistController extends \BaseController {
 		$playlist->save();
 
 		// redirect
-		Session::flash('success_message', Input::get('title') . ' playlist has been aded.');
+		Session::flash('success_message', Input::get('title') . ' playlist has been added.');
 
 		return Redirect::to('admin/playlists');
 	}

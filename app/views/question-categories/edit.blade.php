@@ -6,8 +6,11 @@
 
 		{{ Form::model($category, [ 'method' => 'PATCH', 'route' => ['admin.question-categories.update', $category->id] ]) }}
 
-		{{ Form::text('title'); }}
+		{{ Form::label('order', 'Display Order:') }}
 		{{ Form::text('order'); }}
+
+		{{ Form::label('title', 'Title:') }}
+		{{ Form::text('title'); }}
 
 		{{ Form::submit('Update Category') }}
 		    

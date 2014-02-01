@@ -2,14 +2,17 @@
 
 <div class="row">
 	<div class="small-12 columns">
-		<h2>Add new category</h2>
+		<h2>Create category</h2>
 
 		{{ Form::open([ 'method' => 'POST', 'route' => 'admin.question-categories.store' ]) }}
 
-		{{ Form::text('title'); }}
+		{{ Form::label('order', 'Display Order:') }}
 		{{ Form::text('order'); }}
 
-		{{ Form::submit('Add Category') }}
+		{{ Form::label('title', 'Title:') }}
+		{{ Form::text('title'); }}
+
+		{{ Form::submit('Create Category') }}
 		    
 		{{ Form::close() }}
 	</div>

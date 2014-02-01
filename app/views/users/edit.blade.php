@@ -2,7 +2,7 @@
 
 <div class="row">
 	<div class="small-12 columns">
-		<h2>Update user</h2>
+		<h2>Update User</h2>
 
 		{{ Form::model($user, [ 'method' => 'PATCH', 'route' => ['admin.users.update', $user->id] ]) }}
 

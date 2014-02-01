@@ -5,9 +5,7 @@
 
 		<h2>Pages</h2>
 
-		@if(Auth::user()->group_id <= 5)
 		<p><a href="/admin/pages/create" class="button small"><i class="fa fa-plus"></i> Add page</a></p>
-		@endif
 
 		<table width="100%">
 			<thead>

@@ -2,9 +2,9 @@
 
 <div class="row">
 	<div class="small-12 columns">
-		<h2>Update Page</h2>
+		<h2>Create Page</h2>
 
-		{{ Form::model($page, [ 'method' => 'PATCH', 'route' => ['admin.pages.update', $page->id] ]) }}
+		{{ Form::open([ 'method' => 'POST', 'route' => 'admin.pages.store' ]) }}
 
 		{{ Form::label('order', 'Order:') }}
 		{{ Form::text('order'); }}
@@ -21,7 +21,7 @@
 		{{ Form::label('content', 'Page Contents:') }}
 		{{ Form::textarea('content'); }}
 
-		{{ Form::submit('Update Page') }}
+		{{ Form::submit('Create Page') }}
 		    
 		{{ Form::close() }}
 	</div>
