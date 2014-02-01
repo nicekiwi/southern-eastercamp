@@ -26,8 +26,8 @@
 				@foreach($playlist->videos as $video)
 				<tr>
 					<td>{{ $video->order }}</td>
-					<td>{{ $video->title }}</td>
-					<td><a href="{{ $video->url }}">{{ $video->url }}</a></td>
+					<td><a href="/admin/videos/{{ $video->id }}/edit">{{ $video->title }}</a></td>
+					<td><a class="fancybox" data-title="{{ $video->title }}" href="http://www.youtube.com/watch?v={{ $video->url }}">{{ $video->url }}</a></td>
 					<td>{{ $video->public }}</td>
 					<td>{{ $video->created_at->diffForHumans() }}</td>
 				</tr>
@@ -38,7 +38,5 @@
 		@endforeach
 	</div>
 </div>
-
-
 
 @stop

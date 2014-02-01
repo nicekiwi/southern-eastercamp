@@ -15,12 +15,31 @@ class AlbumController extends \BaseController {
 		$this->layout->content = View::make('albums.index')->with(compact('albums'));
 	}
 
-	public function index_public($year = 2013)
+	public function index_public($year = null)
 	{
-		$album_id = Album::where('year',$year)->pluck('id');
+		// Set the master public Layout
+		$this->layout = View::make('layouts.master');
+
+		// Get Page info from DB if it exists
+		$page = Page::where('slug', 'photos')->first();
+
+		// Get Album info
+		if($year === null)
+			$album_id = Album::orderBy('year','desc')->take(1)->pluck('id');
+		else
+			$album_id = Album::where('year',$year)->pluck('id');
+
+		if($album_id === null)
+			return App::abort(404);
+
 		$photos = Photo::where('album_id',$album_id)->paginate(150);
 
-		return View::make('albums.public')->with(compact('photos'));
+		// Input Meta info if set
+		$this->layout->metaTitle = $page->meta_title;
+		$this->layout->metaDesc = $page->meta_desc;
+
+		$this->layout->content = View::make('albums.public');
+		$this->layout->content->photos = $photos;
 	}
 
 	/**

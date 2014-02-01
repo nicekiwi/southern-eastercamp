@@ -25,8 +25,8 @@ class PlaylistController extends \BaseController {
 		$playlists = Playlist::orderBy('order','asc')->get();
 
 		// Input Meta info if set
-		$this->layout->meta_title = $page->meta_title;
-		$this->layout->meta_desc = $page->meta_desc;
+		$this->layout->metaTitle = $page->meta_title;
+		$this->layout->metaDesc = $page->meta_desc;
 
 		$this->layout->content = View::make('playlists.public');
 		$this->layout->content->playlists = $playlists;

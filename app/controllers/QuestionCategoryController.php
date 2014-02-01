@@ -18,19 +18,37 @@ class QuestionCategoryController extends \BaseController {
 	
 	public function index_public()
 	{
+		// Set the master public Layout
+		$this->layout = View::make('layouts.master');
+
+		// Get Page info from DB if it exists
+		$page = Page::where('slug', 'faq')->first();
 		$categories = QuestionCategory::orderBy('order','asc')->get();
 
-		return View::make('question-categories.public')->with(compact('categories'));
+		// Input Meta info if set
+		$this->layout->metaTitle = $page->meta_title;
+		$this->layout->metaDesc = $page->meta_desc;
+
+		$this->layout->content = View::make('question-categories.public');
+		$this->layout->content->categories = $categories;
 	}
 
 	public function category_public($slug)
 	{
-		$category = QuestionCategory::where('title', ucfirst($slug))->first();
+		// Set the master public Layout
+		$this->layout = View::make('layouts.master');
+
+		$category = QuestionCategory::where('slug', $slug)->first();
 
 		// If Category does not exist, call 404
 		if(!isset($category->id)) return App::abort(404);
 
-		return View::make('question-categories.public-category')->with(compact('category'));
+		// Input Meta info if set
+		$this->layout->metaTitle = $category->title . 'Questions';
+		$this->layout->metaDesc = 'Frequently asked ' . $category->title . ' related Questions.';
+
+		$this->layout->content = View::make('question-categories.public-category');
+		$this->layout->content->category = $category;
 	}
 
 	/**
@@ -68,9 +86,10 @@ class QuestionCategoryController extends \BaseController {
 		}
 
 		// Store
-		$category = new QuestionCategory;
-		$category->title = Input::get('title');
-		$category->order = Input::get('order');
+		$category 			= new QuestionCategory;
+		$category->title 	= Input::get('title');
+		$category->slug 	= Str::slug(Input::get('title'));
+		$category->order 	= Input::get('order');
 
 		$category->save();
 
@@ -127,9 +146,10 @@ class QuestionCategoryController extends \BaseController {
 				->withInput(Input::except('password'));
 		}
 
-		$category = QuestionCategory::findOrFail($id);
-		$category->title = Input::get('title');
-		$category->order = Input::get('order');
+		$category 			= QuestionCategory::findOrFail($id);
+		$category->title 	= Input::get('title');
+		$category->slug 	= Str::slug(Input::get('title'));
+		$category->order 	= Input::get('order');
 
 		$category->save();
 

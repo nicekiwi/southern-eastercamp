@@ -4,7 +4,7 @@ class Playlist extends Eloquent {
 
 	public function videos()
     {
-        return $this->hasMany('Video','playlist_id')->where('public', 1);
+        return $this->hasMany('Video','playlist_id');
     }
 
     public function updatedBy()

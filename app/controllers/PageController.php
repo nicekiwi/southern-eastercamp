@@ -24,21 +24,24 @@ class PageController extends \BaseController {
 		// Get Page info from DB if it exists
 		$page = Page::where('slug', Request::path())->first();
 
-		if($page === null) return App::abort(404);
-
-		// Input Meta info if set
-		$this->layout->meta_title = $page->meta_title;
-		$this->layout->meta_desc = $page->meta_desc;
-
-		// If view exists render view
-		if(View::exists($page->slug))
-			$this->layout->content = View::make($page->slug)->with('content', $page->content);
-		// If DB content exists show it
-		elseif($page->content !== '')
-			$this->layout->content = $page->content;
-		// Else return 404 page
+		// $page should never be null, but just in case
+		if($page !== null)
+		{
+			// Input Meta info if set
+			$this->layout->metaTitle = $page->meta_title;
+			$this->layout->metaDesc = $page->meta_desc;
+		
+			// If view exists render view
+			if(View::exists($page->slug))
+				$this->layout->content = View::make($page->slug)->with('content', Markdown::string($page->content));
+			// If DB content exists and a view does not, show content
+			else
+				$this->layout->content = Markdown::string($page->content);
+		}
 		else
+		{
 			return App::abort(404);
+		}
 	}
 
 	/**

@@ -3,16 +3,14 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-
-
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     @if(getenv('LARA_ENV') !== 'production')
     <meta name="robots" content="noindex, nofollow">
     @endif
-    <title></title>
-    <meta name="description" content="">
+    <title>{{ $metaTitle }}</title>
+    <meta name="description" content="{{ $metaDesc }}">
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="/bower_components/fancybox/source/jquery.fancybox.css">
@@ -52,7 +50,7 @@
                 <a href="/faq"><span><i class="show-for-small-only fa fa-question-circle fa-lg"></i><span>FAQ</span></span></a>
                 <ul class="dropdown">
                 @foreach($questions as $question)
-                  <li><a href="/faq/{{ Str::slug($question->title) }}">{{ $question->title }}</a></li>
+                  <li><a href="/faq/{{ $question->slug }}">{{ $question->title }}</a></li>
                 @endforeach
                 </ul>
               </li>
@@ -77,7 +75,7 @@
           <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       </div>
     </div><![endif]-->
-    
+
     {{ $content }}
 
     <div class="row">
@@ -147,6 +145,7 @@
     <script src="/bower_components/unveil/jquery.unveil.min.js"></script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-countdown/1.6.3/jquery.countdown.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
 
     <script src="/js/jcarousellite.min.js"></script>
     <script src="/js/masonry.pkgd.min.js"></script>

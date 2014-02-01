@@ -6,22 +6,26 @@ class QuestionCategoryTableSeeder extends Seeder {
 	{
 		QuestionCategory::create([
 			'order'		=> 5,
-			'title' 	=> 'General'
+			'title' 	=> 'General',
+			'slug' 		=> 'general'
 		]);
 
 		QuestionCategory::create([
 			'order'		=> 10,
-			'title' 	=> 'Registration'
+			'title' 	=> 'Registration',
+			'slug' 		=> 'registration'
 		]);
 
 		QuestionCategory::create([
 			'order'		=> 15,
-			'title' 	=> 'Parents & Caregivers'
+			'title' 	=> 'Parents & Caregivers',
+			'slug' 		=> 'parents-caregivers'
 		]);
 
 		QuestionCategory::create([
 			'order'		=> 20,
-			'title' 	=> 'Transport'
+			'title' 	=> 'Transport',
+			'slug' 		=> 'transport'
 		]);
 	}
 }

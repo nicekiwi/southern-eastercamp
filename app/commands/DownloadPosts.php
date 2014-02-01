@@ -4,14 +4,14 @@ use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
-class DownloadPosts extends Command {
+class DownloadPostsCommand extends Command {
 
 	/**
 	 * The console command name.
 	 *
 	 * @var string
 	 */
-	protected $name = 'download_posts';
+	protected $name = 'posts:download';
 
 	/**
 	 * The console command description.
@@ -37,7 +37,8 @@ class DownloadPosts extends Command {
 	 */
 	public function fire()
 	{
-		return Posts::download_posts();
+		$post = new Post;
+		return $post->download_posts();
 	}
 
 }

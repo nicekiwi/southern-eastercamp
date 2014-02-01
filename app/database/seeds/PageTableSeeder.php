@@ -7,7 +7,7 @@ class PageTableSeeder extends Seeder {
 		Page::create([
 			'order'				=> 0,
 			'meta_title'		=> 'Homepage',
-			'slug'				=> 'homepage',
+			'slug'				=> '/',
 			'created_by'		=> 1,
 			'updated_by'		=> 1,
 		]);
@@ -30,8 +30,8 @@ class PageTableSeeder extends Seeder {
 
 		Page::create([
 			'order'				=> 30,
-			'meta_title'		=> 'Eastercamp',
-			'slug'				=> 'information/eastercamp',
+			'meta_title'		=> 'Information',
+			'slug'				=> 'information',
 			'created_by'		=> 1,
 			'updated_by'		=> 1,
 		]);
@@ -47,7 +47,7 @@ class PageTableSeeder extends Seeder {
 		Page::create([
 			'order'				=> 50,
 			'meta_title'		=> 'Volunteer',
-			'slug'				=> 'information/volunter',
+			'slug'				=> 'information/volunteer',
 			'created_by'		=> 1,
 			'updated_by'		=> 1,
 		]);

@@ -12,6 +12,7 @@ class VideoController extends \BaseController {
 	public function index()
 	{
 		$videos = Video::orderBy('playlist_id','asc')->orderBy('order','asc')->get();
+
 		$this->layout->content = View::make('videos.index')->with(compact('videos'));
 	}
 

@@ -59,21 +59,6 @@ Route::group(array('before' => 'ip-protection'), function()
 		});
 	});
 
-	Route::get('{slug?}', 'PageController@index_public');
-
-	// Route::get('{category}/{page?}', function($page = null, $category = null)
-	// {
-	// 	if(View::exists($category)) return View::make($category);
-	// 	else if(View::exists($page)) return View::make($page);
-
-	// 	return App::abort(404);
-	// });
-
-	// Route::get('{page?}', function($page = 'home')
-	// {
-	// 	if(View::exists($page)) return View::make($page);
-
-	// 	return App::abort(404);
-	// });
+	Route::get('{slug?}/{slug2?}', 'PageController@index_public');
 });
 

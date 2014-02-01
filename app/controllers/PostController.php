@@ -34,8 +34,8 @@ class PostController extends \BaseController {
 		$posts = Post::orderBy('posted_at','desc')->paginate(15);
 
 		// Input Meta info if set
-		$this->layout->meta_title = $page->meta_title;
-		$this->layout->meta_desc = $page->meta_desc;
+		$this->layout->metaTitle = $page->meta_title;
+		$this->layout->metaDesc = $page->meta_desc;
 
 		$this->layout->content = View::make('posts.public');
 		$this->layout->content->posts = $posts;

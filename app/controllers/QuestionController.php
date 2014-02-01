@@ -17,11 +17,20 @@ class QuestionController extends \BaseController {
 
 	public function index_public($id)
 	{
+		// Set the master public Layout
+		$this->layout = View::make('layouts.master');
+
 		$question = Question::where('id',$id)->first();
 
+		// If Category does not exist, call 404
 		if(!isset($question->id)) return App::abort(404);
 
-		return View::make('questions.public')->with(compact('question'));
+		// Input Meta info if set
+		$this->layout->metaTitle = $question->question . ' - FAQ #' . $question->id;
+		$this->layout->metaDesc = substr(strip_tags($question->answer), 0, 150);
+
+		$this->layout->content = View::make('questions.public');
+		$this->layout->content->question = $question;
 	}
 
 	/**

@@ -15,6 +15,7 @@ class CreateQuestionCategoriesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->text('title')->nullable();
+			$table->text('slug')->nullable();
 			$table->string('count');
 			$table->integer('order');
 

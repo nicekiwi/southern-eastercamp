@@ -1,3 +1,5 @@
+@section('content')
+
 <div class="row">
 	<div class="small-12 columns">
 
@@ -34,3 +36,5 @@
 		</table>
 	</div>
 </div>
+
+@stop

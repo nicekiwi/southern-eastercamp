@@ -17,9 +17,20 @@ class DownloadController extends \BaseController {
 
 	public function index_public()
 	{
+		// Set the master public Layout
+		$this->layout = View::make('layouts.master');
+
+		// Get Page info from DB if it exists
+		$page = Page::where('slug', 'photos')->first();
+
 		$files = Download::orderBy('order','desc')->get();
 
-		return View::make('downloads.public')->with(compact('files'));
+		// Input Meta info if set
+		$this->layout->metaTitle = $page->meta_title;
+		$this->layout->metaDesc = $page->meta_desc;
+
+		$this->layout->content = View::make('downloads.public');
+		$this->layout->content->files = $files;
 	}
 
 	/**
