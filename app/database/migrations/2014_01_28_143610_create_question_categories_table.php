@@ -17,6 +17,9 @@ class CreateQuestionCategoriesTable extends Migration {
 			$table->text('title')->nullable();
 			$table->string('count');
 			$table->integer('order');
+
+			$table->integer('created_by')->unsigned()->nullable();
+			$table->integer('updated_by')->unsigned()->nullable();
 			
 			$table->timestamps();
 		});

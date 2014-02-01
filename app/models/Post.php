@@ -122,7 +122,7 @@ class Post extends Eloquent
 	function makePicture($input)
 	{
 		// Change file to larger extension
-		return str_replace('_s.jpg','_n.jpg', $input);
+		return str_replace('_s.jpg','_o.jpg', $input);
 	}
 
 	function extractBandcamp($input)

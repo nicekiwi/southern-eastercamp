@@ -18,6 +18,9 @@ class CreateAlbumsTable extends Migration {
 			$table->string('year');
 			$table->string('count');
 			$table->string('public');
+
+			$table->integer('created_by')->unsigned()->nullable();
+			$table->integer('updated_by')->unsigned()->nullable();
 			
 			$table->timestamps();
 		});

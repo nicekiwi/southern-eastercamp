@@ -15,16 +15,19 @@ class CreatePagesTable extends Migration {
 		{
 			$table->increments('id');
 
+			$table->integer('order');
 			$table->string('meta_title');
 			$table->string('meta_desc');
 			$table->string('slug');
 
 			$table->text('content');
 			$table->integer('updated_by')->unsigned()->nullable();
+			$table->integer('created_by')->unsigned()->nullable();
 			
 			$table->timestamps();
 
 			$table->foreign('updated_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
+			$table->foreign('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
 		});
 	}
 

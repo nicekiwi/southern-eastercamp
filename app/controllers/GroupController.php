@@ -2,6 +2,8 @@
 
 class GroupController extends \BaseController {
 
+	protected $layout = 'layouts.admin';
+
 	/**
 	 * Display a listing of the resource.
 	 *

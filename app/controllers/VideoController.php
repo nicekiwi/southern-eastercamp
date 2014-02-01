@@ -51,7 +51,7 @@ class VideoController extends \BaseController {
 
 		// process the login
 		if ($validator->fails()) {
-			Session::flash('error_message', 'Validation Error');
+			Session::flash('error_message', 'Validation error, please check all required fields.');
 			return Redirect::to('admin/videos/create')
 				->withErrors($validator)
 				->withInput(Input::except('password'));
@@ -120,7 +120,7 @@ class VideoController extends \BaseController {
 
 		// process the login
 		if ($validator->fails()) {
-			Session::flash('error_message', 'Validation Error');
+			Session::flash('error_message', 'Validation error, please check all required fields.');
 			return Redirect::to('admin/videos/'. $id .'/edit')
 				->withErrors($validator)
 				->withInput(Input::except('password'));

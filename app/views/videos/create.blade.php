@@ -7,7 +7,7 @@
 		{{ Form::open([ 'method' => 'POST', 'route' => 'admin.videos.store' ]) }}
 
 
-		{{ Form::select('playlist_id', $playlists/* , Input::old('playlist')*/) }}
+		{{ Form::select('playlist_id', $playlists) }}
 
 		{{ Form::text('title'); }}
 		{{ Form::text('url'); }}

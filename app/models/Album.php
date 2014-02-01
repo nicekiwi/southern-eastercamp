@@ -36,5 +36,15 @@ class Album extends Eloquent {
     {
         return $this->hasMany('Photo','album_id');
     }
+    
+    public function updatedBy()
+    {
+        return $this->hasOne('User','id','updated_by');
+    }
+
+    public function createdBy()
+    {
+        return $this->hasOne('User','id','created_by');
+    }
 
 }

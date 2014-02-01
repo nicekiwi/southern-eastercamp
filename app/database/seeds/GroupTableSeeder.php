@@ -13,7 +13,7 @@ class GroupTableSeeder extends Seeder {
 		Group::create([
 			'id'				=> 10,
 			'title'				=> 'Power Users',
-			'permissions'		=> 'Access to everything except Users.',
+			'permissions'		=> 'Access to everything except Adding/Removing Pages, Users and Groups.',
 		]);
 	}
 }

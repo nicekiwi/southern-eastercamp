@@ -19,6 +19,9 @@ class CreateVideosTable extends Migration {
 			$table->string('url')->unique();
 			$table->string('title');
 			$table->integer('public');
+
+			$table->integer('created_by')->unsigned()->nullable();
+			$table->integer('updated_by')->unsigned()->nullable();
 			
 			$table->timestamps();
 		});

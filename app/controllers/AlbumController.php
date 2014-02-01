@@ -36,6 +36,7 @@ class AlbumController extends \BaseController {
 
 		$existing = [];
 
+		// filter albums so only un-used albums show up
 		foreach (Album::get() as $list) {
 			foreach (json_decode($list->albums) as $id) {
 				array_push($existing, $id);
@@ -63,7 +64,7 @@ class AlbumController extends \BaseController {
 
 		// process the login
 		if ($validator->fails()) {
-			Session::flash('error_message', 'Validation Error');
+			Session::flash('error_message', 'Validation error, please check all required fields.');
 			return Redirect::to('admin/albums/create')
 				->withErrors($validator)
 				->withInput(Input::except('password'));
@@ -97,7 +98,9 @@ class AlbumController extends \BaseController {
 				$photo->fb_photo_id = $fb_photo['id'];
 				$photo->width 		= $fb_photo['width'];
 				$photo->height 		= $fb_photo['height'];
-				$photo->picture 	= $fb_photo['picture'];
+
+				$post = new Post;
+				$photo->picture 	= $post->makePicture($fb_photo['picture']);
 
 				$photo->save();
 			}

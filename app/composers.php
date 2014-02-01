@@ -12,6 +12,13 @@ View::composer('layouts.master', function($view)
     $view->with(compact(['browser','questions']));
 });
 
+// View::composer('*', function($view)
+// {
+// 	$page = Page::where('slug', Request::path())->first();
+
+// 	$view->with(compact('page'));
+// });
+
 View::composer('partials.footer-photos', function($view)
 {
 	$photos = Photo::where('album_id','10151439168936716')

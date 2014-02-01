@@ -19,6 +19,9 @@ class CreateWallpapersTable extends Migration {
 			$table->string('title');
 			$table->integer('size');
 			$table->string('public');
+
+			$table->integer('created_by')->unsigned()->nullable();
+			$table->integer('updated_by')->unsigned()->nullable();
 			
 			$table->timestamps();
 		});

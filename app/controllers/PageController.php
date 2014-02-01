@@ -2,6 +2,8 @@
 
 class PageController extends \BaseController {
 
+	protected $layout = 'layouts.admin';
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,7 +11,9 @@ class PageController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$pages = Page::orderBy('order','asc')->get();
+
+		$this->layout->content = View::make('pages.index')->with(compact('pages'));
 	}
 
 	/**
