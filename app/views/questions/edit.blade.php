@@ -6,23 +6,40 @@
 
 		{{ Form::model($question, [ 'method' => 'PATCH', 'route' => ['admin.questions.update', $question->id] ]) }}
 
-		{{ Form::label('order', 'Display Order:') }}
-		{{ Form::text('order'); }}
+		<div class="row">
+			<div class="small-12 medium-4 columns">
+				{{ Form::label('category_id', 'Category:') }}
+				{{ Form::select('category_id', $categories) }}
+			</div>
 
-		{{ Form::label('category_id', 'Category:') }}
-		{{ Form::select('category_id', $categories) }}
+			<div class="small-12 medium-4 columns">
+				{{ Form::label('order', 'Display Order:') }}
+				{{ Form::text('order'); }}
+			</div>
 
-		{{ Form::label('question', 'Question:') }}
-		{{ Form::text('question'); }}
+			<div class="small-12 medium-4 columns">
+		      {{ Form::label('public', 'Dislpay:') }}
+		      {{ Form::checkbox('public', 1, true); }}
+		      {{ Form::label('public', 'Dislpay Publicly:') }}
+		    </div>
+		</div>
 
-		{{ Form::label('answer', 'Answer:') }}
-		{{ Form::textarea('answer', $value = null, ['class' => 'content-editor']); }}
-		<div id="content-editor"></div>
+		<div class="row">
+			<div class="small-12 columns">
+				{{ Form::label('question', 'Question:') }}
+				{{ Form::text('question'); }}
 
-		{{ Form::label('public', 'Dislpay Publicly:') }}
-		{{ Form::checkbox('public', 1, true); }}
+				{{ Form::label('answer', 'Answer:') }}
+				{{ Form::textarea('answer', $value = null, ['class' => 'redactor-editor']); }}
+			</div>
+		</div>
 
-		{{ Form::submit('Add Question') }}
+		<div class="row" style="margin-top:10px;">
+			<div class="small-12 columns">
+				{{ Form::submit('Update Question', ['class' => 'button']) }}
+				<a href="/admin/questions" class="button alert">Cancel</a>
+			</div>
+		</div>
 		    
 		{{ Form::close() }}
 	</div>

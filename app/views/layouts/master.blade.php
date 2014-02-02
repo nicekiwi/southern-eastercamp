@@ -148,7 +148,6 @@
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
 
     <script src="/js/jcarousellite.min.js"></script>
-    <script src="/js/masonry.pkgd.min.js"></script>
 
     <script src="/js/app.js"></script>
   </body>

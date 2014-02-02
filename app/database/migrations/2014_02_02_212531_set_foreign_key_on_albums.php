@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class SetForeignKeyOnVideos extends Migration {
+class SetForeignKeyOnAlbums extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -11,9 +12,8 @@ class SetForeignKeyOnVideos extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('videos', function($table)
+		Schema::table('albums', function($table)
 		{
-			$table->foreign('playlist_id')->references('id')->on('playlists')->onUpdate('cascade')->onDelete('set null');
 			$table->foreign('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
 			$table->foreign('updated_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
 		});
@@ -26,9 +26,8 @@ class SetForeignKeyOnVideos extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('videos', function($table)
+		Schema::table('albums', function($table)
 		{
-			$table->dropForeign('videos_playlist_id_foreign');
 			$table->dropForeign('created_by_id_foreign');
 			$table->dropForeign('updated_by_id_foreign');
 		});

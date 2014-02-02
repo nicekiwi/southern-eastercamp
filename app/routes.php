@@ -31,6 +31,7 @@ Route::group(array('before' => 'ip-protection'), function()
 	Route::get('login', 'SessionsController@create');
 	Route::get('logout', 'SessionsController@destroy');
 
+	Route::resource('contact', 'ContactController');
 	Route::resource('sessions', 'SessionsController');
 
 	Route::group(['prefix' => 'admin', 'before' => 'auth'], function()

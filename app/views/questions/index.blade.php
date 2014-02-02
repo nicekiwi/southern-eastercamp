@@ -10,26 +10,25 @@
 		<table width="100%">
 			<thead>
 				<tr>
-					<td>Order</td>
-					<td>Title</td>
 					<td>Category</td>
-					<td>Added</td>
-					<td>x</td>
+					<td>Title</td>
+					<td>Updated</td>
+					<td></td>
 				</tr>
 			</thead>
 
 			<tbody>
 				@foreach($questions as $question)
 				<tr>
-					<td>{{ $question->order }}</td>
-					<td><a href="/admin/questions/{{ $question->id }}/edit">{{ $question->question }}</a></td>
-					@if(isset($question->category->title))
 					<td>{{ $question->category->title }}</td>
-					@else 
-					<td></td>
-					@endif
-					<td>{{ $question->created_at->diffForHumans() }}</td>
-					<td>delete_btn</td>
+					<td><a href="/admin/questions/{{ $question->id }}/edit">{{ $question->question }}</a></td>
+					<td>{{ $question->updated_at->diffForHumans() }} by {{ $question->updatedBy->first_name }} {{ $question->updatedBy->last_name }}</td>
+					<td>
+						{{ Form::open(array('url' => '/admin/questions/' . $question->id, 'class' => 'pull-right')) }}
+							{{ Form::hidden('_method', 'DELETE') }}
+							{{ Form::submit('X', array('class' => 'button tiny alert')) }}
+						{{ Form::close() }}
+					</td>
 				</tr>
 				@endforeach
 			</tbody>

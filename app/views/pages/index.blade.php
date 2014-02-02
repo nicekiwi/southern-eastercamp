@@ -24,6 +24,12 @@
 					<td>{{ $page->slug }}</td>
 					<td><a href="/admin/pages/{{ $page->id }}/edit">{{ $page->meta_title }}</a></td>
 					<td>{{ $page->updated_at->diffForHumans() }} by {{ $page->updatedBy->first_name }} {{ $page->updatedBy->last_name }}</td>
+					<td>
+						{{ Form::open(array('url' => '/admin/pages/' . $page->id, 'class' => 'pull-right')) }}
+							{{ Form::hidden('_method', 'DELETE') }}
+							{{ Form::submit('X', array('class' => 'button tiny alert')) }}
+						{{ Form::close() }}
+					</td>
 				</tr>
 				@endforeach
 			</tbody>

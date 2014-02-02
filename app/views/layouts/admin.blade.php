@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/bower_components/fancybox/source/jquery.fancybox.css">
     <link rel="stylesheet" href="/bower_components/components-font-awesome/css/font-awesome.min.css">
 
-    <link href="/css/app.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/css/app-admin.css" media="screen, projection" rel="stylesheet" type="text/css" />
 
     <script src="/bower_components/modernizr/modernizr.js"></script>
   </head>
@@ -101,9 +101,10 @@
     <script src="/bower_components/fancybox/source/helpers/jquery.fancybox-media.js"></script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.01/ace.js" type="text/javascript"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.01/mode-markdown.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.01/mode-html.js" type="text/javascript"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.01/theme-monokai.js" type="text/javascript"></script>
 
+    <script src="/js/redactor.min.js"></script>
     <script src="/js/app-admin.js"></script>
   </body>
 </html>

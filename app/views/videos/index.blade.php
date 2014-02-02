@@ -28,8 +28,13 @@
 					<td><a class="fancybox" data-title="{{ $video->title }}" href="http://www.youtube.com/watch?v={{ $video->url }}">{{ $video->url }}</a></td>
 					<td>{{ $video->playlist->title }}</td>
 					<td>{{ $video->public }}</td>
-					<td>{{ $video->created_at->diffForHumans() }}</td>
-					<td>delete_btn</td>
+					<td>{{ $video->updated_at->diffForHumans() }} by {{ $video->updatedBy->first_name }} {{ $video->updatedBy->last_name }}</td>
+					<td>
+						{{ Form::open(array('url' => '/admin/videos/' . $video->id, 'class' => 'pull-right')) }}
+							{{ Form::hidden('_method', 'DELETE') }}
+							{{ Form::submit('X', array('class' => 'button tiny alert')) }}
+						{{ Form::close() }}
+					</td>
 				</tr>
 				@endforeach
 			</tbody>

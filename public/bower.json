@@ -6,6 +6,7 @@
     "foundation": "zurb/bower-foundation",
     "components-font-awesome": "*",
     "fancybox": "*",
-    "unveil": "*"
+    "unveil": "*",
+    "datatables": "*"
   }
 }

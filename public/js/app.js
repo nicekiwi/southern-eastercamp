@@ -180,11 +180,7 @@ $(document).ready(function()
   });
 
   $("img.gallery-photo").unveil(100);
-  //$('.ec-triangles').parallax("50%", 0.4);
 
-  // $('#news-posts').masonry({
-  //   itemSelector: '.news-post',
-  //   transitionDuration: 0
-  // });
+  if($('#sender_question').length > 0){$('#sender_question').livesearch({searchCallback: searchFunction,queryDelay: 250,});}
 });
 

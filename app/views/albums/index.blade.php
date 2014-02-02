@@ -24,8 +24,13 @@
 					<td>{{ count(explode(',', $album->albums)) }}</td>
 					<td><a href="/admin/albums/{{ $album->id }}/edit">Eastercamp {{ $album->year }}</a></td>
 					<td>{{ $album->count }}</td>
-					<td>{{ $album->created_at->diffForHumans() }}</td>
-					<td>delete_btn</td>
+					<td>{{ $album->updated_at->diffForHumans() }} by {{ $album->updatedBy->first_name }} {{ $album->updatedBy->last_name }}</td>
+					<td>
+						{{ Form::open(array('url' => '/admin/albums/' . $album->id, 'class' => 'pull-right')) }}
+							{{ Form::hidden('_method', 'DELETE') }}
+							{{ Form::submit('X', array('class' => 'button tiny alert')) }}
+						{{ Form::close() }}
+					</td>
 				</tr>
 			@endforeach
 			</tbody>

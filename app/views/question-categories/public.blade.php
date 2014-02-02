@@ -1,16 +1,28 @@
 <div class="row">
 	<div class="small-12 columns">
 
-		@foreach ($categories as $category)
-		<h2>{{ $category->title }} Questions</h2>
-		
-		<ul class="small-block-grid-1 medium-block-grid-2">
-			@foreach ($category->questions as $question)
-			@if($question->public === 1)
-			<li><a href="/faq/question/{{ $question->id }}">{{ $question->question }}</a></li>
-			@endif
-			@endforeach
-		</ul>
-		@endforeach
+		<h1>Frquently Asked Questions</h1>
+
+		<table id="faq-table">
+			<thead>
+				<tr>
+					<td>Category</td>
+					<td>Question</td>
+				</tr>
+			</thead>
+
+			<tbody>
+				@foreach ($categories as $category)
+				@foreach ($category->questions as $question)
+				@if($question->public === 1)
+				<tr>
+					<td>{{ $category->title }}</td>
+					<td><a href="/faq/question/{{ $question->id }}">{{ $question->question }}</a></td>
+				</tr>
+				@endif
+				@endforeach
+				@endforeach
+			</tbody>
+		</table>
 	</div>
 </div>

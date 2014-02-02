@@ -33,10 +33,10 @@ class PageController extends \BaseController {
 		
 			// If view exists render view
 			if(View::exists($page->slug))
-				$this->layout->content = View::make($page->slug)->with('content', Markdown::string($page->content));
+				$this->layout->content = View::make($page->slug)->with('content', $page->content);
 			// If DB content exists and a view does not, show content
 			else
-				$this->layout->content = Markdown::string($page->content);
+				$this->layout->content = $page->content;
 		}
 		else
 		{
