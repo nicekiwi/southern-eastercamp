@@ -59,7 +59,7 @@ class QuestionController extends \BaseController {
 		// validate
 		// read more on validation at http://laravel.com/docs/validation
 		$rules = array(
-			'question'      => 'required|unique:questions',
+			'question'      => 'required',
 			'answer'      	=> 'required',
 			'order'      	=> 'required'
 		);
@@ -78,6 +78,7 @@ class QuestionController extends \BaseController {
 		$question = new Question;
 		$question->question = Input::get('question');
 		$question->answer = Input::get('answer');
+		$question->public = Input::get('public');
 		$question->order = Input::get('order');
 
 		$question->category_id = Input::get('category_id');
@@ -126,7 +127,7 @@ class QuestionController extends \BaseController {
 		// validate
 		// read more on validation at http://laravel.com/docs/validation
 		$rules = array(
-			'question'      => 'required|unique,question,' . $id,
+			'question'      => 'required',
 			'answer'      	=> 'required',
 			'order'      	=> 'required'
 		);
@@ -145,6 +146,7 @@ class QuestionController extends \BaseController {
 		$question = Question::findOrFail($id);
 		$question->question = Input::get('question');
 		$question->answer = Input::get('answer');
+		$question->public = Input::get('public');
 		$question->order = Input::get('order');
 
 		$question->category_id = Input::get('category_id');

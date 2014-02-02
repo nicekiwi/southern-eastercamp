@@ -25,14 +25,14 @@ class AlbumController extends \BaseController {
 
 		// Get Album info
 		if($year === null)
-			$album_id = Album::orderBy('year','desc')->take(1)->pluck('id');
+			$album = Album::orderBy('year', 'desc')->first();
 		else
-			$album_id = Album::where('year',$year)->pluck('id');
+			$album = Album::where('year', $year)->first();
 
-		if($album_id === null)
+		if($album === null)
 			return App::abort(404);
 
-		$photos = Photo::where('album_id',$album_id)->paginate(150);
+		$photos = Photo::where('album_id',$album->id)->paginate(150);
 
 		// Input Meta info if set
 		$this->layout->metaTitle = $page->meta_title;
@@ -40,6 +40,7 @@ class AlbumController extends \BaseController {
 
 		$this->layout->content = View::make('albums.public');
 		$this->layout->content->photos = $photos;
+		$this->layout->content->album = $album;
 	}
 
 	/**

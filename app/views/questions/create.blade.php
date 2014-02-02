@@ -16,7 +16,8 @@
 		{{ Form::text('question'); }}
 
 		{{ Form::label('answer', 'Answer:') }}
-		{{ Form::textarea('answer'); }}
+		{{ Form::textarea('answer', $value = null, ['class' => 'content-editor']); }}
+		<div id="content-editor"></div>
 
 		{{ Form::label('public', 'Dislpay Publicly:') }}
 		{{ Form::checkbox('public', 1, true); }}

@@ -140,3 +140,12 @@ img.grayscale:hover {
     filter: none;
     -webkit-filter: grayscale(0%);
 }
+
+#content-editor { 
+  position: relative;
+  min-height: 350px;
+}
+
+.center {
+  text-align: center;
+}

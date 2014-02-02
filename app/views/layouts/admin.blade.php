@@ -100,11 +100,10 @@
     <script src="/bower_components/fancybox/source/jquery.fancybox.js"></script>
     <script src="/bower_components/fancybox/source/helpers/jquery.fancybox-media.js"></script>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-countdown/1.6.3/jquery.countdown.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.01/ace.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.01/mode-markdown.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.01/theme-monokai.js" type="text/javascript"></script>
 
-    <script src="/js/jcarousellite.min.js"></script>
-    <script src="/js/masonry.pkgd.min.js"></script>
-
-    <script src="/js/app.js"></script>
+    <script src="/js/app-admin.js"></script>
   </body>
 </html>
