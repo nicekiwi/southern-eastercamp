@@ -1,9 +1,9 @@
 {{ $content }}
 
 <div class="row">
-	<div class="small-12 medium-12 columns">
+	<div class="small-12 medium-6 columns">
 
-		{{ Form::open([ 'method' => 'POST', 'route' => 'contact', 'id' => 'contact-form']) }}
+		{{ Form::open([ 'method' => 'POST', 'route' => 'contact.store', 'id' => 'contact-form']) }}
 
 		<div class="row">
 			<div class="small-12 medium-6 columns">

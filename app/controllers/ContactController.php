@@ -4,13 +4,6 @@ class ContactController extends \BaseController {
 
 	public function index()
 	{
-		if(Input::old('_token') === Session::get('_token'))
-		{
-			// Prevent use pressing back button to resend the form
-	    	Session::put('_token', sha1(microtime()));
-			return Redirect::to('contact');
-		}
-
 		// Set the master public Layout
 		$this->layout = View::make('layouts.master');
 
@@ -63,6 +56,16 @@ class ContactController extends \BaseController {
 	    	'sender_question' 	=> filter_var(Input::get('sender_question'), FILTER_SANITIZE_STRING),
 	    	'sender_message' 	=> filter_var(Input::get('sender_message'), FILTER_SANITIZE_STRING)
 	    ];
+
+	    // Make MD5 string of the form values
+	    $cookie_value = md5($data['sender_name'] . $data['sender_email'] . $data['sender_question'] . $data['sender_message']);
+
+	    // If combined form MD5 is the same as the last submission, reject.
+	    if(!is_null(Cookie::get('contact-token')) && Cookie::get('contact-token') === $cookie_value)
+		{
+			Session::flash('error_message', 'You may not send duplicate messages.');
+			return Redirect::to('contact');
+		}
 		
 		// Validation has succeeded. Send message.
 	    Mail::queue('emails.contact.new-message', $data, function($message) use ($data)
@@ -81,9 +84,12 @@ class ContactController extends \BaseController {
 		    		->subject('Thanks for contacting the EC Office');
 		});
 
+	    // Make cookie to prevent multi submissions
+		$cookie = Cookie::make('contact-token', $cookie_value, 2);
+
 	    // Send user to confirmation page
         Session::flash('success_message', 'Awesome! Your message has been successfully sent.');
-		return Redirect::to('contact');
+		return Redirect::to('contact')->withCookie($cookie);
 	}
 
 }
