@@ -22,6 +22,8 @@ class Post extends Eloquent
 
 		$facebook_posts = $facebook_posts['data'];
 
+		dd($facebook_posts);
+
 		// Make sure facebook returned some posts
 		if(count($facebook_posts) === 0) return false;
 
