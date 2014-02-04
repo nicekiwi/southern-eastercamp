@@ -28,9 +28,8 @@ class Post extends Eloquent
 		// Prepre $local_post for db insertion.
 		foreach($facebook_posts as $facebook_post)
 		{
-			echo Post::where('fb_id', $facebook_post['id'])->count();
 			// Check if post is already in database by id
-			if(Post::where('fb_id', $facebook_post['id'])->count() === 0) {
+			if(Post::where('fb_id', $facebook_post['id'])->count() == 0) {
 
 				// Setup new post
 				$local_post = new Post;
@@ -100,9 +99,6 @@ class Post extends Eloquent
 				// Save new Post.
 				$local_post->save();
 			}
-
-			dd('here');
-
 		}
 	}
 
