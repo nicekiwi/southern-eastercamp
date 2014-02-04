@@ -6,7 +6,11 @@
 	<div class="small-12 columns">
 		<p>Yay admin..</p>
 
-		<p>Enviroment = "{{ App::environment('LARA_ENV'); }}".</p>
+		<p>PHP Enviroment = "{{ getenv('LARA_ENV'); }}".<br>Laravel Enviroment = "{{ App::environment(); }}".</p>
+
+		@if(App::environment('staging'))
+			meow
+		@endif
 	</div>
 </div>
 
