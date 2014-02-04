@@ -1,5 +1,7 @@
 <div class="small-12 medium-6 columns">
+	@if(@is_null($video))
 	<a class="fancybox" data-title="{{ $video->title }}" href="http://www.youtube.com/watch?v={{ $video->url }}"><img class="th" src="http://i.ytimg.com/vi/{{ $video->url }}/hqdefault.jpg"></a>
+	@endif
 </div>
 
 <div class="small-12 medium-6 columns">
