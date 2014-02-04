@@ -1,6 +1,6 @@
 <?php
 
-class DownloadController extends \BaseController {
+class WallpaperController extends \BaseController {
 
 	protected $layout = 'layouts.admin';
 

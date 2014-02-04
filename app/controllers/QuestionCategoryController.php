@@ -90,6 +90,7 @@ class QuestionCategoryController extends \BaseController {
 		$category->title 	= Input::get('title');
 		$category->slug 	= Str::slug(Input::get('title'));
 		$category->order 	= Input::get('order');
+		$category->created_by = Auth::user()->id;
 
 		$category->save();
 
@@ -150,6 +151,7 @@ class QuestionCategoryController extends \BaseController {
 		$category->title 	= Input::get('title');
 		$category->slug 	= Str::slug(Input::get('title'));
 		$category->order 	= Input::get('order');
+		$category->updated_by = Auth::user()->id;
 
 		$category->save();
 

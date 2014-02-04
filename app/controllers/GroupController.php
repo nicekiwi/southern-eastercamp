@@ -81,7 +81,7 @@ class GroupController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$group = Groups::findOrFail($id);
+		$group = Group::findOrFail($id);
 		$this->layout->content = View::make('groups.edit')->with(compact('group'));
 	}
 

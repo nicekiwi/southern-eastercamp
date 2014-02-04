@@ -13,8 +13,8 @@
 					<td>Sets</td>
 					<td>Title / Year</td>
 					<td>Photos</td>
-					<td>Added</td>
-					<td>x</td>
+					<td>Last Updated</td>
+					<td></td>
 				</tr>
 			</thead>
 
@@ -24,7 +24,11 @@
 					<td>{{ count(explode(',', $album->albums)) }}</td>
 					<td><a href="/admin/albums/{{ $album->id }}/edit">Eastercamp {{ $album->year }}</a></td>
 					<td>{{ $album->count }}</td>
+					@if(!is_null($album->updated_by))
 					<td>{{ $album->updated_at->diffForHumans() }} by {{ $album->updatedBy->first_name }} {{ $album->updatedBy->last_name }}</td>
+					@else
+						<td>{{ $album->created_at->diffForHumans() }} by {{ $album->createdBy->first_name }} {{ $album->createdBy->last_name }}</td>
+					@endif
 					<td>
 						{{ Form::open(array('url' => '/admin/albums/' . $album->id, 'class' => 'pull-right')) }}
 							{{ Form::hidden('_method', 'DELETE') }}

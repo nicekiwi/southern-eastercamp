@@ -13,7 +13,7 @@
 					<td>Order</td>
 					<td>Slug</td>
 					<td>Title</td>
-					<td>Updated</td>
+					<td>Last Updated</td>
 				</tr>
 			</thead>
 
@@ -23,7 +23,11 @@
 					<td>{{ $page->order }}</td>
 					<td>{{ $page->slug }}</td>
 					<td><a href="/admin/pages/{{ $page->id }}/edit">{{ $page->meta_title }}</a></td>
+					@if(!is_null($page->updated_by))
 					<td>{{ $page->updated_at->diffForHumans() }} by {{ $page->updatedBy->first_name }} {{ $page->updatedBy->last_name }}</td>
+					@else
+						<td>{{ $page->created_at->diffForHumans() }} by {{ $page->createdBy->first_name }} {{ $page->createdBy->last_name }}</td>
+					@endif
 					<td>
 						{{ Form::open(array('url' => '/admin/pages/' . $page->id, 'class' => 'pull-right')) }}
 							{{ Form::hidden('_method', 'DELETE') }}

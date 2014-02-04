@@ -66,6 +66,7 @@ class VideoController extends \BaseController {
 		$video->public = Input::get('public');
 
 		$video->playlist_id = Input::get('playlist_id');
+		$video->created_by = Auth::user()->id;
 
 		$video->save();
 
@@ -135,6 +136,7 @@ class VideoController extends \BaseController {
 		$video->public = Input::get('public');
 
 		$video->playlist_id = Input::get('playlist_id');
+		$video->updated_by = Auth::user()->id;
 
 		$video->save();
 

@@ -12,7 +12,7 @@
 				<tr>
 					<td>Category</td>
 					<td>Title</td>
-					<td>Updated</td>
+					<td>Last Updated</td>
 					<td></td>
 				</tr>
 			</thead>
@@ -22,7 +22,11 @@
 				<tr>
 					<td>{{ $question->category->title }}</td>
 					<td><a href="/admin/questions/{{ $question->id }}/edit">{{ $question->question }}</a></td>
+					@if(!is_null($question->updated_by))
 					<td>{{ $question->updated_at->diffForHumans() }} by {{ $question->updatedBy->first_name }} {{ $question->updatedBy->last_name }}</td>
+					@else
+						<td>{{ $question->created_at->diffForHumans() }} by {{ $question->createdBy->first_name }} {{ $question->createdBy->last_name }}</td>
+					@endif
 					<td>
 						{{ Form::open(array('url' => '/admin/questions/' . $question->id, 'class' => 'pull-right')) }}
 							{{ Form::hidden('_method', 'DELETE') }}

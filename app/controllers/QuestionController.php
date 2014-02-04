@@ -82,6 +82,7 @@ class QuestionController extends \BaseController {
 		$question->order = Input::get('order');
 
 		$question->category_id = Input::get('category_id');
+		$question->created_by = Auth::user()->id;
 
 		$question->save();
 
@@ -150,6 +151,7 @@ class QuestionController extends \BaseController {
 		$question->order = Input::get('order');
 
 		$question->category_id = Input::get('category_id');
+		$question->updated_by = Auth::user()->id;
 
 		$question->save();
 

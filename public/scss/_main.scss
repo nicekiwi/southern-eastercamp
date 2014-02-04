@@ -141,6 +141,14 @@ img.grayscale:hover {
     -webkit-filter: grayscale(0%);
 }
 
+.supporter-img {
+  opacity: 0.8;
+}
+
+.supporter-img:hover {
+  opacity: 1;
+}
+
 #content-editor { 
   position: relative;
   min-height: 350px;

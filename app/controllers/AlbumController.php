@@ -128,6 +128,8 @@ class AlbumController extends \BaseController {
 
 		$album = Album::find($album_id);
 		$album->count = $photo_count;
+		$album->created_by = Auth::user()->id;
+
 		$album->save();
 
 		// redirect

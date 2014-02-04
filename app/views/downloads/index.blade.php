@@ -25,10 +25,14 @@
 				@foreach($files as $file)
 				<tr>
 					<td>{{ $file->order }}</td>
-					<td><a href="/admin/videos/{{ $file->id }}/edit">{{ $file->title }}</a></td>
+					<td><a href="/admin/downloads/{{ $file->id }}/edit">{{ $file->title }}</a></td>
 					<td><a target="_blank" href="{{ $file->url }}">{{ $file->url }}</a></td>
 					<td>{{ $file->public }}</td>
+					@if(!is_null($file->updated_by))
 					<td>{{ $file->updated_at->diffForHumans() }} by {{ $file->updatedBy->first_name }} {{ $file->updatedBy->last_name }}</td>
+					@else
+						<td>{{ $file->created_at->diffForHumans() }} by {{ $file->createdBy->first_name }} {{ $file->createdBy->last_name }}</td>
+					@endif
 					<td>
 						{{ Form::open(array('url' => '/admin/downloads/' . $file->id, 'class' => 'pull-right')) }}
 							{{ Form::hidden('_method', 'DELETE') }}

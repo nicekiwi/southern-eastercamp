@@ -22,7 +22,7 @@
 		{{ Form::text('type'); }}
 
 		{{ Form::label('public', 'Display Publicly:') }}
-		{{ Form::checkbox('public', 1, true); }}
+		{{ Form::checkbox('public', 1); }}
 
 		{{ Form::submit('Update Download') }}
 		    

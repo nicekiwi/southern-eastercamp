@@ -65,6 +65,7 @@ class PlaylistController extends \BaseController {
 		$playlist = new Playlist;
 		$playlist->title = Input::get('title');
 		$playlist->order = Input::get('order');
+		$playlist->created_by = Auth::user()->id;
 
 		$playlist->save();
 
@@ -124,6 +125,7 @@ class PlaylistController extends \BaseController {
 		$playlist = Playlist::findOrFail($id);
 		$playlist->title = Input::get('title');
 		$playlist->order = Input::get('order');
+		$playlist->updated_by = Auth::user()->id;
 
 		$playlist->save();
 

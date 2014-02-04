@@ -28,7 +28,11 @@
 					<td><a class="fancybox" data-title="{{ $video->title }}" href="http://www.youtube.com/watch?v={{ $video->url }}">{{ $video->url }}</a></td>
 					<td>{{ $video->playlist->title }}</td>
 					<td>{{ $video->public }}</td>
+					@if(!is_null($video->updated_by))
 					<td>{{ $video->updated_at->diffForHumans() }} by {{ $video->updatedBy->first_name }} {{ $video->updatedBy->last_name }}</td>
+					@else
+						<td>{{ $video->created_at->diffForHumans() }} by {{ $video->createdBy->first_name }} {{ $video->createdBy->last_name }}</td>
+					@endif
 					<td>
 						{{ Form::open(array('url' => '/admin/videos/' . $video->id, 'class' => 'pull-right')) }}
 							{{ Form::hidden('_method', 'DELETE') }}

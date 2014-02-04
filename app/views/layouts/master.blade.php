@@ -91,18 +91,11 @@
     <div class="row">
       <div class="small-12 columns">
         <h3>Proudly Supported by</h3>
-        <div class="supporters-list">
-          <div class="jCarouselLite">
-            <ul>
-              <li><img class="grayscale" src="/img/supporters/nz-police.jpg" alt="slide 1" /></li>
-              <li><img class="grayscale" src="/img/supporters/nz-police.jpg" alt="slide 1" /></li>
-              <li><img class="grayscale" src="/img/supporters/nz-police.jpg" alt="slide 1" /></li>
-              <li><img class="grayscale" src="/img/supporters/nz-police.jpg" alt="slide 1" /></li>
-              <li><img class="grayscale" src="/img/supporters/nz-police.jpg" alt="slide 1" /></li>
-            </ul>
-          </div>
-        </div>
-        
+        <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-7">
+          @foreach($supporters as $supporter)
+          <li><a target="_blank" href="{{ $supporter->url }}"><img class="grayscale supporter-img" src="/img/supporters/{{ $supporter->slug }}.jpg" /></a></li>
+          @endforeach
+        </ul>        
       </div>
     </div>
 
