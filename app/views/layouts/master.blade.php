@@ -78,32 +78,17 @@
 
     {{ $content }}
 
-    <div class="row">
-      <div class="small-12 medium-4 columns">
-        @include('partials.footer-video')
-      </div>
-
-      <div class="small-12 medium-8 columns">
-        @include('partials.footer-photos')
-      </div>
-    </div>
+    
 
     <div class="row">
       <div class="small-12 columns">
-        <h3>Proudly Supported by</h3>
-        <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-7">
-          @foreach($supporters as $supporter)
-          <li><a target="_blank" href="{{ $supporter->url }}"><img class="grayscale supporter-img" src="/img/supporters/{{ $supporter->slug }}.jpg" /></a></li>
-          @endforeach
-        </ul>        
+        @include('partials.footer-supporters')        
       </div>
     </div>
 
     <section class="footer-first">
       <div class="row">
-        <div class="small-12 columns">
-          <p>Some kinda media content</p>
-        </div>
+        @include('partials.footer-media')
       </div>
     </section>
 

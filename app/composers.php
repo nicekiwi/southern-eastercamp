@@ -5,17 +5,19 @@
 View::composer('layouts.master', function($view)
 {
     $questions = QuestionCategory::orderBy('order','asc')->get(['title','slug']);
-    $supporters = Supporter::orderBy(DB::raw('RAND()'))->take(7)->get();
-
-    $view->with(compact('questions','supporters'));
+    $view->with(compact('questions'));
 });
 
-View::composer('partials.footer-photos', function($view)
+View::composer('partials.footer-media', function($view)
 {
-	$photos = Photo::where('album_id','2')
-					->orderBy(DB::raw('RAND()'))
-					->take(12)
-					->get();
+	$photos = Photo::where('album_id','1')->orderBy(DB::raw('RAND()'))->take(4)->get();
+	$video = Video::orderBy(DB::raw('RAND()'))->first();
 
-	$view->with('photos', $photos);
+	$view->with(compact('photos','video'));
+});
+
+View::composer('partials.footer-supporters', function($view)
+{
+	$supporters = Supporter::orderBy(DB::raw('RAND()'))->take(7)->get();
+	$view->with(compact('supporters'));
 });

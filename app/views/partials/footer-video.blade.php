@@ -1,1 +1,0 @@
-<img class="th" data-original="http://i.ytimg.com/vi/ADujDniSYNA/hqdefault.jpg" alt="Eastercamp 2011: Highlights Mix #3 Thumbnail" src="http://i.ytimg.com/vi/ADujDniSYNA/hqdefault.jpg" style="display: inline;">
