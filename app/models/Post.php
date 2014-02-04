@@ -100,10 +100,9 @@ class Post extends Eloquent
 				// Save new Post.
 				$local_post->save();
 			}
-			else
-			{
-				dd('here');
-			}
+
+			dd('here');
+
 		}
 	}
 
