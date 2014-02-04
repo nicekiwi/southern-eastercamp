@@ -24,7 +24,7 @@ class DownloadController extends \BaseController {
 		$page = Page::where('slug', 'photos')->first();
 
 		$files = Download::orderBy('order','desc')->get();
-		$walls = Wallpaper::orderBy('order','desc')->get();
+		$images = Wallpaper::orderBy('order','desc')->get();
 
 		// Input Meta info if set
 		$this->layout->metaTitle = $page->meta_title;
@@ -32,6 +32,7 @@ class DownloadController extends \BaseController {
 
 		$this->layout->content = View::make('downloads.public');
 		$this->layout->content->files = $files;
+		$this->layout->content->images = $images;
 	}
 
 	/**

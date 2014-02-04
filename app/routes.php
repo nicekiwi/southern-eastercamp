@@ -50,7 +50,7 @@ Route::group(array('before' => 'ip-protection'), function()
 		Route::resource('questions', 'QuestionController');
 		Route::resource('question-categories', 'QuestionCategoryController');
 		Route::resource('downloads', 'DownloadController');
-		//Route::resource('wallpapers', 'WallpaperController');
+		Route::resource('wallpapers', 'WallpaperController');
 
 		// Make sure only Admins can add or remove users and groups
 		Route::group(['before' => 'auth.admin'], function()

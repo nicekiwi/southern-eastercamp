@@ -11,27 +11,8 @@ class WallpaperController extends \BaseController {
 	 */
 	public function index()
 	{
-		$files = Download::orderBy('order','desc')->get();
-		$this->layout->content = View::make('downloads.index')->with(compact('files'));
-	}
-
-	public function index_public()
-	{
-		// Set the master public Layout
-		$this->layout = View::make('layouts.master');
-
-		// Get Page info from DB if it exists
-		$page = Page::where('slug', 'photos')->first();
-
-		$files = Download::orderBy('order','desc')->get();
-		$walls = Wallpaper::orderBy('order','desc')->get();
-
-		// Input Meta info if set
-		$this->layout->metaTitle = $page->meta_title;
-		$this->layout->metaDesc = $page->meta_desc;
-
-		$this->layout->content = View::make('downloads.public');
-		$this->layout->content->files = $files;
+		$images = Wallpaper::orderBy('order','desc')->get();
+		$this->layout->content = View::make('wallpapers.index')->with(compact('images'));
 	}
 
 	/**
@@ -41,7 +22,7 @@ class WallpaperController extends \BaseController {
 	 */
 	public function create()
 	{
-		$this->layout->content = View::make('downloads.create');
+		$this->layout->content = View::make('wallpapers.create');
 	}
 
 	/**
@@ -55,7 +36,7 @@ class WallpaperController extends \BaseController {
 		// read more on validation at http://laravel.com/docs/validation
 		$rules = array(
 			'title'      => 'required',
-			'url'      => 'required|unique:downloads',
+			'url'      => 'required|unique:wallpapers',
 			'size'      => 'required',
 			'type'      => 'required',
 			'order'      => 'required'
@@ -66,13 +47,13 @@ class WallpaperController extends \BaseController {
 		// process the login
 		if ($validator->fails()) {
 			Session::flash('error_message', 'Validation error, please check all required fields.');
-			return Redirect::to('admin/downloads/create')
+			return Redirect::to('admin/wallpapers/create')
 				->withErrors($validator)
 				->withInput(Input::except('password'));
 		}
 
 		// Store
-		$category = new Download;
+		$category = new Wallpaper;
 		$category->title = Input::get('title');
 		$category->url = Input::get('url');
 		$category->size = Input::get('size');
@@ -84,9 +65,9 @@ class WallpaperController extends \BaseController {
 		$category->save();
 
 		// redirect
-		Session::flash('success_message', Input::get('title') . ' has been added to Downloads.');
+		Session::flash('success_message', Input::get('title') . ' has been added to wallpapers.');
 
-		return Redirect::to('admin/downloads');
+		return Redirect::to('admin/wallpapers');
 	}
 
 	/**
@@ -108,8 +89,8 @@ class WallpaperController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$download = Download::findOrFail($id);
-		$this->layout->content = View::make('downloads.edit')->with(compact('download'));
+		$Wallpaper = Wallpaper::findOrFail($id);
+		$this->layout->content = View::make('wallpapers.edit')->with(compact('Wallpaper'));
 	}
 
 	/**
@@ -124,7 +105,7 @@ class WallpaperController extends \BaseController {
 		// read more on validation at http://laravel.com/docs/validation
 		$rules = array(
 			'title'      => 'required',
-			'url'      => 'required|unique:downloads,url,' . $id,
+			'url'      => 'required|unique:wallpapers,url,' . $id,
 			'size'      => 'required',
 			'type'      => 'required',
 			'order'      => 'required'
@@ -135,13 +116,13 @@ class WallpaperController extends \BaseController {
 		// process the login
 		if ($validator->fails()) {
 			Session::flash('error_message', 'Validation error, please check all required fields.');
-			return Redirect::to('admin/downloads/' . $id . '/edit')
+			return Redirect::to('admin/wallpapers/' . $id . '/edit')
 				->withErrors($validator)
 				->withInput(Input::except('password'));
 		}
 
 		// Store
-		$category = Download::findOrFail($id);
+		$category = Wallpaper::findOrFail($id);
 		$category->title = Input::get('title');
 		$category->url = Input::get('url');
 		$category->size = Input::get('size');
@@ -153,9 +134,9 @@ class WallpaperController extends \BaseController {
 		$category->save();
 
 		// redirect
-		Session::flash('success_message', Input::get('title') . ' Download has been updated.');
+		Session::flash('success_message', Input::get('title') . ' Wallpaper has been updated.');
 
-		return Redirect::to('admin/downloads');
+		return Redirect::to('admin/wallpapers');
 	}
 
 	/**
