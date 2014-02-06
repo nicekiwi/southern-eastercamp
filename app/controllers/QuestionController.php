@@ -169,7 +169,13 @@ class QuestionController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		// delete
+		$question = Question::findOrFail($id);
+		$question->delete();
+
+		// redirect
+		Session::flash('success_message', 'Question has been deleted.');
+		return Redirect::to('admin/questions');
 	}
 
 }

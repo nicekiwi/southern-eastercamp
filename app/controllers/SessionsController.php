@@ -53,7 +53,8 @@ class SessionsController extends \BaseController {
 	{
 		Auth::logout();
 
-		return Redirect::to('/admin');
+		Session::flash('success_message', 'Awww you left. :(');
+		return Redirect::to('login');
 	}
 
 }

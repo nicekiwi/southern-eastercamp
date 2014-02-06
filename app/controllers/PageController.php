@@ -173,7 +173,13 @@ class PageController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		// delete
+		$page = Page::findOrFail($id);
+		$page->delete();
+
+		// redirect
+		Session::flash('success_message', 'Page has been deleted.');
+		return Redirect::to('admin/pages');
 	}
 
 }

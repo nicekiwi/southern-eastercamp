@@ -28,10 +28,7 @@
 						<td>{{ $question->created_at->diffForHumans() }} by {{ $question->createdBy->first_name }} {{ $question->createdBy->last_name }}</td>
 					@endif
 					<td>
-						{{ Form::open(array('url' => '/admin/questions/' . $question->id, 'class' => 'pull-right')) }}
-							{{ Form::hidden('_method', 'DELETE') }}
-							{{ Form::submit('X', array('class' => 'button tiny alert')) }}
-						{{ Form::close() }}
+						{{ Form::delete('admin/questions/'. $question->id, 'X', null, array('class' => 'button tiny alert')) }}
 					</td>
 				</tr>
 				@endforeach

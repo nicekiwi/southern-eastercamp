@@ -29,10 +29,7 @@
 						<td>{{ $page->created_at->diffForHumans() }} by {{ $page->createdBy->first_name }} {{ $page->createdBy->last_name }}</td>
 					@endif
 					<td>
-						{{ Form::open(array('url' => '/admin/pages/' . $page->id, 'class' => 'pull-right')) }}
-							{{ Form::hidden('_method', 'DELETE') }}
-							{{ Form::submit('X', array('class' => 'button tiny alert')) }}
-						{{ Form::close() }}
+						{{ Form::delete('admin/pages/'. $page->id, 'X', null, array('class' => 'button tiny alert')) }}
 					</td>
 				</tr>
 				@endforeach

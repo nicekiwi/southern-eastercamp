@@ -26,4 +26,10 @@ $(document).ready(function()
 		youtube : {autoplay: 1}
 
 	});
+
+	
+});
+
+$(document).on('submit', '.delete-form', function(){
+	return confirm('Are you sure?');
 });

@@ -26,7 +26,7 @@
         <nav class="top-bar" data-topbar>
           <ul class="title-area">
             <li class="name show-for-small-only">
-              <h1><a href="/"><img src="/img/ec-logo-header.svg"></a></h1>
+              <h1><a href="/">Eastercamp '14</a></h1>
             </li>
             <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
           </ul>
@@ -58,7 +58,15 @@
 
             <ul class="right">
               <li><a href="/downloads"><span><i class="fa fa-cloud-download fa-lg"></i><span class="show-for-small-only">Downloads</span></span></a></li>
-              <li><a href="/photos"><span><i class="fa fa-camera fa-lg"></i><span class="show-for-small-only">Photos</span></span></a></li>
+              <li class="has-dropdown">
+                <a href="/photos"><span><i class="fa fa-camera fa-lg"></i><span class="show-for-small-only">Photos</span></span></a>
+                <ul class="dropdown">
+                  <li><a href="/photos/2013">2013</a></li>
+                  <li><a href="/photos/2012">2012</a></li>
+                  <li><a href="/photos/2011">2011</a></li>
+                  <li><a href="/photos/2010">2010</a></li>
+                </ul>
+              </li>
               <li><a href="/videos"><span><i class="fa fa-youtube-play fa-lg"></i><span class="show-for-small-only">Videos</span></span></a></li>
               <li><a href="/contact"><span><i class="fa fa-phone fa-lg"></i><span class="show-for-small-only">Contact</span></span></a></li>
             </ul>
@@ -78,35 +86,28 @@
 
     {{ $content }}
 
-    
-
     <div class="row">
       <div class="small-12 columns">
         @include('partials.footer-supporters')        
       </div>
     </div>
 
-    <section class="footer-first">
+    <!-- <section class="footer-first">
       <div class="row">
         @include('partials.footer-media')
       </div>
-    </section>
+    </section> -->
 
     <footer>
       <div class="row">
-<!--         <div class="small-4 columns">
-          <i class="fa fa-facebook-square fa-2x"></i><i class="fa fa-youtube-play fa-2x"></i>
-        </div> -->
         <div class="small-4 columns">
-          <a title="Canterbury Youth Services" target="_blank" href="http://www.cys.org.nz">
-            <img src="/img/cys-logo.png">
-          </a>
+        <p>meow</p>
         </div>
         <div class="small-8 columns">
           <ul class="inline-list right">
             <li><a href="/information/parents-caregivers">Parents</a></li>
             <li><a href="https://www.eastercamp.org.nz/southern/leaders">Leaders</a></li>
-            <li><a href="/register/volunteer">Volunteer</a></li>
+            <li><a href="/information/volunteer">Volunteer</a></li>
             <li><a href="/faq">FAQ</a></li>
             <li><a href="/privacy">Privacy</a></li>
             <li><a href="/contact">Contact</a></li>
@@ -121,6 +122,7 @@
     <script src="/bower_components/fancybox/source/jquery.fancybox.js"></script>
     <script src="/bower_components/fancybox/source/helpers/jquery.fancybox-media.js"></script>
     <script src="/bower_components/unveil/jquery.unveil.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.1.2/masonry.pkgd.min.js"></script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-countdown/1.6.3/jquery.countdown.min.js"></script>
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>

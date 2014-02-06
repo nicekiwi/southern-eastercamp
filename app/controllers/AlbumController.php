@@ -179,7 +179,13 @@ class AlbumController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		// delete
+		$album = Album::findOrFail($id);
+		$album->delete();
+
+		// redirect
+		Session::flash('success_message', 'Album has been deleted.');
+		return Redirect::to('admin/albums');
 	}
 
 }

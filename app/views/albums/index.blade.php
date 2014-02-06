@@ -30,10 +30,7 @@
 						<td>{{ $album->created_at->diffForHumans() }} by {{ $album->createdBy->first_name }} {{ $album->createdBy->last_name }}</td>
 					@endif
 					<td>
-						{{ Form::open(array('url' => '/admin/albums/' . $album->id, 'class' => 'pull-right')) }}
-							{{ Form::hidden('_method', 'DELETE') }}
-							{{ Form::submit('X', array('class' => 'button tiny alert')) }}
-						{{ Form::close() }}
+						{{ Form::delete('admin/albums/'. $album->id, 'X', null, array('class' => 'button tiny alert')) }}
 					</td>
 				</tr>
 			@endforeach

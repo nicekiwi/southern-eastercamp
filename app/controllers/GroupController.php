@@ -131,7 +131,13 @@ class GroupController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		// delete
+		$group = Group::findOrFail($id);
+		$group->delete();
+
+		// redirect
+		Session::flash('success_message', 'Group has been deleted.');
+		return Redirect::to('admin/groups');
 	}
 
 }

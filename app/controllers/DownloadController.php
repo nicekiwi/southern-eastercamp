@@ -167,7 +167,13 @@ class DownloadController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		// delete
+		$album = Download::findOrFail($id);
+		$album->delete();
+
+		// redirect
+		Session::flash('success_message', 'Download has been deleted.');
+		return Redirect::to('admin/downloads');
 	}
 
 }

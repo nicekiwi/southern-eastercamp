@@ -169,7 +169,13 @@ class QuestionCategoryController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		// delete
+		$category = QuestionCategory::findOrFail($id);
+		$category->delete();
+
+		// redirect
+		Session::flash('success_message', 'Category has been deleted.');
+		return Redirect::to('admin/question-categories');
 	}
 
 }

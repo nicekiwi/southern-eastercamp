@@ -4,13 +4,10 @@
 
 <div class="row">
 	<div class="small-12 columns">
-		<p>Yay admin..</p>
 
-		<p>PHP Enviroment = "{{ getenv('LARA_ENV'); }}".<br>Laravel Enviroment = "{{ App::environment(); }}".</p>
+		<h1>Administation,</h1>
 
-		@if(App::environment('staging'))
-			meow
-		@endif
+		<p>Welcome {{ Auth::user()->first_name }}, you are beautiful.</p>
 	</div>
 </div>
 

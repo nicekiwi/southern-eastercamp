@@ -29,7 +29,7 @@ class Post extends Eloquent
 		foreach($facebook_posts as $facebook_post)
 		{
 			// Check if post is already in database by id
-			if(Post::where('fb_id', $facebook_post['id'])->count() == 0) {
+			if(Post::where('fb_id', $facebook_post['id'])->count() < 1) {
 
 				// Setup new post
 				$local_post = new Post;

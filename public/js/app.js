@@ -179,6 +179,13 @@ $(document).ready(function()
       speed: 1000
   });
 
+  var $container = $('#news-posts');
+  // initialize
+  $container.masonry({
+    columnWidth: 200,
+    itemSelector: '.news-post'
+  });
+
   $("img.gallery-photo").unveil(100);
 
   if($('#sender_question').length > 0){$('#sender_question').livesearch({searchCallback: searchFunction,queryDelay: 250,});}

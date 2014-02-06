@@ -143,7 +143,13 @@ class PlaylistController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		// delete
+		$plsylist = Playlist::findOrFail($id);
+		$plsylist->delete();
+
+		// redirect
+		Session::flash('success_message', 'Playlist has been deleted.');
+		return Redirect::to('admin/playlists');
 	}
 
 }
