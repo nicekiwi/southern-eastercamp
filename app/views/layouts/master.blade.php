@@ -34,7 +34,7 @@
           <section class="top-bar-section">
             <ul>
               <li class="hide-for-small-only"><a href="/"><i class="fa fa-home fa-lg"></i></a></li>
-              <li><a href="/news"><span><i class="show-for-small-only fa fa-globe fa-lg"></i><span>News</span></span></a></li>
+              <!-- <li><a href="/news"><span><i class="show-for-small-only fa fa-globe fa-lg"></i><span>News</span></span></a></li> -->
               <li><a href="/register"><span><i class="show-for-small-only fa fa-pencil fa-lg"></i><span>Register</span></span></a></li>
               <li class="has-dropdown">
                 <a href="/information"><span><i class="show-for-small-only fa fa-info-circle fa-lg"></i><span>Information</span></span></a>
@@ -58,7 +58,8 @@
 
             <ul class="right">
               <li><a href="/downloads"><span><i class="fa fa-cloud-download fa-lg"></i><span class="show-for-small-only">Downloads</span></span></a></li>
-              <li class="has-dropdown">
+              <li><a href="/photos"><span><i class="fa fa-camera fa-lg"></i><span class="show-for-small-only">Photos</span></span></a></li>
+              <!-- <li class="has-dropdown">
                 <a href="/photos"><span><i class="fa fa-camera fa-lg"></i><span class="show-for-small-only">Photos</span></span></a>
                 <ul class="dropdown">
                   <li><a href="/photos/2013">2013</a></li>
@@ -66,7 +67,7 @@
                   <li><a href="/photos/2011">2011</a></li>
                   <li><a href="/photos/2010">2010</a></li>
                 </ul>
-              </li>
+              </li> -->
               <li><a href="/videos"><span><i class="fa fa-youtube-play fa-lg"></i><span class="show-for-small-only">Videos</span></span></a></li>
               <li><a href="/contact"><span><i class="fa fa-phone fa-lg"></i><span class="show-for-small-only">Contact</span></span></a></li>
             </ul>

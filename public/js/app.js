@@ -179,12 +179,20 @@ $(document).ready(function()
       speed: 1000
   });
 
-  var $container = $('#news-posts');
-  // initialize
-  $container.masonry({
-    columnWidth: 200,
-    itemSelector: '.news-post'
-  });
+  // var $container = $('#news-posts');
+  // // initialize
+  // $container.masonry({
+  //   columnWidth: 200,
+  //   itemSelector: '.news-post'
+  // });
+
+  // var container = document.querySelector('#news-posts');
+  // var msnry = new Masonry( container, {
+  //   // options
+  //   "columnWidth": ".news-post",
+  //   "gutter": 10,
+  //   itemSelector: '.news-post'
+  // });
 
   $("img.gallery-photo").unveil(100);
 

@@ -154,6 +154,18 @@ img.grayscale:hover {
   min-height: 350px;
 }
 
+#news-posts {
+  width: 100%;
+}
+
+.news-post { width: 50%; }
+
+.video-title {
+  font-size: rem-calc(13);
+  text-align: center;
+  margin: 6px 0;
+}
+
 .center {
   text-align: center;
 }
