@@ -14,7 +14,7 @@
 			<tbody>
 				@foreach ($categories as $category)
 				@foreach ($category->questions as $question)
-				@if($question->public === 1)
+				@if($question->public > 0)
 				<tr>
 					<td>{{ $category->title }}</td>
 					<td><a href="/faq/question/{{ $question->id }}">{{ $question->question }}</a></td>

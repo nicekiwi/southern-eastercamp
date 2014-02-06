@@ -179,6 +179,8 @@ $(document).ready(function()
       speed: 1000
   });
 
+  $('#faq-table').dataTable();
+
   // var $container = $('#news-posts');
   // // initialize
   // $container.masonry({
