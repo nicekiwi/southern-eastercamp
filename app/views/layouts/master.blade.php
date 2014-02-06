@@ -37,7 +37,7 @@
               <!-- <li><a href="/news"><span><i class="show-for-small-only fa fa-globe fa-lg"></i><span>News</span></span></a></li> -->
               <li><a href="/register"><span><i class="show-for-small-only fa fa-pencil fa-lg"></i><span>Register</span></span></a></li>
               <li class="has-dropdown">
-                <a href="/information"><span><i class="show-for-small-only fa fa-info-circle fa-lg"></i><span>Information</span></span></a>
+                <a href="#"><span><i class="show-for-small-only fa fa-info-circle fa-lg"></i><span>Information</span></span></a>
                 <ul class="dropdown">
                   <li><a href="/information">Eastercamp</a></li>
                   <li><a href="/information/parents-caregivers">Parents &amp; Caregivers</a></li>
@@ -47,7 +47,7 @@
                 </ul>
               </li>
               <li class="has-dropdown">
-                <a href="/faq"><span><i class="show-for-small-only fa fa-question-circle fa-lg"></i><span>FAQ</span></span></a>
+                <a href="#"><span><i class="show-for-small-only fa fa-question-circle fa-lg"></i><span>FAQ</span></span></a>
                 <ul class="dropdown">
                 @foreach($questions as $question)
                   <li><a href="/faq/{{ $question->slug }}">{{ $question->title }}</a></li>

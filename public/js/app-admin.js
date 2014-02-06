@@ -11,6 +11,8 @@ $(document).ready(function()
 		var editor = ace.edit("content-editor");
 			editor.setTheme("ace/theme/monokai");
 			editor.getSession().setMode("ace/mode/markdown");
+			editor.getSession().setUseWrapMode(true);
+			editor.setShowPrintMargin(false);
 			editor.getSession().setValue(textarea.val());
 			editor.getSession().on('change', function(){
 				textarea.val(editor.getSession().getValue());

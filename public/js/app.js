@@ -169,7 +169,12 @@ $(document).ready(function()
 
   $("a.fancybox").fancybox({
     defaults : {padding: 0, width: 1000, height: 900},
-    helpers : {media: true},
+    helpers : {
+      media: true,
+      overlay: {
+        locked: false
+      }
+    },
     youtube : {autoplay: 1}
     
   });

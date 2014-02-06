@@ -4,13 +4,18 @@
 // }
 
 body > footer {
-  height: 300px;
+  height: 90px;
   background-color: $topbar-bg-color;
   color: #fff;
 }
 
 h1, h2, h3 {
-  font-family: 'Muli', $body-font-family;
+  font-family: 'streetscriptregular', $body-font-family;
+
+}
+
+.header-divider {
+  height: 35px;
 }
 
 .nav-header {
@@ -50,11 +55,11 @@ a.fancybox {
   position: relative;
 }
 
-a.fancybox:hover i {
+a.overlay-icon8:hover i {
   opacity: 0.9;
 }
 
-a.fancybox i {
+a.overlay-icon i {
     display: block;
     font-size: rem-calc(30);
     line-height: rem-calc(35);
@@ -107,7 +112,7 @@ a.fancybox i {
 
 .ec-triangles {
     background-image: url(/img/parallax/triangles-bg-large.svg);
-    padding: 80px 0;
+    padding: 50px 0;
 }
 
 .ec-pies {
@@ -164,6 +169,17 @@ img.grayscale:hover {
   font-size: rem-calc(13);
   text-align: center;
   margin: 6px 0;
+}
+
+.logo-home {
+  max-height: 300px !important;
+  margin: 0 auto 35px;
+  display: block;
+}
+
+.rego-btn-home, .promo-btn-home {
+  margin: 10px;
+  width: 90%;
 }
 
 .center {
