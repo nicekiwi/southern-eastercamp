@@ -168,7 +168,7 @@ $(document).ready(function()
   });
 
   $("a.fancybox").fancybox({
-    defaults : {padding: 0, width: 1000, height: 900},
+    defaults : {padding: 0, width: 1280, height: 720},
     helpers : {
       media: true,
       overlay: {
