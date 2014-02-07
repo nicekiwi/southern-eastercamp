@@ -21,8 +21,12 @@ class PageController extends \BaseController {
 		// Set the master public Layout
 		$this->layout = View::make('layouts.master');
 
+		// Setup the slug
+		$slug = Request::path();
+		if(Request::path() === '/') $slug = 'home';
+
 		// Get Page info from DB if it exists
-		$page = Page::where('slug', Request::path())->first();
+		$page = Page::where('slug', $slug)->first();
 
 		// $page should never be null, but just in case
 		if($page !== null)
@@ -36,7 +40,7 @@ class PageController extends \BaseController {
 				$this->layout->content = View::make($page->slug)->with('content', $page->content);
 			// If DB content exists and a view does not, show content
 			else
-				$this->layout->content = $page->content;
+				$this->layout->content = View::make('empty')->with('content', $page->content);
 		}
 		else
 		{

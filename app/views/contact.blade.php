@@ -1,7 +1,7 @@
-{{ $content }}
-
 <div class="row">
-	<div class="small-12 medium-6 columns">
+	<div class="small-12 columns">
+
+		{{ $content }}
 
 		{{ Form::open([ 'method' => 'POST', 'route' => 'contact.store', 'id' => 'contact-form']) }}
 

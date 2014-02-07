@@ -19,8 +19,8 @@
 		{{ Form::textarea('meta_desc'); }}
 
 		{{ Form::label('content', 'Page Contents:') }}
-		{{ Form::textarea('content', $value = null, ['class' => 'content-editor']); }}
-		<div id="content-editor"></div>
+		{{ Form::textarea('content', $value = null, ['class' => 'redactor-editor']); }}
+		<!-- <div id="content-editor"></div> -->
 
 		{{ Form::submit('Create Page') }}
 		    

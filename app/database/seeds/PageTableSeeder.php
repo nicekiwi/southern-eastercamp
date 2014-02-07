@@ -7,7 +7,7 @@ class PageTableSeeder extends Seeder {
 		Page::create([
 			'order'				=> 0,
 			'meta_title'		=> 'Homepage',
-			'slug'				=> '/',
+			'slug'				=> 'home',
 			'created_by'		=> 1,
 			'updated_by'		=> 1,
 		]);
