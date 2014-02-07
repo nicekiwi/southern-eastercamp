@@ -72,7 +72,7 @@ class ContactController extends \BaseController {
 		{
 		    $message->from('mailbot@eastercamp.org.nz','EC Mailbot')
 		    		->replyTo($data['sender_email'],$data['sender_name'])
-		    		->to('nicekiwi@gmail.com', 'Ezra Sharp')
+		    		->to('info@eastercamp.org.nz','EC Office')
 		    		->subject($data['sender_question']);
 		});
 

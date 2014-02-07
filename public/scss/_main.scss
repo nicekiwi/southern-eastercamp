@@ -4,7 +4,7 @@
 // }
 
 body > footer {
-  height: 90px;
+  height: 50px;
   background-color: $topbar-bg-color;
   color: #fff;
 }
@@ -188,4 +188,17 @@ img.grayscale:hover {
 
 .center {
   text-align: center;
+}
+
+.master-supporters {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+footer {
+  padding-top: 10px;
+}
+
+footer ul li a {
+  color: #fff;
 }

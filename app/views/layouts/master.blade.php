@@ -111,16 +111,16 @@
 
     {{ $content }}
 
-    <div class="row">
+    <div class="row master-supporters show-for-large-up">
       <div class="small-12 columns">
         @include('partials.footer-supporters')        
       </div>
     </div>
 
-    <footer>
+    <footer class="show-for-large-up">
       <div class="row">
         <div class="small-4 columns">
-        <p>meow</p>
+        <p>&copy; 2014 CYS</p>
         </div>
         <div class="small-8 columns">
           <ul class="inline-list right">
@@ -131,7 +131,6 @@
             <li><a href="/privacy">Privacy</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
-          <p>&copy; 2012 CYS. All Rights Reserved. Designed &amp; Developed by Ezra Sharp</p>
         </div>
       </div>
     </footer>
