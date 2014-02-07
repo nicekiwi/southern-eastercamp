@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row content-top">
 	<div class="small-12 columns">
 
 		{{ $content }}
@@ -21,7 +21,7 @@
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row" style="display:none;">
 			<div class="small-12 columns">
 				<div id="faq-query-results" class="faq-query-contact hidden">
 					<strong>Questions that may already have your answer:</strong>

@@ -10,8 +10,32 @@
     <meta name="robots" content="noindex, nofollow">
     @endif
     <title>{{ $metaTitle }}</title>
-    <meta name="description" content="{{ $metaDesc }}">
+
     <meta name="viewport" content="width=device-width">
+    <meta name="handheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="copyright" content="copyright 2014 cys.org.nz" /> 
+    <meta name="keywords" content="" />
+    <meta name="description" content="{{ $metaDesc }}" />
+    <meta name="robots" content="all" /> 
+
+    <meta itemprop="name" content="{{ $metaTitle }}">
+    <meta itemprop="description" content="{{ $metaDesc }}">
+    <meta itemprop="image" content="http://www.eastercamp.org.nz/images/facebook.png">
+
+    <meta property="og:title" content="{{ $metaTitle }}" />
+    <meta property="og:description" content="{{ $metaDesc }}" />
+
+    <meta property="og:image" content="http://www.eastercamp.org.nz/images/facebook.png" />
+    <meta property="og:type" content="non_profit" />
+    <meta property="og:url" content="http://www.eastercamp.org.nz" />
+    <meta property="og:site_name" content="" />
+    <meta property="fb:admins" content="1082075795"/>
+
+    <link rel="publisher" href="https://plus.google.com/109194678174277060406" />
+    <link rel="shortcut icon" href="/fav-icon.png" />
 
     <link rel="stylesheet" href="/bower_components/fancybox/source/jquery.fancybox.css">
     <link rel="stylesheet" href="/bower_components/components-font-awesome/css/font-awesome.min.css">
@@ -37,9 +61,9 @@
               <li><a href="/news"><span><i class="show-for-small-only fa fa-bullhorn fa-lg"></i><span>News</span></span></a></li>
               <li><a href="/register"><span><i class="show-for-small-only fa fa-pencil fa-lg"></i><span>Register</span></span></a></li>
               <li class="has-dropdown">
-                <a href="#"><span><i class="show-for-small-only fa fa-info-circle fa-lg"></i><span>Information</span></span></a>
+                <a href="/information"><span><i class="show-for-small-only fa fa-info-circle fa-lg"></i><span>Information</span></span></a>
                 <ul class="dropdown">
-                  <li><a href="/information">What \ Where \ When</a></li>
+                  <li><a href="/information">When, Where and Who</a></li>
                   <li><a href="/information/parents-caregivers">Parents &amp; Caregivers</a></li>
                   <li><a href="/information/volunteer">Volunteer to Help</a></li>
                   <li><a href="/information/the-rules">The Rules</a></li>
@@ -47,7 +71,7 @@
                 </ul>
               </li>
               <li class="has-dropdown">
-                <a href="#"><span><i class="show-for-small-only fa fa-question-circle fa-lg"></i><span>FAQ</span></span></a>
+                <a href="/faq"><span><i class="show-for-small-only fa fa-question-circle fa-lg"></i><span>FAQ</span></span></a>
                 <ul class="dropdown">
                 @foreach($questions as $question)
                   <li><a href="/faq/{{ $question->slug }}">{{ $question->title }}</a></li>
@@ -92,12 +116,6 @@
         @include('partials.footer-supporters')        
       </div>
     </div>
-
-    <!-- <section class="footer-first">
-      <div class="row">
-        @include('partials.footer-media')
-      </div>
-    </section> -->
 
     <footer>
       <div class="row">

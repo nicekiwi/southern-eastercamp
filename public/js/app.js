@@ -168,41 +168,27 @@ $(document).ready(function()
   });
 
   $("a.fancybox").fancybox({
-    defaults : {padding: 0, width: 1280, height: 720},
+    defaults : {
+      padding: 0,
+      width: 1280,
+      height: 720
+    },
     helpers : {
       media: true,
       overlay: {
         locked: false
       }
     },
-    youtube : {autoplay: 1}
+    youtube : {
+      autoplay: 1
+    }
     
-  });
-
-  $(".jCarouselLite").jCarouselLite({
-      auto: 2500,
-      speed: 1000
   });
 
   $('#faq-table').dataTable();
 
-  // var $container = $('#news-posts');
-  // // initialize
-  // $container.masonry({
-  //   columnWidth: 200,
-  //   itemSelector: '.news-post'
-  // });
-
-  // var container = document.querySelector('#news-posts');
-  // var msnry = new Masonry( container, {
-  //   // options
-  //   "columnWidth": ".news-post",
-  //   "gutter": 10,
-  //   itemSelector: '.news-post'
-  // });
-
   $("img.gallery-photo").unveil(100);
 
-  if($('#sender_question').length > 0){$('#sender_question').livesearch({searchCallback: searchFunction,queryDelay: 250,});}
+  //if($('#sender_question').length > 0){$('#sender_question').livesearch({searchCallback: searchFunction,queryDelay: 250,});}
 });
 

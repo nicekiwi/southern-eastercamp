@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row content-top">
 	<div class="small-12 columns">
 
 		@foreach ($playlists as $playlist)

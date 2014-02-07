@@ -1,7 +1,7 @@
-<div class="row">
+<div class="row content-top">
 	<div class="small-12 columns">
 	 
-		<h1>Newsfeed</h1>
+		<h1>News</h1>
 
 		<ul id="news-posts" class="small-block-grid-1">
 
