@@ -36,8 +36,12 @@ body > footer ul li a:hover {
   text-decoration: underline;
 }
 
-body > footer, .push {
+body > footer {
   height: 55px; /* .push must be the same height as .footer */
+}
+
+.push {
+  height: 228px;
 }
 
 h1, h2, h3 {
