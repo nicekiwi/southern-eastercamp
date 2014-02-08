@@ -46,7 +46,6 @@ $(document).ready(function()
     youtube : {
       autoplay: 1
     }
-    
   });
 
   $('#faq-table').dataTable();

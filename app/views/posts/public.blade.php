@@ -28,7 +28,7 @@
 			    @if($post->type == 'video')
 			    	@if($post->source != '')
 			    		@if(strstr($post->source, 'youtube'))
-				          <a class="{{($browser['isMobile'] ?: 'fancybox.iframe')}}  overlay-icon" href="//www.youtube.com/embed/{{ rawurldecode(substr($post->picture, 112,11)) }}?rel=0&amp;autoplay=1" title="{{$post->link_name}}">
+				          <a class="{{($browser['isMobile'] ?: 'fancybox')}} overlay-icon" href="//www.youtube.com/embed/{{ rawurldecode(substr($post->picture, 112,11)) }}?rel=0&amp;autoplay=1" title="{{$post->link_name}}">
 				            <img class="th" src="https://i.embed.ly/1/display/crop?key=d5a004fad9d94741b9ea438a9b802b3e&amp;url={{ rawurldecode(substr($post->picture, 79,44)) }}/hqdefault.jpg&amp;height=360&amp;width=640" />
 				            <i class="fa fa-play-circle"></i>
 				          </a>
@@ -51,7 +51,7 @@
 				<!-- Photo Formatting -->
 				@if($post->type == 'photo' || $post->type == 'photos')
 					<div class="media-photo">
-						<a href="{{ $post->picture_large }}" class="{{($browser['isMobile'] ? 'mobile-photo' : 'fancybox overlay-icon')}}" title="{{ $post->link_name }}">
+						<a href="{{ $post->picture_large }}" class="{{($browser['isMobile'] ? 'mobile-photo' : 'fancybox')}} overlay-icon" title="{{ $post->link_name }}">
 							<img class="th" src="https://i.embed.ly/1/display/crop?key=d5a004fad9d94741b9ea438a9b802b3e&amp;url={{ $post->picture }}&amp;height=360&amp;width=640" alt="{{ strtotime($post->created_time) }}" />
 							<i class="fa fa-plus-circle"></i>
 						</a>

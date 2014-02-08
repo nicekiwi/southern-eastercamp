@@ -5,7 +5,7 @@
             <img class="logo-home" src="/img/parallax/ec-logo.svg">
                 <div class="row">
                 <div class="small-12 medium-6 columns">
-                    <a class="fancybox alert button radius promo-btn-home" href="http://www.youtube.com/watch?v=L6LB8sYwvXA"><i class="fa fa-play fa-lg"></i> Promo</a>
+                    <a class="{{($browser['isMobile'] ?: 'fancybox')}} alert button radius promo-btn-home" href="http://www.youtube.com/watch?v=L6LB8sYwvXA"><i class="fa fa-play fa-lg"></i> Promo</a>
                 </div>
                 <div class="small-12 medium-6 columns">
                     <a class="success button radius rego-btn-home" target="_blank" href="https://www.eastercamp.org.nz/southern/register"><i class="fa fa-ticket fa-lg"></i> Register</a>
