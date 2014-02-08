@@ -10,7 +10,7 @@ html, body {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin-bottom: -55px; /* the bottom margin is the negative value of the footer's height */
+  margin-bottom: -228px; /* the bottom margin is the negative value of the footer's height */
 }
 
 body > footer {
@@ -29,6 +29,11 @@ body > footer ul {
 
 body > footer ul li a {
   color: #fff;
+}
+
+body > footer ul li a:hover {
+  color: #fff;
+  text-decoration: underline;
 }
 
 body > footer, .push {
@@ -216,7 +221,15 @@ img.grayscale:hover {
   text-align: center;
 }
 
-.master-supporters ul {
-  margin: 40px 0;
+.master-supporters {
+  margin: 30px auto;
+  min-height: 113px;
 }
+
+.master-supporters p {
+  margin-bottom: 10px;
+  color: #ababab;
+  font-size: rem-calc(12);
+}
+
 

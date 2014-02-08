@@ -3,13 +3,13 @@
 class PostController extends \BaseController {
 
 	protected $layout = 'layouts.admin';
-	protected $browser;
+	//protected $browser;
 
-	function __construct()
-	{
-		$browser = BrowserDetect::getInfo();
-    	$this->browser = $browser->data;
-	}
+	// function __construct()
+	// {
+	// 	$browser = BrowserDetect::getInfo();
+ //    	$this->browser = $browser->data;
+	// }
 
 	/**
 	 * Display a listing of the resource.
@@ -39,7 +39,7 @@ class PostController extends \BaseController {
 
 		$this->layout->content = View::make('posts.public');
 		$this->layout->content->posts = $posts;
-		$this->layout->content->browser = $this->browser;
+		//$this->layout->content->browser = $this->browser;
 	}
 
 	/**
