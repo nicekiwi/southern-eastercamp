@@ -28,17 +28,10 @@
 			    @if($post->type == 'video')
 			    	@if($post->source != '')
 			    		@if(strstr($post->source, 'youtube'))
-
-							@if($browser['isMobile'])
-					          <div class="flex-video widescreen youtube">
-					            <iframe src="//www.youtube.com/embed/{{ rawurldecode(substr($post->picture, 112,11)) }}?rel=0" frameborder="0" allowfullscreen></iframe>
-					          </div>
-					        @else
-					          <a class="fancybox.iframe overlay-icon" href="//www.youtube.com/embed/{{ rawurldecode(substr($post->picture, 112,11)) }}?rel=0&amp;autoplay=1" title="{{$post->link_name}}">
-					            <img class="th" src="https://i.embed.ly/1/display/crop?key=d5a004fad9d94741b9ea438a9b802b3e&amp;url={{ rawurldecode(substr($post->picture, 79,44)) }}/hqdefault.jpg&amp;height=360&amp;width=640" />
-					            <i class="fa fa-play-circle"></i>
-					          </a>
-					        @endif
+				          <a class="{{($browser['isMobile'] ?: 'fancybox.iframe')}}  overlay-icon" href="//www.youtube.com/embed/{{ rawurldecode(substr($post->picture, 112,11)) }}?rel=0&amp;autoplay=1" title="{{$post->link_name}}">
+				            <img class="th" src="https://i.embed.ly/1/display/crop?key=d5a004fad9d94741b9ea438a9b802b3e&amp;url={{ rawurldecode(substr($post->picture, 79,44)) }}/hqdefault.jpg&amp;height=360&amp;width=640" />
+				            <i class="fa fa-play-circle"></i>
+				          </a>
 						@endif
 					@endif
 				@endif
@@ -48,9 +41,6 @@
 			    	<!-- YouTube -->
 			    	@if($post->source != '')
 						@if(strstr($post->source, 'bandcamp'))
-							<noscript>
-								<p><strong class="label label-warning">JavaScript is required for this plugin to function.</strong></p>
-							</noscript>
 							<div class="media-bandcamp">
 								<iframe style="border: 0; width: 100%; height: 42px;" src="http://bandcamp.com/EmbeddedPlayer/{{ $post->source_bandcamp }}/size=small/bgcol=ffffff/linkcol=7137dc/transparent=true/" seamless></iframe>
 							</div>
@@ -67,10 +57,6 @@
 						</a>
 					</div>
 				@endif
-
-
-					
-
 			</li>
 		@endforeach
 		</ul>
