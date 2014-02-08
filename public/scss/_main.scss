@@ -3,10 +3,36 @@
 //   color: #fff;
 // }
 
+html, body {
+  height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -55px; /* the bottom margin is the negative value of the footer's height */
+}
+
 body > footer {
-  height: 50px;
+  height: 55px;
   background-color: $topbar-bg-color;
   color: #fff;
+}
+
+body > footer {
+  padding-top: 15px;
+}
+
+body > footer ul {
+  margin-bottom: 0 !important;
+}
+
+body > footer ul li a {
+  color: #fff;
+}
+
+body > footer, .push {
+  height: 55px; /* .push must be the same height as .footer */
 }
 
 h1, h2, h3 {
@@ -190,15 +216,7 @@ img.grayscale:hover {
   text-align: center;
 }
 
-.master-supporters {
-  margin-top: 20px;
-  margin-bottom: 20px;
+.master-supporters ul {
+  margin: 40px 0;
 }
 
-footer {
-  padding-top: 10px;
-}
-
-footer ul li a {
-  color: #fff;
-}

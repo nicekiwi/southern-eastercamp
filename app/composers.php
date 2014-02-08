@@ -2,7 +2,7 @@
 
 // composers
 
-View::composer('layouts.master', function($view)
+View::composer(['layouts.master'], function($view)
 {
     $questions = QuestionCategory::orderBy('order','asc')->get(['title','slug']);
     $view->with(compact('questions'));
