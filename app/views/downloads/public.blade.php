@@ -4,7 +4,7 @@
 
 		<ul class="small-block-grid-1">
 			@foreach($files as $file)
-			@if($file->public === 1)
+			@if($file->public < 0)
 			<li><i class="fa fa-arrow-circle-o-down fa-lg"></i></i>&nbsp;<a href="{{ $file->url }}" target="_blank">{{ $file->title }}</a> ({{ number_format($file->size) }} KB)</li>
 			@endif
 			@endforeach
