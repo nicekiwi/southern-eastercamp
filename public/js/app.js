@@ -51,7 +51,7 @@ $(document).ready(function()
     compact: true
   });
 
-  $("a.fancybox").fancybox({
+  $(".fancybox").fancybox({
     defaults : {
       padding: 0,
       width: 1280,
@@ -67,6 +67,11 @@ $(document).ready(function()
       autoplay: 1
     }
   });
+
+  // var container = document.querySelector('#news-posts');
+  // var msnry = new Masonry( container, {
+  //   itemSelector: '.test-post',
+  // });
 
   //$('#faq-table').dataTable();
 

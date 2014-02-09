@@ -245,4 +245,15 @@ img.grayscale:hover {
   width: 100%;
 }
 
+#news-posts .test-post {
+  width: 48%;
+  margin: 1%;
+}
+
+@media #{$large-up} { 
+  #news-posts img{
+    width: 50%;
+  }
+}
+
 

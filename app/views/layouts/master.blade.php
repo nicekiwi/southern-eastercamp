@@ -87,14 +87,14 @@
     <script src="/bower_components/fancybox/source/jquery.fancybox.js"></script>
     <script src="/bower_components/fancybox/source/helpers/jquery.fancybox-media.js"></script>
     <script src="/bower_components/unveil/jquery.unveil.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.1.2/masonry.pkgd.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js" type="text/javascript"></script>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.1.2/masonry.pkgd.min.js"></script> -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js" type="text/javascript"></script> -->
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-countdown/1.6.3/jquery.countdown.min.js"></script>
-    <script src="/js/jquery.livesearch.js"></script>
+    <!-- <script src="/js/jquery.livesearch.js"></script> -->
 
-    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-    <script src="/js/directions.min.js"></script>
+    <!-- <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="/js/directions.min.js"></script> -->
 
     <script src="/js/app.js"></script>
   </body>
