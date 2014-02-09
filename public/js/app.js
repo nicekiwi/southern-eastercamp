@@ -21,17 +21,7 @@ function searchFunction(searchTerm)
 $(document).foundation({
 	tooltip : {
 		disable_for_touch: true
-	},
-  orbit: {
-    animation: 'fade',
-    timer_speed: 2500,
-    pause_on_hover: true,
-    animation_speed: 500,
-    navigation_arrows: false,
-    bullets: false,
-    slide_number: false,
-    resume_on_mouseout: true,
-  }
+	}
 });
 
 $(document).ready(function()
