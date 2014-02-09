@@ -16,39 +16,38 @@ class QuestionCategoryController extends \BaseController {
 		$this->layout->content = View::make('question-categories.index')->with(compact('categories'));
 	}
 	
-	public function index_public()
+	public function index_public($slug = null)
 	{
 		// Set the master public Layout
 		$this->layout = View::make('layouts.master');
 
-		// Get Page info from DB if it exists
-		$page = Page::where('slug', 'faq')->first();
-		$categories = QuestionCategory::orderBy('order','asc')->get();
+		if(is_null($slug))
+		{
+			// Get Page info from DB if it exists
+			$page = Page::where('slug', 'faq')->first();
 
-		// Input Meta info if set
-		$this->layout->metaTitle = $page->meta_title;
-		$this->layout->metaDesc = $page->meta_desc;
+			// Input Meta info if set
+			$this->layout->metaTitle = $page->meta_title;
+			$this->layout->metaDesc = $page->meta_desc;
+
+			$questions = Question::orderBy('category_id','asc')->get();
+		}
+		else
+		{
+			$category = QuestionCategory::where('slug', $slug)->first();
+
+			// If Category does not exist, call 404
+			if(!isset($category->id)) return App::abort(404);
+
+			$questions = Question::where('category_id', $category->id)->get();
+
+			// Input Meta info if set
+			$this->layout->metaTitle = $category->title . ' Questions';
+			$this->layout->metaDesc = 'Frequently asked ' . $category->title . ' related Questions.';
+		}
 
 		$this->layout->content = View::make('question-categories.public');
-		$this->layout->content->categories = $categories;
-	}
-
-	public function category_public($slug)
-	{
-		// Set the master public Layout
-		$this->layout = View::make('layouts.master');
-
-		$category = QuestionCategory::where('slug', $slug)->first();
-
-		// If Category does not exist, call 404
-		if(!isset($category->id)) return App::abort(404);
-
-		// Input Meta info if set
-		$this->layout->metaTitle = $category->title . 'Questions';
-		$this->layout->metaDesc = 'Frequently asked ' . $category->title . ' related Questions.';
-
-		$this->layout->content = View::make('question-categories.public-category');
-		$this->layout->content->category = $category;
+		$this->layout->content->questions = $questions;
 	}
 
 	/**

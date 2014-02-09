@@ -34,10 +34,13 @@ class PageController extends \BaseController {
 			// Input Meta info if set
 			$this->layout->metaTitle = $page->meta_title;
 			$this->layout->metaDesc = $page->meta_desc;
+
+			$slug = explode('/', $page->slug);
+			$slug = $slug[count($slug)-1];
 		
 			// If view exists render view
-			if(View::exists($page->slug))
-				$this->layout->content = View::make($page->slug)->with('content', $page->content);
+			if(View::exists($slug))
+				$this->layout->content = View::make($slug)->with('content', $page->content);
 			// If DB content exists and a view does not, show content
 			else
 				$this->layout->content = View::make('empty')->with('content', $page->content);

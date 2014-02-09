@@ -73,6 +73,10 @@ h1, h2, h3 {
   text-transform: uppercase;
 }
 
+.top-bar-section li.active:not(.has-form) a:not(.button) {
+  background-color: darken($topbar-bg-color, 15%);
+}
+
 .parallax-orbit-container {
   position: relative;
   width: 100%;
@@ -206,6 +210,7 @@ img.grayscale:hover {
   margin: 6px 0;
 }
 
+
 .logo-home {
   max-height: 300px !important;
   margin: 0 auto 35px;
@@ -234,6 +239,10 @@ img.grayscale:hover {
   margin-bottom: 10px;
   color: #ababab;
   font-size: rem-calc(12);
+}
+
+.adp-directions {
+  width: 100%;
 }
 
 

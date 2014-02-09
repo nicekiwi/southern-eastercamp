@@ -1,4 +1,6 @@
-<div class="row">
+{{ $content }}
+
+<div class="row content-top">
 	<div class="small-12 columns">
 
 	    <h1><i class="fa fa-map-marker"></i> Get Directions</h1>
@@ -22,8 +24,6 @@
 		    	<div id="map-canvas"></div>
 		</div>
 		
-
 	    <div id="directions-panel"></div>
-
 	</div>
 </div>

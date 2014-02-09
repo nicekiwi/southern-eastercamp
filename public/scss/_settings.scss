@@ -959,7 +959,7 @@ $topbar-dropdown-link-bg: darken($topbar-bg-color, 15%);
 $topbar-link-font-size: rem-calc(14);
 //$topbar-link-hover-lightness: -10%; // Darken by 10%
 $topbar-link-bg-hover: darken($topbar-bg-color, 10%);
-// $topbar-link-bg-active: $primary-color;
+$topbar-link-bg-active: darken($topbar-bg-color, 35%);
 $topbar-link-bg-active-hover: darken($topbar-bg-color, 15%);
 $topbar-link-font-family: 'Muli', $body-font-family;
 

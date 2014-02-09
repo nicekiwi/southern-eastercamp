@@ -91,7 +91,10 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js" type="text/javascript"></script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-countdown/1.6.3/jquery.countdown.min.js"></script>
-    <!-- <script src="http://maps.google.com/maps/api/js?sensor=true"></script> -->
+    <script src="/js/jquery.livesearch.js"></script>
+
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="/js/directions.min.js"></script>
 
     <script src="/js/app.js"></script>
   </body>

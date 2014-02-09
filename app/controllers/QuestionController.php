@@ -33,6 +33,15 @@ class QuestionController extends \BaseController {
 		$this->layout->content->question = $question;
 	}
 
+	public function query_public($string)
+	{
+		$response = Question::where('question', 'LIKE', '%' . $string . '%')
+							//->orWhere('answer', 'LIKE', '%' . $string . '%')
+							->get(['id','question']);
+
+		return $response;
+	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 *

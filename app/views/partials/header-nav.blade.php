@@ -26,7 +26,7 @@
           <li class="{{ (Request::segment(1) == 'faq') ? 'active' : '' }} has-dropdown">
             <a href="/faq"><span><i class="show-for-small-only fa fa-question-circle fa-lg"></i><span>FAQ</span></span></a>
             <ul class="dropdown">
-            @foreach($questions as $question)
+            @foreach($global_categories as $question)
               <li><a href="/faq/{{ $question->slug }}">{{ $question->title }}</a></li>
             @endforeach
             </ul>

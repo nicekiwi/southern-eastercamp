@@ -7,6 +7,9 @@ class BaseController extends Controller {
         // Build our navigation
         $browser = BrowserDetect::getInfo();
         View::share('browser', $browser->data);
+
+        $categories = QuestionCategory::orderBy('order','asc')->get(['title','slug']);
+   		View::share('global_categories', $categories);
     }
 
 	/**

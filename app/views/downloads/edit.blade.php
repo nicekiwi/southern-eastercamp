@@ -15,10 +15,10 @@
 		{{ Form::label('url', 'File Location:') }}
 		{{ Form::text('url'); }}
 
-		{{ Form::label('size', 'File Size:') }}
+		{{ Form::label('size', 'File Size: (KB)') }}
 		{{ Form::text('size'); }}
 
-		{{ Form::label('type', 'File Type:') }}
+		{{ Form::label('type', 'File Type: (pdf, doc, zip etc..)') }}
 		{{ Form::text('type'); }}
 
 		{{ Form::label('public', 'Display Publicly:') }}

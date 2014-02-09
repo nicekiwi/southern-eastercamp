@@ -1,3 +1,21 @@
+
+function searchFunction(searchTerm) 
+{
+  var resultBox = $('#faq-query-results ul');
+
+  resultBox.html('');
+
+  $.getJSON( "/faq/question/query/" + searchTerm, function( data ) 
+  {
+    if(data.length > 0)
+    {
+      $.each( data, function( key, val ) {
+        resultBox.append( "<li><a href='/faq/question/"+val.id+"'>" + val.question + "</a></li>" );
+      });
+    }
+  });
+}
+
 // Foundation JavaScript
 // Documentation can be found at: http://foundation.zurb.com/docs
 $(document).foundation({
@@ -18,6 +36,8 @@ $(document).foundation({
 
 $(document).ready(function()
 {
+  //initMaps();
+
   $('#ec-countdown').countdown({ 
     until: new Date("April 17, 2014 20:00:00"),
     compactLabels: ['y', 'm', 'w', 'Days'],
@@ -48,7 +68,10 @@ $(document).ready(function()
     }
   });
 
-  $('#faq-table').dataTable();
+  //$('#faq-table').dataTable();
 
   $("img.unveil").unveil(100);
+
+  //if($('#sender_question').length > 0){$('#sender_question').livesearch({searchCallback: searchFunction,queryDelay: 250,});}
+
 });
