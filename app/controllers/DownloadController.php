@@ -21,7 +21,7 @@ class DownloadController extends \BaseController {
 		$this->layout = View::make('layouts.master');
 
 		// Get Page info from DB if it exists
-		$page = Page::where('slug', 'photos')->first();
+		$page = Page::where('slug', 'downloads')->first();
 
 		$files = Download::orderBy('order','desc')->get();
 		$images = Wallpaper::orderBy('order','desc')->get();

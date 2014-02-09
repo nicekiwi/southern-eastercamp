@@ -73,7 +73,7 @@
         <div class="small-12 medium-8 columns show-for-medium-up">
           <ul class="inline-list right">
             <li><a href="/information/parents-caregivers">Parents</a></li>
-            <li><a href="https://www.eastercamp.org.nz/southern/leaders">Leaders</a></li>
+            <li><a target="_blank" href="https://www.eastercamp.org.nz/southern/leaders">Leaders</a></li>
             <li><a href="/information/volunteer">Volunteer</a></li>
             <li><a href="/faq">FAQ</a></li>
             <li><a href="/contact">Contact</a></li>
@@ -83,7 +83,7 @@
     </footer>
 
     <script src="/bower_components/jquery/jquery.js"></script>
-    <script src="/bower_components/foundation/js/foundation.min.js"></script>
+    <script src="/bower_components/foundation/js/foundation.js"></script>
     <script src="/bower_components/fancybox/source/jquery.fancybox.js"></script>
     <script src="/bower_components/fancybox/source/helpers/jquery.fancybox-media.js"></script>
     <script src="/bower_components/unveil/jquery.unveil.min.js"></script>

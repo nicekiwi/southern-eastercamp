@@ -18,11 +18,7 @@ function searchFunction(searchTerm)
 
 // Foundation JavaScript
 // Documentation can be found at: http://foundation.zurb.com/docs
-$(document).foundation({
-	tooltip : {
-		disable_for_touch: true
-	}
-});
+$(document).foundation();
 
 $(document).ready(function()
 {

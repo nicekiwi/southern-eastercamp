@@ -21,7 +21,7 @@ class PlaylistController extends \BaseController {
 		$this->layout = View::make('layouts.master');
 
 		// Get Page info from DB if it exists
-		$page = Page::where('slug', Request::path())->first();
+		$page = Page::where('slug', 'videos')->first();
 		$playlists = Playlist::orderBy('order','asc')->get();
 
 		// Input Meta info if set
