@@ -110,7 +110,7 @@ a.overlay-icon i {
     position: absolute;
     top: 50%;
     left: 50%;
-    z-index: 100;
+    // z-index: 100;
     margin: -0.5em 0 0 -0.5em;
     opacity: 0.5;
     text-shadow: 0 0 100px #1d1d1d;
@@ -250,10 +250,50 @@ img.grayscale:hover {
   margin: 1%;
 }
 
+@media #{$small-only} { 
+  .push{
+    height: 145px;
+  }
+
+  .wrapper {
+    margin-bottom: -145px;
+  }
+
+  .master-supporters {
+    max-height: 90px;
+    overflow: hidden;
+  }
+
+  .master-supporters img {
+    margin: 0 auto 20px;
+    display: block;
+  }
+
+  footer .copyright {
+    text-align: center;
+  }
+}
+
+@media #{$medium-only} { 
+  .master-supporters {
+    margin: 10px auto;
+    min-height: 90px;
+  }
+
+  .wrapper {
+    margin-bottom: -165px;
+  }
+
+  .push {
+    height: 165px;
+  }
+}
+
 @media #{$large-up} { 
   #news-posts img{
     width: 50%;
   }
 }
+
 
 

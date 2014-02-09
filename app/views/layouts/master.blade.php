@@ -64,13 +64,13 @@
 
     @include('partials.footer-supporters')
 
-    <footer class="show-for-medium-up">
+    <footer>
 
       <div class="row">
-        <div class="small-4 columns">
+        <div class="small-12 medium-4 columns copyright">
         <p style="margin:0;">&copy; 2014 CYS</p>
         </div>
-        <div class="small-8 columns">
+        <div class="small-12 medium-8 columns show-for-medium-up">
           <ul class="inline-list right">
             <li><a href="/information/parents-caregivers">Parents</a></li>
             <li><a href="https://www.eastercamp.org.nz/southern/leaders">Leaders</a></li>
