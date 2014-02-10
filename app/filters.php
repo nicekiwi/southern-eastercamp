@@ -120,13 +120,13 @@ Route::filter('cache', function($route, $request, $response = null)
 
     $key = 'route-'.Str::slug( Request::url() ) . $page;
 
-    if(is_null($response) && Cache::has($key) && App::environment() != 'local' && Config::get('app.debug') != 'true' && Config::get('app.cache') != 'true')
+    if(is_null($response) && Cache::has($key) && App::environment() != 'local' && Config::get('app.debug') != true && Config::get('app.page-cache.enabled') == true)
     {
         return Cache::get($key);
     }
-    elseif(!is_null($response) && !Cache::has($key) && App::environment() != 'local' && Config::get('app.debug') != 'true' && Config::get('app.cache') != 'true')
+    elseif(!is_null($response) && !Cache::has($key) && App::environment() != 'local' && Config::get('app.debug') != true && Config::get('app.page-cache.enabled') == true)
     {
-        Cache::put($key, $response->getContent(), 360);
+        Cache::put($key, $response->getContent(), Config::get('app.page-cache.time'));
     }
 });
 
