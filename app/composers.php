@@ -2,9 +2,22 @@
 
 // composers
 
-View::composer('*', function($view)
+View::composer(['layouts.master'], function($view)
 {
-    $browser = BrowserDetect::getInfo();
+    $questions = QuestionCategory::orderBy('order','asc')->get(['title','slug']);
+    $view->with(compact('questions'));
+});
 
-    $view->with('browser', $browser->data);
+View::composer('partials.footer-media', function($view)
+{
+	$photos = Photo::where('album_id','1')->orderBy(DB::raw('RAND()'))->take(4)->get();
+	$video = Video::orderBy(DB::raw('RAND()'))->first();
+
+	$view->with(compact('photos','video'));
+});
+
+View::composer('partials.footer-supporters', function($view)
+{
+	$supporters = Supporter::orderBy(DB::raw('RAND()'))->take(6)->get();
+	$view->with(compact('supporters'));
 });

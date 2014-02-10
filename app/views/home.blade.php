@@ -1,111 +1,39 @@
-@extends('layouts.master')
+<section class="parallax-section ec-triangles">
+    <div class="row">
+        <div class="small-1 medium-2 columns"> </div>
+        <div class="small-10 medium-8 columns center">
+            <img class="logo-home" src="/img/parallax/ec-logo.svg">
+                <div class="row">
+                <div class="small-12 medium-6 columns">
+                    <a class="{{($browser['isMobile'] ?: 'fancybox')}} alert button radius promo-btn-home" href="//www.youtube.com/embed/L6LB8sYwvXA?rel=0&autoplay=1"><i class="fa fa-play fa-lg"></i> Promo</a>
+                </div>
+                <div class="small-12 medium-6 columns">
+                    <a class="success button radius rego-btn-home" target="_blank" href="https://www.eastercamp.org.nz/southern/register"><i class="fa fa-ticket fa-lg"></i> Register</a>
+                </div>
+            </div>
+        </div>
+        <div class="small-1 medium-2 columns"> </div>
+    </div>
+</section>
 
-@section('title','Southern Eastercamp 2014')
-@section('desc','')
-
-@section('content')
-
-<style type="text/css">
-
-	.parallax-section {
-		color: white;
-		overflow: hidden;
-		padding: 0;
-
-		background-image: none;
-		background-color: #000;
-		background-position: 50% 0;
-		background-attachment: fixed;
-		background-repeat: no-repeat;
-
-		position: relative;
-	}
-	
-	/* Medium Screens */
-	@media only screen and (min-width: 40.063em) {
-		#fmx-rider {
-			background-image: url(/img/parallax/fmx-bg-medium.jpg);
-			height: 300px;
-		}
-	}
-
- 	/* Large Screens */
-	@media only screen and (min-width: 64.063em) { 
-		#fmx-rider{
-			background-image: url(/img/parallax/fmx-bg-large.jpg);
-			height: 500px;
-		}
-	}
-
-	#third{
-		background: url(/img/parallax/thirdBG.jpg) 50% 0 no-repeat fixed;
-		color: white;
-		height: 650px;
-		padding: 100px 0 0 0;	
-	}
-
-	#fifth{
-		background: #ccc;
-		height: 400px;
-		margin: 0 auto;
-		padding: 40px 0 0 0;
-	}
-</style>
-
-<div class="row" style="margin-top: 30px;">
-	<div class="small-1 medium-3 columns">&nbsp;</div>
-	<div id="logo-box" class="small-10 medium-6 columns">
-		
-		<img class="logo-layer" src="/img/logo-ab/9_logo.svg">
-		<img class="logo-layer" src="/img/logo-ab/8_logo.svg">
-		<img class="logo-layer" src="/img/logo-ab/7_logo.svg">
-		<img class="logo-layer" src="/img/logo-ab/6_logo.svg">
-		<img class="logo-layer" src="/img/logo-ab/5_logo.svg">
-		<img class="logo-layer" src="/img/logo-ab/4_logo.svg">
-		<img class="logo-layer" src="/img/logo-ab/3_logo.svg">
-		<img class="logo-layer" src="/img/logo-ab/2_logo.svg">
-		<img class="logo-layer" src="/img/logo-ab/1_logo.svg">
-		
-	</div>
-	<div class="small-1 medium-3 columns">&nbsp;</div>
+<div class="row">
+    <div class="small-12 columns center">
+        <h1>Are you ready for the best Easter ever?</h1>
+        
+        <p>Eastercamp is a massive christian youth camp held just out of Christchurch over the Easter holiday weekend. Its you + your mates, oh and 4500 others from around the country; all ready to have the best days of their lives!</p>
+        
+        <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-4">
+            <li><a href="http://photos-d.ak.fbcdn.net/hphotos-ak-frc3/t1/24616_10151438892906716_1989813280_o.jpg" rel="photo-gallery" class="fancybox overlay-icon"><img src="/img/gallery-fallback.png" class="th unveil" data-src="https://i.embed.ly/1/display/crop?key=d5a004fad9d94741b9ea438a9b802b3e&url=http://photos-d.ak.fbcdn.net/hphotos-ak-frc3/t1/24616_10151438892906716_1989813280_o.jpg&height=200&width=300"><i class="fa fa-plus-circle"></i></a></li>
+            <li><a href="http://photos-b.ak.fbcdn.net/hphotos-ak-prn1/t1/521639_10151438889481716_742474888_o.jpg" rel="photo-gallery" class="fancybox overlay-icon"><img src="/img/gallery-fallback.png" class="th unveil" data-src="https://i.embed.ly/1/display/crop?key=d5a004fad9d94741b9ea438a9b802b3e&url=http://photos-b.ak.fbcdn.net/hphotos-ak-prn1/t1/521639_10151438889481716_742474888_o.jpg&height=200&width=300"><i class="fa fa-plus-circle"></i></a></li>
+            <li><a href="http://photos-a.ak.fbcdn.net/hphotos-ak-ash2/t1/527831_10150692988136716_79936295_o.jpg" rel="photo-gallery" class="fancybox overlay-icon"><img src="/img/gallery-fallback.png" class="th unveil" data-src="https://i.embed.ly/1/display/crop?key=d5a004fad9d94741b9ea438a9b802b3e&url=http://photos-a.ak.fbcdn.net/hphotos-ak-ash2/t1/527831_10150692988136716_79936295_o.jpg&height=200&width=300"><i class="fa fa-plus-circle"></i></a></li>
+            <li><a href="http://photos-d.ak.fbcdn.net/hphotos-ak-ash3/t1/564368_10150693511371716_347532160_o.jpg" rel="photo-gallery" class="fancybox overlay-icon"><img src="/img/gallery-fallback.png" class="th unveil" data-src="https://i.embed.ly/1/display/crop?key=d5a004fad9d94741b9ea438a9b802b3e&url=http://photos-d.ak.fbcdn.net/hphotos-ak-ash3/t1/564368_10150693511371716_347532160_o.jpg&height=200&width=300"><i class="fa fa-plus-circle"></i></a></li>
+        </ul>
+    </div>
 </div>
 
-<section class="parallax-section">
-	<div class="row">
-		<div class="small-2 columns"></div>
-    	<div class="small-8 columns" style="text-align:center;">
-			<h3>April 17th - 21st, Spencer Park - Christchurch</h3>
-		</div>
-		<div class="small-2 columns"></div>
+<div class="row">
+    <div class="small-12 columns center">
+        <h2 id="ec-countdown"></h2>
+        <h3>17th April - 21st April 2014</h3>
     </div>
-</section>
-
-<section id="fmx-rider" class="parallax-section">
-	<div class="row">
-    	<div class="small-12 medium-6 columns">
-            <h1 id="ec-countdown"></h1>
-        </div>
-
-        <div class="small-12 medium-6 columns">
-            <img id="rider" src="/img/parallax/fmx-rider.png">
-        </div>
-    </div>
-    
-</section>
-
-<section class="parallax-section">
-	<div class="row">
-    	<div class="float-left">
-        	<h2>What Happens When JavaScript is Disabled?</h2>
-            <p>The user gets a slap! Actually, all that jQuery does is moves the backgrounds relative to the position of the scrollbar. Without it, the backgrounds simply stay put and the user would never know they are missing out on the awesome! CSS2 does a good enough job to still make the effect look cool.</p>
-        </div>
-    </div> 
-</section> 
-
-<section class="parallax-section">
-	<div class="row">
-	    <h2>Registration!</h2>
-    </div> 
-</section>
-
-@stop
+</div>

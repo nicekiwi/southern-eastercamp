@@ -2,6 +2,16 @@
 
 class BaseController extends Controller {
 
+	public function __construct()
+    {
+        // Build our navigation
+        $browser = BrowserDetect::getInfo();
+        View::share('browser', $browser->data);
+
+        $categories = QuestionCategory::orderBy('order','asc')->get(['title','slug']);
+   		View::share('global_categories', $categories);
+    }
+
 	/**
 	 * Setup the layout used by the controller.
 	 *
@@ -14,5 +24,4 @@ class BaseController extends Controller {
 			$this->layout = View::make($this->layout);
 		}
 	}
-
 }

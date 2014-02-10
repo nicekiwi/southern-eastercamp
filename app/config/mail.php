@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => Config::get('mandrill.username'),
+	'username' => Config::get('keys.mandrill.username'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => Config::get('mandrill.password'),
+	'password' => Config::get('keys.mandrill.password'),
 
 	/*
 	|--------------------------------------------------------------------------

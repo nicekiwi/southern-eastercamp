@@ -38,6 +38,11 @@ Route::filter('auth', function()
 	if (Auth::guest()) return Redirect::guest('login');
 });
 
+Route::filter('auth.admin', function()
+{
+	if (Auth::user()->role > 1) return Redirect::to('/admin');
+});
+
 
 Route::filter('auth.basic', function()
 {
@@ -80,7 +85,59 @@ Route::filter('csrf', function()
 });
 
 /*
-| IP Protection
+|--------------------------------------------------------------------------
+| 404 Page Trigger Response
+|--------------------------------------------------------------------------
+|
+| When a view is not found the missing view page is presented.
+|
+*/
+
+App::missing(function($exception)
+{
+    if (Request::is('admin/*'))
+    {
+        return Response::view('admin.missing', array(), 404);
+    }
+    else
+    {
+        return Response::view('errors.missing', array(), 404);
+    } 
+});
+
+/*
+|--------------------------------------------------------------------------
+| Caching Filter
+|--------------------------------------------------------------------------
+|
+| The Caching filter keeps a cache of any page requested for up to 6 hours.
+|
+*/
+
+Route::filter('cache', function($route, $request, $response = null)
+{
+    $page = ( Paginator::getCurrentPage() > 1 ? Paginator::getCurrentPage() : '' );
+
+    $key = 'route-'.Str::slug( Request::url() ) . $page;
+
+    if(is_null($response) && Cache::has($key) && App::environment() != 'local' && Config::get('app.debug') != 'true' && Config::get('app.cache') != 'true')
+    {
+        return Cache::get($key);
+    }
+    elseif(!is_null($response) && !Cache::has($key) && App::environment() != 'local' && Config::get('app.debug') != 'true' && Config::get('app.cache') != 'true')
+    {
+        Cache::put($key, $response->getContent(), 360);
+    }
+});
+
+/*
+|--------------------------------------------------------------------------
+| IP and Date Protection
+|--------------------------------------------------------------------------
+|
+| Filter visitors based on IP or date and reditect them if they do not meet
+| the requirments.
+|
 */
 
 Route::filter('date-protection', function(){
@@ -91,7 +148,7 @@ Route::filter('date-protection', function(){
 Route::filter('ip-protection', function()
 {
 	// Do stuff before every request
-	if (!in_array(Request::getClientIp(), Config::get('keys.custom.ip-protection.whitelist')) && Config::get('app.ip-protection.enabled') === true ) 
+	if (!in_array(Request::getClientIp(), Config::get('keys.custom.ip-protection.whitelist',[])) && Config::get('app.ip-protection.enabled') === true ) 
 	{
 		return Redirect::to( Config::get('app.ip-protection.redirect_url') );
 	}

@@ -5,7 +5,9 @@
 	"require": {
 		"laravel/framework": "4.1.*",
 		"facebook/php-sdk": "dev-master",
-		"hisorange/browser-detect": "dev-master"
+		"hisorange/browser-detect": "dev-master",
+		"binarix/foundation-pagination": "dev-master",
+		"vtalbot/markdown": "1.*"
 	},
 	"autoload": {
 		"classmap": [

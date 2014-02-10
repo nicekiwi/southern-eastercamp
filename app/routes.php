@@ -18,40 +18,50 @@ Route::get('splash', function()
 
 Route::group(array('before' => 'ip-protection'), function()
 {
-	Route::get('/', function()
+	Route::get('news', 'PostController@index_public');
+	Route::get('downloads', 'DownloadController@index_public');
+
+	Route::get('videos', 'PlaylistController@index_public');
+	Route::get('photos/{slug?}', 'AlbumController@index_public');
+
+	Route::get('faq/question/query/{string}', 'QuestionController@query_public');
+
+	//Route::get('faq', 'QuestionCategoryController@index_public');
+	Route::get('faq/{slug?}', 'QuestionCategoryController@index_public');
+	Route::get('faq/question/{id}', 'QuestionController@index_public');
+
+	Route::get('login', 'SessionsController@create');
+	Route::get('logout', 'SessionsController@destroy');
+
+	Route::resource('contact', 'ContactController');
+	Route::resource('sessions', 'SessionsController');
+
+	Route::group(['prefix' => 'admin', 'before' => 'auth'], function()
 	{
-		return View::make('home');
+		Route::get('/', function()
+		{
+			return View::make('admin.index');
+		});
+
+		Route::resource('posts', 'PostController');
+		Route::resource('pages', 'PageController');
+		Route::resource('albums', 'AlbumController');
+		Route::resource('playlists', 'PlaylistController');
+		Route::resource('videos', 'VideoController');
+
+		Route::resource('questions', 'QuestionController');
+		Route::resource('question-categories', 'QuestionCategoryController');
+		Route::resource('downloads', 'DownloadController');
+		Route::resource('wallpapers', 'WallpaperController');
+
+		// Make sure only Admins can add or remove users and groups
+		Route::group(['before' => 'auth.admin'], function()
+		{
+			Route::resource('users', 'UserController');
+			Route::resource('groups', 'GroupController');
+		});
 	});
 
-	Route::get('registration', function()
-	{
-		return View::make('registration');
-	});
-
-	Route::get('contact-us', function()
-	{
-		return View::make('contact');
-	});
-
-	Route::get('information', function()
-	{
-		return View::make('information');
-	});
-
-	Route::get('contact', function()
-	{
-		return View::make('contact');
-	});
-
-	Route::get('meow', function()
-	{
-		$facebook = new Facebook([
-			'appId'  => Config::get('facebook.app_id'),
-			'secret' => Config::get('facebook.secret_key'),
-		]);
-
-		dd($facebook->getUser());
-	});
-
-	Route::get('news', 'NewsController@ShowNews');
+	Route::get('{slug?}/{slug2?}', 'PageController@index_public');
 });
+
