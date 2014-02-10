@@ -16,7 +16,7 @@
           <li class="{{ (Request::segment(1) == 'information') ? 'active' : '' }} has-dropdown">
             <a href="/information"><span><i class="show-for-small-only fa fa-info-circle fa-lg"></i><span>Information</span></span></a>
             <ul class="dropdown">
-              <li><a href="/information">When, Where and Who</a></li>
+              <li><a href="/information">Eastercamp</a></li>
               <li><a href="/information/parents-caregivers">Parents &amp; Caregivers</a></li>
               <li><a href="/information/volunteer">Volunteer to Help</a></li>
               <li><a href="/information/the-rules">The Rules</a></li>
