@@ -15,13 +15,13 @@ class CreateQuestionsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('category_id')->unsigned()->nullable();
-			$table->text('question');
-			$table->text('answer');
-			$table->string('views');
-			$table->integer('helpful_yes');
-			$table->integer('helpful_no');
-			$table->integer('order');
-			$table->integer('public');
+			$table->text('question')->nullable();
+			$table->text('answer')->nullable();
+			$table->string('views')->nullable();
+			$table->integer('helpful_yes')->nullable();
+			$table->integer('helpful_no')->nullable();
+			$table->integer('order')->nullable();
+			$table->integer('public')->nullable();
 
 			$table->integer('created_by')->unsigned()->nullable();
 			$table->integer('updated_by')->unsigned()->nullable();

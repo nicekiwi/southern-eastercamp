@@ -15,10 +15,10 @@ class CreateVideosTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('playlist_id')->unsigned()->nullable();
-			$table->integer('order');
+			$table->integer('order')->nullable();
 			$table->string('url')->unique();
-			$table->string('title');
-			$table->integer('public');
+			$table->string('title')->nullable();
+			$table->integer('public')->nullable();
 
 			$table->integer('created_by')->unsigned()->nullable();
 			$table->integer('updated_by')->unsigned()->nullable();

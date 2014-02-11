@@ -14,9 +14,9 @@ class CreateSupportersTable extends Migration {
 		Schema::create('supporters', function($table)
 		{
 			$table->integer('id')->increment();
-			$table->string('title');
-			$table->string('slug');
-			$table->string('url');
+			$table->string('title')->nullable();
+			$table->string('slug')->nullable();
+			$table->string('url')->nullable();
 
 			$table->integer('updated_by')->unsigned()->nullable();
 			$table->integer('created_by')->unsigned()->nullable();

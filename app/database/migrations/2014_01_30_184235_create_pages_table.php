@@ -15,12 +15,12 @@ class CreatePagesTable extends Migration {
 		{
 			$table->increments('id');
 
-			$table->integer('order');
-			$table->string('meta_title');
-			$table->string('meta_desc');
-			$table->string('slug');
+			$table->integer('order')->nullable();
+			$table->string('meta_title')->nullable();
+			$table->string('meta_desc')->nullable();
+			$table->string('slug')->nullable();
 
-			$table->text('content');
+			$table->text('content')->nullable();
 			$table->integer('updated_by')->unsigned()->nullable();
 			$table->integer('created_by')->unsigned()->nullable();
 			

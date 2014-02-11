@@ -14,12 +14,12 @@ class CreateDownloadsTable extends Migration {
 		Schema::create('downloads', function($table)
 		{
 			$table->increments('id');
-			$table->integer('order');
-			$table->string('type');
+			$table->integer('order')->nullable();
+			$table->string('type')->nullable();
 			$table->string('url')->unique();
-			$table->string('title');
-			$table->integer('size');
-			$table->integer('public');
+			$table->string('title')->nullable();
+			$table->integer('size')->nullable();
+			$table->integer('public')->nullable();
 
 			$table->integer('created_by')->unsigned()->nullable();
 			$table->integer('updated_by')->unsigned()->nullable();

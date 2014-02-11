@@ -15,18 +15,18 @@ class CreatePostsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('fb_id')->unique();
-			$table->text('message');
-			$table->text('link');
-			$table->text('picture');
-			$table->text('picture_large');
-			$table->text('source');
-			$table->text('source_bandcamp');
-			$table->text('story');
-			$table->text('status_type');
-			$table->text('link_desc');
-			$table->text('link_name');
-			$table->text('link_caption');
-			$table->text('type');
+			$table->text('message')->nullable();
+			$table->text('link')->nullable();
+			$table->text('picture')->nullable();
+			$table->text('picture_large')->nullable();
+			$table->text('source')->nullable();
+			$table->text('source_bandcamp')->nullable();
+			$table->text('story')->nullable();
+			$table->text('status_type')->nullable();
+			$table->text('link_desc')->nullable();
+			$table->text('link_name')->nullable();
+			$table->text('link_caption')->nullable();
+			$table->text('type')->nullable();
 			$table->timestamp('posted_at');
 			
 			$table->timestamps();

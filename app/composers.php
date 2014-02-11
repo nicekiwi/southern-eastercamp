@@ -18,6 +18,6 @@ View::composer('partials.footer-media', function($view)
 
 View::composer('partials.footer-supporters', function($view)
 {
-	$supporters = Supporter::orderBy(DB::raw('RAND()'))->take(6)->get();
+	$supporters = Supporter::orderBy(DB::raw('RANDOM()'))->take(6)->get();
 	$view->with(compact('supporters'));
 });

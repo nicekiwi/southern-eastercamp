@@ -15,9 +15,9 @@ class CreateAlbumsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->text('albums')->nullable();
-			$table->string('year');
-			$table->string('count');
-			$table->string('public');
+			$table->integer('year')->unique();
+			$table->integer('count')->nullable();
+			$table->integer('public')->nullable();
 
 			$table->integer('created_by')->unsigned()->nullable();
 			$table->integer('updated_by')->unsigned()->nullable();
