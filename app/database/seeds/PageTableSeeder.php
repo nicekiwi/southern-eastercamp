@@ -79,7 +79,7 @@ class PageTableSeeder extends Seeder {
 		Page::create([
 			'order'				=> 90,
 			'meta_title'		=> 'Downloads',
-			'slug'				=> 'Downloads',
+			'slug'				=> 'downloads',
 			'created_by'		=> 1,
 			'updated_by'		=> 1,
 		]);
