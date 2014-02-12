@@ -28,8 +28,8 @@ class SetForeignKeyOnAlbums extends Migration {
 	{
 		Schema::table('albums', function($table)
 		{
-			$table->dropForeign('created_by_id_foreign');
-			$table->dropForeign('updated_by_id_foreign');
+			$table->dropForeign('albums_created_by_foreign');
+			$table->dropForeign('albums_updated_by_foreign');
 		});
 	}
 

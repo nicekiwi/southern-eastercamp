@@ -13,7 +13,7 @@ class AddFulltextToQuestionsTable extends Migration {
 	public function up()
 	{
 		//DB::raw('create index qsearch on questions (question)');
-		//DB::unprepared('CREATE INDEX question_fulltext_idx ON questions USING gin(to_tsvector("english", question))');
+		DB::unprepared("CREATE INDEX question_fulltext_idx ON questions USING gin(to_tsvector('english', question))");
 	}
 
 	/**
@@ -23,9 +23,9 @@ class AddFulltextToQuestionsTable extends Migration {
 	 */
 	public function down()
 	{
-		// Schema::table('questions', function($table) {
-		//     $table->dropIndex('qsearch');
-		// });
+		Schema::table('questions', function($table) {
+		    $table->dropIndex('question_fulltext_idx');
+		});
 	}
 
 }

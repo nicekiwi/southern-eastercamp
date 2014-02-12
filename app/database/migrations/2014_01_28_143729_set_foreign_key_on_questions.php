@@ -29,8 +29,8 @@ class SetForeignKeyOnQuestions extends Migration {
 		Schema::table('questions', function($table)
 		{
 			$table->dropForeign('questions_category_id_foreign');
-			$table->dropForeign('created_by_id_foreign');
-			$table->dropForeign('updated_by_id_foreign');
+			$table->dropForeign('questions_created_by_foreign');
+			$table->dropForeign('questions_updated_by_foreign');
 		});
 	}
 }

@@ -29,8 +29,8 @@ class SetForeignKeyOnVideos extends Migration {
 		Schema::table('videos', function($table)
 		{
 			$table->dropForeign('videos_playlist_id_foreign');
-			$table->dropForeign('created_by_id_foreign');
-			$table->dropForeign('updated_by_id_foreign');
+			$table->dropForeign('videos_created_by_foreign');
+			$table->dropForeign('videos_updated_by_foreign');
 		});
 	}
 
