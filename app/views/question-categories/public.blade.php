@@ -1,7 +1,7 @@
 <div class="row content-top">
 	<div class="small-12 columns">
 
-		<h1>Frquently Asked Questions</h1>
+		<h1>Frequently Asked Questions</h1>
 
 		<dl class="sub-nav">
 		  <dt>Filter:</dt>
