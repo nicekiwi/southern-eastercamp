@@ -10,6 +10,10 @@ return array(
 			'username'  => 'root',
 			'password'  => 'password',
 		),
+
+		'sqlite' => array(
+			'database' => __DIR__.'/../../database/local.sqlite',
+		),
 	),
 
 );

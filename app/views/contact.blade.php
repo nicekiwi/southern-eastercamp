@@ -21,7 +21,7 @@
 			</div>
 		</div>
 
-		<div class="row" style="display:none;">
+		<div class="row">
 			<div class="small-12 columns">
 				<div id="faq-query-results" class="faq-query-contact">
 					<strong>This may help:</strong>

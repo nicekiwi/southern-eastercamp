@@ -63,6 +63,6 @@ $(document).ready(function()
 
   $("img.unveil").unveil(100);
 
-  //if($('#sender_question').length > 0){$('#sender_question').livesearch({searchCallback: searchFunction,queryDelay: 250,});}
+  if($('#sender_question').length > 0){$('#sender_question').livesearch({searchCallback: searchFunction,queryDelay: 250,});}
 
 });
