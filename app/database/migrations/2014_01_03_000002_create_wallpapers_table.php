@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVideosTable extends Migration {
+class CreateWallpapersTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -11,19 +11,22 @@ class CreateVideosTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('videos', function($table)
+		Schema::create('wallpapers', function($table)
 		{
 			$table->increments('id');
-			$table->integer('playlist_id')->unsigned()->nullable();
 			$table->integer('order')->nullable();
 			$table->string('url')->unique();
 			$table->string('title')->nullable();
+			$table->integer('size')->nullable();
 			$table->integer('public')->nullable();
 
 			$table->integer('created_by')->unsigned()->nullable();
 			$table->integer('updated_by')->unsigned()->nullable();
 			
 			$table->timestamps();
+			
+			$table->foreign('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
+			$table->foreign('updated_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
 		});
 	}
 
@@ -34,7 +37,7 @@ class CreateVideosTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('videos');
+		Schema::drop('wallpapers');
 	}
 
 }

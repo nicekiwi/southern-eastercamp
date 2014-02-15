@@ -22,6 +22,8 @@ class CreatePhotosTable extends Migration {
 			$table->string('picture')->unique();
 			
 			$table->timestamps();
+
+			$table->foreign('album_id')->references('id')->on('albums')->onUpdate('cascade')->onDelete('cascade');
 		});
 	}
 

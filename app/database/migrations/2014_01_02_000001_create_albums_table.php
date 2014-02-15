@@ -1,9 +1,8 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class SetForeignKeyOnAlbums extends Migration {
+class CreateAlbumsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,8 +11,19 @@ class SetForeignKeyOnAlbums extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('albums', function($table)
+		Schema::create('albums', function($table)
 		{
+			$table->increments('id');
+			$table->text('albums')->nullable();
+			$table->integer('year')->unique();
+			$table->integer('count')->nullable();
+			$table->integer('public')->nullable();
+
+			$table->integer('created_by')->unsigned()->nullable();
+			$table->integer('updated_by')->unsigned()->nullable();
+			
+			$table->timestamps();
+
 			$table->foreign('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
 			$table->foreign('updated_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
 		});
@@ -26,11 +36,7 @@ class SetForeignKeyOnAlbums extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('albums', function($table)
-		{
-			$table->dropForeign('albums_created_by_foreign');
-			$table->dropForeign('albums_updated_by_foreign');
-		});
+		Schema::drop('albums');
 	}
 
 }

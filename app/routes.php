@@ -25,10 +25,8 @@ Route::group(array('before' => 'ip-protection'), function()
 	Route::get('photos/{slug?}', 'AlbumController@index_public');
 
 	Route::get('faq/question/query/{string}', 'QuestionController@query_public');
-
-	//Route::get('faq', 'QuestionCategoryController@index_public');
-	Route::get('faq/{slug?}', 'QuestionCategoryController@index_public');
 	Route::get('faq/question/{id}', 'QuestionController@index_public');
+	Route::get('faq/{slug?}', 'QuestionCategoryController@index_public');
 
 	Route::get('login', 'SessionsController@create');
 	Route::get('logout', 'SessionsController@destroy');

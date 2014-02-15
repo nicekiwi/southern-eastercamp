@@ -27,7 +27,13 @@ class CreateQuestionsTable extends Migration {
 			$table->integer('updated_by')->unsigned()->nullable();
 			
 			$table->timestamps();
+
+			$table->foreign('category_id')->references('id')->on('question_categories')->onUpdate('cascade')->onDelete('set null');
+			$table->foreign('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
+			$table->foreign('updated_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
 		});
+
+		DB::unprepared('ALTER TABLE questions ADD FULLTEXT INDEX SEARCH(question)');
 	}
 
 	/**

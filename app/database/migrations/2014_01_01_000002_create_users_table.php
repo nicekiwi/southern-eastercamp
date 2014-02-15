@@ -23,6 +23,9 @@ class CreateUsersTable extends Migration {
 			$table->timestamp('last_login')->nullable();
 			
 			$table->timestamps();
+
+			// add forign key
+			$table->foreign('group_id')->references('id')->on('groups')->onUpdate('cascade')->onDelete('set null');
 		});
 	}
 

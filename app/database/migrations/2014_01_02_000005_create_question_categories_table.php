@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePlaylistsTable extends Migration {
+class CreateQuestionCategoriesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -11,10 +11,11 @@ class CreatePlaylistsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('playlists', function($table)
+		Schema::create('question_categories', function($table)
 		{
 			$table->increments('id');
 			$table->text('title')->nullable();
+			$table->text('slug')->nullable();
 			$table->integer('count')->nullable();
 			$table->integer('order')->nullable();
 
@@ -22,6 +23,9 @@ class CreatePlaylistsTable extends Migration {
 			$table->integer('updated_by')->unsigned()->nullable();
 			
 			$table->timestamps();
+
+			$table->foreign('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
+			$table->foreign('updated_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
 		});
 	}
 
@@ -32,7 +36,7 @@ class CreatePlaylistsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('playlists');
+		Schema::drop('question_categories');
 	}
 
 }

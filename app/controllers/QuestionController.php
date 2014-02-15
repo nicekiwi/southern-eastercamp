@@ -35,9 +35,7 @@ class QuestionController extends \BaseController {
 
 	public function query_public($string)
 	{
-		$response = Question::where('question', 'LIKE', '%' . $string . '%')
-							//->orWhere('answer', 'LIKE', '%' . $string . '%')
-							->get(['id','question']);
+		$response = Question::whereRaw("MATCH(question) AGAINST(? IN NATURAL LANGUAGE MODE)", array($string))->take(5)->get();
 
 		return $response;
 	}
