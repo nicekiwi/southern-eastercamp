@@ -14,16 +14,19 @@ class CreateWallpapersTable extends Migration {
 		Schema::create('wallpapers', function($table)
 		{
 			$table->increments('id');
-			$table->integer('order');
+			$table->integer('order')->nullable();
 			$table->string('url')->unique();
-			$table->string('title');
-			$table->integer('size');
-			$table->string('public');
+			$table->string('title')->nullable();
+			$table->integer('size')->nullable();
+			$table->integer('public')->nullable();
 
 			$table->integer('created_by')->unsigned()->nullable();
 			$table->integer('updated_by')->unsigned()->nullable();
 			
 			$table->timestamps();
+			
+			$table->foreign('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
+			$table->foreign('updated_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
 		});
 	}
 

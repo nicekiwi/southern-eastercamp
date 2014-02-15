@@ -35,10 +35,7 @@ class QuestionController extends \BaseController {
 
 	public function query_public($string)
 	{
-		$response = Question::where('question', 'LIKE', '%' . $string . '%')
-							//->orWhere('answer', 'LIKE', '%' . $string . '%')
-							->get(['id','question']);
-
+		$response = Question::whereRaw("MATCH(question,tags) AGAINST(? IN NATURAL LANGUAGE MODE)", array($string))->take(5)->get(['id','question']);
 		return $response;
 	}
 
@@ -87,6 +84,7 @@ class QuestionController extends \BaseController {
 		$question = new Question;
 		$question->question = Input::get('question');
 		$question->answer = Input::get('answer');
+		$question->tags = Input::get('tags');
 		$question->public = Input::get('public');
 		$question->order = Input::get('order');
 
@@ -156,6 +154,7 @@ class QuestionController extends \BaseController {
 		$question = Question::findOrFail($id);
 		$question->question = Input::get('question');
 		$question->answer = Input::get('answer');
+		$question->tags = Input::get('tags');
 		$question->public = Input::get('public');
 		$question->order = Input::get('order');
 

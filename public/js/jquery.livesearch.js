@@ -142,7 +142,7 @@
 
 	$.fn.livesearch.defaults = {
 		queryDelay: 250,
-		innerText: "Search",
+		innerText: "",
 		minimumSearchLength: 3
 	};
 

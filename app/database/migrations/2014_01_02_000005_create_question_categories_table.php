@@ -16,13 +16,16 @@ class CreateQuestionCategoriesTable extends Migration {
 			$table->increments('id');
 			$table->text('title')->nullable();
 			$table->text('slug')->nullable();
-			$table->string('count');
-			$table->integer('order');
+			$table->integer('count')->nullable();
+			$table->integer('order')->nullable();
 
 			$table->integer('created_by')->unsigned()->nullable();
 			$table->integer('updated_by')->unsigned()->nullable();
 			
 			$table->timestamps();
+
+			$table->foreign('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
+			$table->foreign('updated_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
 		});
 	}
 

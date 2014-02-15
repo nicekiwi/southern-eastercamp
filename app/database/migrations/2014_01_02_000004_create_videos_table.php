@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class SetForeignKeyOnVideos extends Migration {
+class CreateVideosTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -11,8 +11,20 @@ class SetForeignKeyOnVideos extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('videos', function($table)
+		Schema::create('videos', function($table)
 		{
+			$table->increments('id');
+			$table->integer('playlist_id')->unsigned()->nullable();
+			$table->integer('order')->nullable();
+			$table->string('url')->unique();
+			$table->string('title')->nullable();
+			$table->integer('public')->nullable();
+
+			$table->integer('created_by')->unsigned()->nullable();
+			$table->integer('updated_by')->unsigned()->nullable();
+			
+			$table->timestamps();
+
 			$table->foreign('playlist_id')->references('id')->on('playlists')->onUpdate('cascade')->onDelete('set null');
 			$table->foreign('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
 			$table->foreign('updated_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
@@ -26,12 +38,7 @@ class SetForeignKeyOnVideos extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('videos', function($table)
-		{
-			$table->dropForeign('videos_playlist_id_foreign');
-			$table->dropForeign('created_by_id_foreign');
-			$table->dropForeign('updated_by_id_foreign');
-		});
+		Schema::drop('videos');
 	}
 
 }

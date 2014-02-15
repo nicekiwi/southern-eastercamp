@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePagesTable extends Migration {
+class CreateSupportersTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -11,16 +11,13 @@ class CreatePagesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('pages', function($table)
+		Schema::create('supporters', function($table)
 		{
-			$table->increments('id');
+			$table->integer('id')->increment();
+			$table->string('title')->nullable();
+			$table->string('slug')->nullable();
+			$table->string('url')->nullable();
 
-			$table->integer('order');
-			$table->string('meta_title');
-			$table->string('meta_desc');
-			$table->string('slug');
-
-			$table->text('content');
 			$table->integer('updated_by')->unsigned()->nullable();
 			$table->integer('created_by')->unsigned()->nullable();
 			
@@ -38,7 +35,7 @@ class CreatePagesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('pages');
+		Schema::drop('supporters');
 	}
 
 }

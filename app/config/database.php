@@ -66,8 +66,8 @@ return array(
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',
-			'database' => 'database',
-			'username' => 'root',
+			'database' => 'eastercamp',
+			'username' => 'Ezra',
 			'password' => '',
 			'charset'  => 'utf8',
 			'prefix'   => '',

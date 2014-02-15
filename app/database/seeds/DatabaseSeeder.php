@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder {
 
 		$this->call('GroupTableSeeder');
 
-		if (App::environment('local')) $this->call('UserTableSeeder');
+		/* if (App::environment('local')) */ $this->call('UserTableSeeder');
 
 		$this->call('PlaylistTableSeeder');
 		$this->call('QuestionCategoryTableSeeder');

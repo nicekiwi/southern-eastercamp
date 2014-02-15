@@ -6,17 +6,20 @@ class PlaylistTableSeeder extends Seeder {
 	{
 		Playlist::create([
 			'order'		=> 5,
-			'title' 	=> 'Promos'
+			'title' 	=> 'Promos',
+			'count'		=> 0
 		]);
 
 		Playlist::create([
 			'order'		=> 10,
-			'title' 	=> 'Highlights'
+			'title' 	=> 'Highlights',
+			'count'		=> 0
 		]);
 
 		Playlist::create([
 			'order'		=> 15,
-			'title' 	=> 'Segments'
+			'title' 	=> 'Segments',
+			'count'		=> 0
 		]);
 	}
 }

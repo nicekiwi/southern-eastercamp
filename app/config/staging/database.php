@@ -10,6 +10,10 @@ return array(
 			'username'  => Config::get('keys.laravel.database.username'),
 			'password'  => Config::get('keys.laravel.database.password'),
 		),
+
+		'sqlite' => array(
+			'database' => __DIR__.'/../../database/staging.sqlite',
+		),
 	),
 
 );

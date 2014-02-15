@@ -1,16 +1,19 @@
 
 function searchFunction(searchTerm) 
 {
-  var resultBox = $('#faq-query-results ul');
+  var resultBox = $('#faq-query-results');
+  var resultList = $('ul', resultBox);
 
-  resultBox.html('');
+  resultList.html('');
 
   $.getJSON( "/faq/question/query/" + searchTerm, function( data ) 
   {
     if(data.length > 0)
     {
+      if(resultBox.hasClass('hidden')) resultBox.removeClass('hidden');
+
       $.each( data, function( key, val ) {
-        resultBox.append( "<li><a href='/faq/question/"+val.id+"'>" + val.question + "</a></li>" );
+        resultList.append( "<li><a href='/faq/question/"+val.id+"'>" + val.question + "</a></li>" );
       });
     }
   });
@@ -63,6 +66,6 @@ $(document).ready(function()
 
   $("img.unveil").unveil(100);
 
-  //if($('#sender_question').length > 0){$('#sender_question').livesearch({searchCallback: searchFunction,queryDelay: 250,});}
+  if($('#sender_question').length > 0){$('#sender_question').livesearch({searchCallback: searchFunction,queryDelay: 250,});}
 
 });

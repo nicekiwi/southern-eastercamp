@@ -1,4 +1,5 @@
 /app/config/keys.php
+/app/database/*.sqlite
 /bootstrap/compiled.php
 /vendor
 composer.phar

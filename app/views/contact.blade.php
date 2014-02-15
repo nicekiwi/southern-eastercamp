@@ -21,10 +21,10 @@
 			</div>
 		</div>
 
-		<div class="row" style="display:none;">
+		<div class="row">
 			<div class="small-12 columns">
-				<div id="faq-query-results" class="faq-query-contact">
-					<strong>This may help:</strong>
+				<div id="faq-query-results" class="hidden">
+					<p><strong>Check these first:</strong></p>
 					<ul class="small-block-grid-1">
 
 					</ul>
