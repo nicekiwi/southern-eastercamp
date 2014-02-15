@@ -31,6 +31,9 @@
 
 				{{ Form::label('answer', 'Answer:') }}
 				{{ Form::textarea('answer', $value = null, ['class' => 'redactor-editor']); }}
+
+				{{ Form::label('tags', 'Tags: (up to 8 related nouns not found in the title, seperated by a space.)') }}
+				{{ Form::text('tags'); }}
 			</div>
 		</div>
 

@@ -17,6 +17,7 @@ class CreateQuestionsTable extends Migration {
 			$table->integer('category_id')->unsigned()->nullable();
 			$table->text('question')->nullable();
 			$table->text('answer')->nullable();
+			$table->text('tags')->nullable();
 			$table->string('views')->nullable();
 			$table->integer('helpful_yes')->nullable();
 			$table->integer('helpful_no')->nullable();
@@ -33,7 +34,8 @@ class CreateQuestionsTable extends Migration {
 			$table->foreign('updated_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
 		});
 
-		DB::unprepared('ALTER TABLE questions ADD FULLTEXT INDEX SEARCH(question)');
+		// Add fulltext index to Questions table
+		DB::unprepared('ALTER TABLE questions ADD FULLTEXT INDEX SEARCH(question,tags)');
 	}
 
 	/**
