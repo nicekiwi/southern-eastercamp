@@ -29,7 +29,7 @@
 			    	@if($post->source != '')
 			    		@if(strstr($post->source, 'youtube'))
 				          <p><a class="{{($browser['isMobile'] ?: 'fancybox')}} overlay-icon" href="//www.youtube.com/embed/{{ rawurldecode(substr($post->picture, 112,11)) }}?rel=0&amp;autoplay=1" title="{{$post->link_name}}">
-				            <img class="th unveil" src="/img/video-fallback.png" data-src="/douglas/videos/{{ rawurldecode(substr($post->picture, 79,44)) }}/hqdefault.jpg" /><i class="fa fa-play-circle"></i></a>
+				            <img class="th unveil" src="/img/video-fallback.png" data-src="/douglas/videos/{{ urlencode(rawurldecode(substr($post->picture, 79,44)) . '/hqdefault.jpg') }}" /><i class="fa fa-play-circle"></i></a>
 				          </p>
 						@endif
 					@endif
@@ -51,7 +51,7 @@
 				@if($post->type == 'photo' || $post->type == 'photos')
 					<div class="media-photo">
 						<a href="{{ $post->picture }}" class="{{($browser['isMobile'] ?: 'fancybox')}} overlay-icon" title="{{ $post->link_name }}">
-							<img class="th unveil"src="/img/gallery-fallback.png" data-src="/douglas/nphotos/{{ $post->picture }}" alt="{{ strtotime($post->created_time) }}" />
+							<img class="th unveil"src="/img/gallery-fallback.png" data-src="/douglas/nphotos/{{ urlencode($post->picture) }}" alt="{{ strtotime($post->created_time) }}" />
 							<i class="fa fa-plus-circle"></i>
 						</a>
 					</div>
