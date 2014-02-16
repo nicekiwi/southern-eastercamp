@@ -6,9 +6,7 @@
     "foundation": "zurb/bower-foundation",
     "components-font-awesome": "*",
     "fancybox": "*",
-    "unveil": "*",
-    "datatables": "*",
-    "jquery-masonry": "*"
+    "unveil": "*"
   },
   "resolutions": {
     "jquery": ">= 2.0.0"

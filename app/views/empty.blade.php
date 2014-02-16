@@ -1,5 +1,7 @@
-<div class="row content-top">
-	<div class="small-12 columns">
-		{{ $content }}
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			{{ $content }}
+		</div>
 	</div>
 </div>

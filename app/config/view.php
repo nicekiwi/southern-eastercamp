@@ -26,8 +26,8 @@ return array(
 	|
 	*/
 
-	//'pagination' => 'pagination::slider',
-	'pagination' => 'foundationpagination::slider-center',
+	'pagination' => 'pagination::slider-3',
+	//'pagination' => 'foundationpagination::slider-center',
 	//'pagination' => 'foundationpagination::slider',
 
 );

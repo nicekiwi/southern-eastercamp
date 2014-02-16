@@ -1,0 +1,56 @@
+@import "bootstrap/bootstrap.less";
+@import "_fonts.less";
+@import "_navbar.less";
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+	/* Margin bottom by footer height */
+	margin-bottom: 60px;
+}
+
+
+
+#footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 60px;
+	background-color: @navbar-default-bg;
+}
+
+// Thumbnail overlay Icon
+a.fancybox {
+  position: relative;
+}
+
+a.overlay-icon:hover i {
+  opacity: 0.9;
+}
+
+a.overlay-icon i {
+    display: block;
+    font-size: rem-calc(30);
+    line-height: rem-calc(35);
+    height: 1em;
+    width: 1em;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    // z-index: 100;
+    margin: -0.5em 0 0 -0.5em;
+    opacity: 0.5;
+    text-shadow: 0 0 100px #1d1d1d;
+    transition: opacity 0.5s ease;
+}
+
+.center {
+	text-align: center;
+}

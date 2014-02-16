@@ -1,44 +1,34 @@
 <!-- Display Alert messages -->
-@if(Session::get('error_message'))
-<div data-alert data-options="animation_speed:500;" class="alert-box alert">
+<div class="container">
   <div class="row">
-    <div class="small-12 columns">
-      <i class="fa fa-exclamation-circle fa-lg"></i> {{ Session::get('error_message') }}
-      <a href="#" class="close">&times;</a>
-    </div>
-  </div>
-</div>
-@endif
+    <div class="col-xs-12">
+      @if(Session::get('success_message'))
+      <div class="alert alert-success alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <i class="fa fa-check-square-o fa-lg"></i> {{ Session::get('success_message') }}
+      </div>
+      @endif
 
-@if(Session::get('warning_message'))
-<div data-alert data-options="animation_speed:500;" class="alert-box warning">
-  <div class="row">
-    <div class="small-12 columns">
-      <i class="fa fa-exclamation-triangle fa-lg"></i>{{ Session::get('warning_message') }}
-      <a href="#" class="close">&times;</a>
-    </div>
-  </div>
-</div>
-@endif
+      @if(Session::get('info_message'))
+      <div class="alert alert-info alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <i class="fa fa-bullhorn fa-lg"></i> {{ Session::get('info_message') }}
+      </div>
+      @endif
 
-@if(Session::get('info_message'))
-<div data-alert data-options="animation_speed:500;" class="alert-box info">
-  <div class="row">
-    <div class="small-12 columns">
-      <i class="fa fa-bullhorn fa-lg"></i> {{ Session::get('info_message') }}
-      <a href="#" class="close">&times;</a>
-    </div>
-  </div>
-</div>
-@endif
+      @if(Session::get('warning_message'))
+      <div class="alert alert-warning alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <i class="fa fa-exclamation-triangle fa-lg"></i>{{ Session::get('warning_message') }}
+      </div>
+      @endif
 
-@if(Session::get('success_message'))
-<div data-alert data-options="animation_speed:500;" class="alert-box success">
-  <div class="row">
-    <div class="small-12 columns">
-      <i class="fa fa-check-square-o fa-lg"></i> {{ Session::get('success_message') }}
-      <a href="#" class="close">&times;</a>
+      @if(Session::get('error_message'))
+      <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <i class="fa fa-exclamation-circle fa-lg"></i> {{ Session::get('error_message') }}
+      </div>
+      @endif
     </div>
   </div>
 </div>
-@endif

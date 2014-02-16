@@ -40,12 +40,9 @@
     <link rel="stylesheet" href="/bower_components/fancybox/source/jquery.fancybox.css">
     <link rel="stylesheet" href="/bower_components/components-font-awesome/css/font-awesome.min.css">
 
-    <link href="/css/app.css" media="screen, projection" rel="stylesheet" type="text/css" />
-
-    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <link href="/build/css/app.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div class="wrapper">
       @include('partials.header-nav')
 
       @include('partials.error-messages')
@@ -59,19 +56,12 @@
 
       {{ $content }}
 
-      <div class="push"></div>
-    </div>
+      @include('partials.footer-supporters')
 
-    @include('partials.footer-supporters')
-
-    <footer>
-
-      <div class="row">
-        <div class="small-12 medium-4 columns copyright">
-        <p style="margin:0;">&copy; 2014 CYS</p>
-        </div>
-        <div class="small-12 medium-8 columns show-for-medium-up">
-          <ul class="inline-list right">
+    <div id="footer">
+      <div class="container">
+        <div class="col-xs-12 col-md-6">
+          <ul style="margin:20px 0" class="list-inline pull-left">
             <li><a href="/information/parents-caregivers">Parents</a></li>
             <li><a target="_blank" href="https://www.eastercamp.org.nz/southern/leaders">Leaders</a></li>
             <li><a href="/information/volunteer">Volunteer</a></li>
@@ -79,23 +69,22 @@
             <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
+
+        <div class="col-xs-12 col-md-6">
+          <p style="margin:20px 0;text-align:right;">&copy; 2014 CYS</p>
+        </div>
       </div>
-    </footer>
+    </div>
 
     <script src="/bower_components/jquery/jquery.js"></script>
-    <script src="/bower_components/foundation/js/foundation.js"></script>
+    <script src="/build/js/bootstrap.min.js"></script>
     <script src="/bower_components/fancybox/source/jquery.fancybox.js"></script>
     <script src="/bower_components/fancybox/source/helpers/jquery.fancybox-media.js"></script>
     <script src="/bower_components/unveil/jquery.unveil.min.js"></script>
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.1.2/masonry.pkgd.min.js"></script> -->
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js" type="text/javascript"></script> -->
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-countdown/1.6.3/jquery.countdown.min.js"></script>
-    <script src="/js/jquery.livesearch.js"></script>
+    <script src="/build/js/jquery.livesearch.min.js"></script>
 
-    <!-- <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-    <script src="/js/directions.min.js"></script> -->
-
-    <script src="/js/app.js"></script>
+    <script src="/build/js/app.min.js"></script>
   </body>
 </html>
