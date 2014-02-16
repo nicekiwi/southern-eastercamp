@@ -194,7 +194,7 @@ return array(
 
 	'ip-protection' => [
 
-		'enabled' => true,
+		'enabled' => false,
 		'redirect_url' => '/splash',
 	],
 
