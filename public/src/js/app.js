@@ -19,10 +19,10 @@ function searchFunction(searchTerm)
   });
 }
 
+$(document).foundation();
+
 $(document).ready(function()
 {
-  //initMaps();
-
   $('#ec-countdown').countdown({ 
     until: new Date("April 17, 2014 20:00:00"),
     compactLabels: ['y', 'm', 'w', 'Days'],
@@ -37,11 +37,8 @@ $(document).ready(function()
   });
 
   $(".fancybox").fancybox({
-    defaults : {
-      padding: 0,
-      width: 1280,
-      height: 720
-    },
+    width: 1280,
+    height: 720,
     helpers : {
       media: true,
       overlay: {
@@ -53,15 +50,8 @@ $(document).ready(function()
     }
   });
 
-  // var container = document.querySelector('#news-posts');
-  // var msnry = new Masonry( container, {
-  //   itemSelector: '.test-post',
-  // });
-
-  //$('#faq-table').dataTable();
-
   $("img.unveil").unveil(100);
 
-  if($('#sender_question').length > 0){$('#sender_question').livesearch({searchCallback: searchFunction,queryDelay: 250,});}
+  $('#sender_question').livesearch({searchCallback: searchFunction,queryDelay: 250,});
 
 });

@@ -37,12 +37,12 @@
     <link rel="publisher" href="https://plus.google.com/109194678174277060406" />
     <link rel="shortcut icon" href="/fav-icon.png" />
 
-    <link rel="stylesheet" href="/bower_components/fancybox/source/jquery.fancybox.css">
-    <link rel="stylesheet" href="/bower_components/components-font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css">
 
-    <link href="/css/app.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/build/css/app.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
 
-    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/js/vendor/modernizr.min.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -82,20 +82,17 @@
       </div>
     </footer>
 
-    <script src="/bower_components/jquery/jquery.js"></script>
-    <script src="/bower_components/foundation/js/foundation.js"></script>
-    <script src="/bower_components/fancybox/source/jquery.fancybox.js"></script>
-    <script src="/bower_components/fancybox/source/helpers/jquery.fancybox-media.js"></script>
-    <script src="/bower_components/unveil/jquery.unveil.min.js"></script>
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.1.2/masonry.pkgd.min.js"></script> -->
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js" type="text/javascript"></script> -->
-
+    <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/js/vendor/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/js/foundation.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-media.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/unveil/1.3.0/jquery.unveil.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-countdown/1.6.3/jquery.countdown.min.js"></script>
-    <script src="/js/jquery.livesearch.js"></script>
+    <script src="/build/js/jquery.livesearch.min.js"></script>
 
     <!-- <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script src="/js/directions.min.js"></script> -->
 
-    <script src="/js/app.js"></script>
+    <script src="/build/js/app.min.js"></script>
   </body>
 </html>
