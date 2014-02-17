@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    @if(getenv('LARA_ENV') !== 'production')
+    @if(app()->env !== 'production')
     <meta name="robots" content="noindex, nofollow">
     @endif
     <title>{{ $metaTitle }}</title>
@@ -37,12 +37,11 @@
     <link rel="publisher" href="https://plus.google.com/109194678174277060406" />
     <link rel="shortcut icon" href="/fav-icon.png" />
 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css">
 
-    <link href="/build/css/app.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    {{ HTML::style('css/app' . (app()->env === 'local' ? '.css' : '.min.css')) }}
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/js/vendor/modernizr.min.js"></script>
+    {{ HTML::script('js/vendor/modernizr.min.js') }}
   </head>
   <body>
     <div class="wrapper">
@@ -82,18 +81,10 @@
       </div>
     </footer>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/js/vendor/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/js/foundation.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-media.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/unveil/1.3.0/jquery.unveil.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-countdown/1.6.3/jquery.countdown.min.js"></script>
-    <script src="/build/js/jquery.livesearch.min.js"></script>
-
     <!-- <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script src="/js/directions.min.js"></script> -->
 
-    <script src="/build/js/app.min.js"></script>
+    {{ HTML::script('js/app' . (app()->env == 'local' ? '.js' : '.min.js')) }}
 
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
