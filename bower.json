@@ -8,8 +8,5 @@
     "fancybox": "*",
     "unveil": "*",
     "jquery.countdown": "*"
-  },
-  "resolutions": {
-    "jquery": ">= 2.0.0"
   }
 }

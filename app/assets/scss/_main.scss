@@ -10,7 +10,7 @@ html, body {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin-bottom: -228px; /* the bottom margin is the negative value of the footer's height */
+  margin-bottom: -275px; /* the bottom margin is the negative value of the footer's height */
 }
 
 // body > footer {
@@ -44,7 +44,7 @@ body > footer i {
 }
 
 .push {
-  height: 228px;
+  height: 275px;
 }
 
 h1, h2, h3 {
@@ -288,11 +288,11 @@ img.grayscale:hover {
 
 @media #{$small-only} { 
   .push{
-    height: 520px;
+    height: 347px;
   }
 
   .wrapper {
-    margin-bottom: -145px;
+    margin-bottom: -347px;
   }
 
   .master-supporters {
@@ -340,9 +340,9 @@ img.grayscale:hover {
     min-height: 90px;
   }
 
-  .wrapper {
-    margin-bottom: -165px;
-  }
+  // .wrapper {
+  //   margin-bottom: -375px;
+  // }
 
   .push {
     height: 375px;
