@@ -90,11 +90,7 @@
     <!-- <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script src="/js/directions.min.js"></script> -->
 
-<<<<<<< HEAD
-    <script src="/js/app.js"></script>
-=======
     {{ HTML::script('js/app' . (app()->env == 'local' ? '.js' : '.min.js')) }}
->>>>>>> gulp
 
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
