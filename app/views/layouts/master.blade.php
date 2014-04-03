@@ -68,7 +68,7 @@
       <div class="row">
         <div class="small-12 medium-4 columns">
 
-          <p style="margin:0;">CYS — 2014<br><br></p>
+          <p style="margin:0;"><a href="http://www.cys.org.nz" title="Caterbury Youth Services Website" target="_blank">CYS — 2014<br><br></p>
 
           <ul class="no-bullet">
             <li><a href="/information/parents-caregivers">Parents</a></li>
