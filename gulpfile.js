@@ -11,6 +11,8 @@ var jshint 			= require('gulp-jshint'),
 	autoprefix 		= require('gulp-autoprefixer'),
 	minifyCSS 		= require('gulp-minify-css'),
 	rename			= require('gulp-rename'),
+    includejs       = require('gulp-include'),
+    importcss       = require('gulp-cssimport'),
 	sass			= require('gulp-ruby-sass');
  
 var sources = {
@@ -60,15 +62,16 @@ gulp.task('jshint', function() {
 // JS concat, strip debugging and minify
 gulp.task('scripts', function() {
 	gulp.src([
-            sources.javascript.jquery,
-            sources.javascript.foundation.main,
-            sources.javascript.fancybox.main,
-            sources.javascript.fancybox.media,
-            sources.javascript.unveil,
-            sources.javascript.countdown,
+            // sources.javascript.jquery,
+            // sources.javascript.foundation.main,
+            // sources.javascript.fancybox.main,
+            // sources.javascript.fancybox.media,
+            // sources.javascript.unveil,
+            // sources.javascript.countdown,
             sources.javascript.app
         ])
-        .pipe(concat('app.js'))
+        //.pipe(concat('app.js'))
+        .pipe(includejs())
         .pipe(gulp.dest(targets.js))
 		.pipe(stripDebug())
 		.pipe(uglify('compress'))
@@ -81,38 +84,26 @@ gulp.task('scripts', function() {
 // compile CSS
 gulp.task('sass', function() {
 
-    // gulp.src(sources.css.fancybox)
-    //     .pipe(minifyCSS())
-    //     pipe(gulp.dest('./app/assets/build'));
-
-    gulp.src(['./app/assets/scss/app.scss', './app/assets/scss/app-admin.scss'])
+    gulp.src([
+            './app/assets/scss/app.scss', 
+            './app/assets/scss/app-admin.scss'
+        ])
+        .pipe(importcss())
         .pipe(sass({
-            loadPath: ['./bower_components/foundation/scss', './bower_components']
+            loadPath: [
+                './bower_components/foundation/scss', 
+                './bower_components'
+            ]
         }))
+
         .pipe(autoprefix('last 2 versions'))
-        //.pipe(concat('app.css'))
         .pipe(gulp.dest(targets.css))
         .pipe(minifyCSS())
         .pipe(rename(function (path) {
 	        path.basename += '.min';
 	    }))
         .pipe(gulp.dest(targets.css));
-
-    // gulp.src(sources.css.fancybox)
-    //     .pipe(minifyCSS())
-    //     pipe(gulp.dest('./app/assets/build'));
 });
-
-// gulp.task('pull-css', function() {
-//     gulp.src(sources.css.fancybox)
-//         .pipe(gulp.dest(targets.css));
-// });
-
-// gulp.task('css', function() {
-//     gulp.src('./public/css/*.css')
-//         .pipe(autoprefix('last 2 versions'))
-//         .pipe(minifyCSS())
-// });
 
 gulp.task('watch', function () {
     gulp.watch('./app/assets/scss/**/*.scss', ['sass']);

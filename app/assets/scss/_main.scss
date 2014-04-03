@@ -13,31 +13,34 @@ html, body {
   margin-bottom: -228px; /* the bottom margin is the negative value of the footer's height */
 }
 
-body > footer {
-  height: 55px;
-  background-color: $topbar-bg-color;
-  color: #fff;
-}
-
-body > footer {
-  padding-top: 15px;
-}
+// body > footer {
+//   padding-top: 15px;
+// }
 
 body > footer ul {
   margin-bottom: 0 !important;
 }
 
-body > footer ul li a {
+body > footer a {
   color: #fff;
 }
 
-body > footer ul li a:hover {
+body > footer a:hover {
   color: #fff;
   text-decoration: underline;
 }
 
+$footer-height: 275px;
+
 body > footer {
-  height: 55px; /* .push must be the same height as .footer */
+  height: $footer-height; /* .push must be the same height as .footer */
+  padding: 60px 0 40px 0;
+  background-color: $topbar-bg-color;
+  color: #fff;
+}
+
+body > footer i {
+  margin-left: 25px;
 }
 
 .push {
@@ -171,12 +174,28 @@ a.overlay-icon i {
   opacity: 0.9;
 }
 
-img.grayscale {
-    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+, IE10 */
-    filter: gray; /* IE6-9 */
-    //-webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
-    -webkit-transition: all .2s ease; /* Fade to color for Chrome and Safari */
-    -webkit-backface-visibility: hidden; /* Fix for transition flickering */
+.createdBy {
+  width: 90px;
+  margin-bottom: 3px;
+  margin-left: 5px;
+}
+
+// img.grayscale {
+//     filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+, IE10 */
+//     filter: gray; /* IE6-9 */
+//     //-webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
+//     -webkit-transition: all .2s ease; /* Fade to color for Chrome and Safari */
+//     -webkit-backface-visibility: hidden; /* Fix for transition flickering */
+// }
+
+img.grayscale { 
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 4+ */
+  filter: gray; /* IE 6-9 */
 }
 
 img.grayscale:hover {
@@ -269,7 +288,7 @@ img.grayscale:hover {
 
 @media #{$small-only} { 
   .push{
-    height: 145px;
+    height: 520px;
   }
 
   .wrapper {
@@ -289,6 +308,30 @@ img.grayscale:hover {
   footer .copyright {
     text-align: center;
   }
+
+  body > footer {
+    height: $footer-height + 72px;
+    text-align: center;
+  }
+
+  body > footer i {
+    margin: 0 20px !important;
+  }
+
+  body > footer .right {
+    text-align: center !important;
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .small-block-grid-1 .th.unveil {
+    margin: 0 auto;
+    display: block;
+  }
+
+  .small-block-grid-1 i {
+    display: none !important;
+  }
 }
 
 @media #{$medium-only} { 
@@ -302,7 +345,7 @@ img.grayscale:hover {
   }
 
   .push {
-    height: 165px;
+    height: 375px;
   }
 }
 

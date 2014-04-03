@@ -1,3 +1,13 @@
+//= include ../../../bower_components/jquery/dist/jquery.js
+//= include ../../../bower_components/foundation/js/foundation.js
+//= include ../../../bower_components/fancybox/source/jquery.fancybox.js
+//= include ../../../bower_components/fancybox/source/helpers/jquery.fancybox-media.js
+//= include ../../../bower_components/unveil/jquery.unveil.js
+//= include ../../../bower_components/jquery.countdown/dist/jquery.countdown.js
+//= include jquery.livesearch.js
+
+      //localVendor: './app/assets/vendor/**/*.js', 
+
 
 function searchFunction(searchTerm) 
 {
@@ -23,17 +33,21 @@ $(document).foundation();
 
 $(document).ready(function()
 {
-  $('#ec-countdown').countdown({ 
-    until: new Date("April 17, 2014 20:00:00"),
-    compactLabels: ['y', 'm', 'w', 'Days'],
-    compact: true
-  });
+  // $('.ec-countdown').countdown({ 
+  //   until: new Date("April 17, 2014 20:00:00"),
+  //   compactLabels: ['y', 'm', 'w', 'Days'],
+  //   compact: true
+  // });
 
-  $('#ec-countdown-text').countdown({
-    until: new Date("April 17, 2014 20:00:00"),
-    format: 'd',
-    compactLabels: ['y', 'm', 'w', ' days;'],
-    compact: true
+  // $('.ec-countdown-text').countdown({
+  //   until: new Date("April 17, 2014 20:00:00"),
+  //   format: 'd',
+  //   compactLabels: ['y', 'm', 'w', ' days;'],
+  //   compact: true
+  // });
+
+  $('.ec-countdown').countdown('2014/04/17 20:00:00', function(event) {
+    $(this).html(event.strftime('%-D Days %H:%M:%S'));
   });
 
   $(".fancybox").fancybox({

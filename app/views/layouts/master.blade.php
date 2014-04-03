@@ -23,12 +23,12 @@
 
     <meta itemprop="name" content="{{ $metaTitle }}">
     <meta itemprop="description" content="{{ $metaDesc }}">
-    <meta itemprop="image" content="http://www.eastercamp.org.nz/images/facebook.png">
+    <meta itemprop="image" content="http://www.eastercamp.org.nz/img/facebook.png">
 
     <meta property="og:title" content="{{ $metaTitle }}" />
     <meta property="og:description" content="{{ $metaDesc }}" />
 
-    <meta property="og:image" content="http://www.eastercamp.org.nz/images/facebook.png" />
+    <meta property="og:image" content="http://www.eastercamp.org.nz/img/facebook.png" />
     <meta property="og:type" content="non_profit" />
     <meta property="og:url" content="http://www.eastercamp.org.nz" />
     <meta property="og:site_name" content="" />
@@ -41,7 +41,7 @@
 
     {{ HTML::style('css/app' . (app()->env === 'local' ? '.css' : '.min.css')) }}
 
-    {{ HTML::script('js/vendor/modernizr.min.js') }}
+    {{ HTML::script('//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js') }}
   </head>
   <body>
     <div class="wrapper">
@@ -58,25 +58,31 @@
 
       {{ $content }}
 
+      @include('partials.footer-supporters')
+
       <div class="push"></div>
     </div>
-
-    @include('partials.footer-supporters')
 
     <footer>
 
       <div class="row">
-        <div class="small-12 medium-4 columns copyright">
-        <p style="margin:0;">&copy; 2014 CYS</p>
-        </div>
-        <div class="small-12 medium-8 columns show-for-medium-up">
-          <ul class="inline-list right">
+        <div class="small-12 medium-4 columns">
+
+          <p style="margin:0;">CYS — 2014<br><br></p>
+
+          <ul class="no-bullet">
             <li><a href="/information/parents-caregivers">Parents</a></li>
             <li><a target="_blank" href="https://www.eastercamp.org.nz/southern/leaders">Leaders</a></li>
             <li><a href="/information/volunteer">Volunteer</a></li>
             <li><a href="/faq">FAQ</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
+        </div>
+        <div class="small-12 medium-4 columns hide-for-small-only">
+          <p class="center">Created by <a title="Kiwidev Website" href="http://kiwidev.co.nz"><img alt="Kiwidev" class="createdBy" src="/img/kiwidev-footer.svg"/></a></p>
+        </div>
+        <div class="small-12 medium-4 columns">
+          <p class="right"><a href="https://twitter.com/Eastercampsouth" target="_blank" title="Southern Eastercamp on Twitter"><i class="fa fa-twitter fa-2x"></i></a><a href="https://www.facebook.com/southerneastercamp" target="_blank" title="Southern Eastercamp's Facebook Page"><i class="fa fa-facebook fa-2x"></i></a><a href="https://www.youtube.com/user/nzeastercamp" target="_blank" title="Southern Eastercamp's Youtube Channel"><i class="fa fa-youtube fa-2x"></i></a></p>
         </div>
       </div>
     </footer>
