@@ -1,9 +1,10 @@
-node_modules
-.sass-cache
-bower_components
 /app/config/keys.php
 /app/database/*.sqlite
+/app/assets/build/*
 /bootstrap/compiled.php
 /vendor
+/bower_components/*
+/.sass-cache/*
+/node_modules/*
 composer.phar
 .DS_Store

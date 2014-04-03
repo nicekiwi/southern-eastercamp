@@ -7,10 +7,6 @@
     "components-font-awesome": "*",
     "fancybox": "*",
     "unveil": "*",
-    "datatables": "*",
-    "jquery-masonry": "*"
-  },
-  "resolutions": {
-    "jquery": ">= 2.0.0"
+    "jquery.countdown": "*"
   }
 }

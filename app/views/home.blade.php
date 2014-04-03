@@ -31,7 +31,7 @@
             <li><a href="http://photos-d.ak.fbcdn.net/hphotos-ak-ash3/t1/564368_10150693511371716_347532160_o.jpg" rel="photo-gallery" class="fancybox overlay-icon"><img src="/img/gallery-fallback.png" class="th unveil" data-src="https://i.embed.ly/1/display/crop?key=d5a004fad9d94741b9ea438a9b802b3e&url=http://photos-d.ak.fbcdn.net/hphotos-ak-ash3/t1/564368_10150693511371716_347532160_o.jpg&height=200&width=300"><i class="fa fa-plus-circle"></i></a></li>
         </ul>
 
-        <h2 id="ec-countdown"></h2>
+        <h2 class="ec-countdown"></h2>
         <h3>17th April - 21st April 2014</h3>
     </div>
 </div>

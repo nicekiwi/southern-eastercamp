@@ -1,5 +1,8 @@
-@import "settings";
+@import "foundation/settings";
+@import "settings-override";
+@import "normalize";
 @import "foundation";
+
 @import "fonts";
 @import "fancybox";
 @import "redactor";

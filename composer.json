@@ -7,7 +7,6 @@
 		"facebook/php-sdk": "dev-master",
 		"hisorange/browser-detect": "dev-master",
 		"binarix/foundation-pagination": "dev-master",
-		"vtalbot/markdown": "1.*",
 		"thapp/jitimage": "dev-master"
 	},
 	"autoload": {
