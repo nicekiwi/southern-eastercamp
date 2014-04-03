@@ -7035,6 +7035,15 @@ img.grayscale:hover {
 .hidden {
   display: none; }
 
+.faq-table {
+  width: 100%; }
+
+.faq-table td:nth-child(2) {
+  display: none; }
+
+.faq-table .dataTables_filter label {
+  font-weight: bold; }
+
 @media only screen and (max-width: 40em) {
   .push {
     height: 347px; }

@@ -4,6 +4,7 @@
 //= include ../../../bower_components/fancybox/source/helpers/jquery.fancybox-media.js
 //= include ../../../bower_components/unveil/jquery.unveil.js
 //= include ../../../bower_components/jquery.countdown/dist/jquery.countdown.js
+//= include ../../../bower_components/datatables/media/js/jquery.dataTables.js
 //= include jquery.livesearch.js
 
       //localVendor: './app/assets/vendor/**/*.js', 
@@ -33,18 +34,24 @@ $(document).foundation();
 
 $(document).ready(function()
 {
-  // $('.ec-countdown').countdown({ 
-  //   until: new Date("April 17, 2014 20:00:00"),
-  //   compactLabels: ['y', 'm', 'w', 'Days'],
-  //   compact: true
-  // });
+  oTable = $('.faq-table').dataTable({
+    //"aoColumns": [null],
+    "bPaginate": false,
+    //"bLengthChange": false,
+    "bFilter": true,
+    "bSort": true,
+    "sDom": '<"top">rt<"bottom"lp><"clear">',
+    //"bInfo": false,
+    "bAutoWidth": false,
+    // "oLanguage": {
+    //   "sSearch": "Filter by keyword: "
+    // }
 
-  // $('.ec-countdown-text').countdown({
-  //   until: new Date("April 17, 2014 20:00:00"),
-  //   format: 'd',
-  //   compactLabels: ['y', 'm', 'w', ' days;'],
-  //   compact: true
-  // });
+  });
+
+  $('.faq-table-filter').keyup(function(){
+        oTable.fnFilter( $(this).val() );
+  });
 
   $('.ec-countdown').countdown('2014/04/17 20:00:00', function(event) {
     $(this).html(event.strftime('%-D Days %H:%M:%S'));
