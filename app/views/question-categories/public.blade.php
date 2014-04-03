@@ -11,17 +11,19 @@
 		  @endforeach
 		</dl>
 
-		<table id="faq-table">
-			<!-- <thead>
+		<input type="text" class="faq-table-filter" placeholder="Keyword Filter">
+
+		<table class="faq-table">
+			<thead>
 				<tr>
-					<td>Question</td>
+					<td>Questions</td>
 				</tr>
-			</thead> -->
+			</thead>
 			<tbody>
 				@foreach ($questions as $question)
 				@if($question->public > 0)
 				<tr>
-					<td><a href="/faq/question/{{ $question->id }}">{{ $question->question }}</a></td>
+					<td><a href="/faq/question/{{ $question->id }}">{{ $question->question }}</a><p class="hidden">{{ $question->tags }}</p></td>
 				</tr>
 				@endif
 				@endforeach

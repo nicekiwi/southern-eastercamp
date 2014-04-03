@@ -9,6 +9,8 @@
 		@if($question->tags != '')
 		<p><strong>TAGS:</strong> {{ $question->tags }}</p>
 		@endif
+
+		<p>&nbsp;</p>
 		
 		<p><a href="{{ URL::previous() }}">&lt;- Return to previous page</a></p>
 	</div>

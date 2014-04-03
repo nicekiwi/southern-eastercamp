@@ -286,6 +286,18 @@ img.grayscale:hover {
   display: none;
 }
 
+.faq-table {
+  width: 100%;
+}
+
+.faq-table td:nth-child(2) {
+  display: none;
+}
+
+.faq-table .dataTables_filter label {
+  font-weight: bold;
+}
+
 @media #{$small-only} { 
   .push{
     height: 347px;
